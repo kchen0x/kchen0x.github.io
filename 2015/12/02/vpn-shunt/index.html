@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>通过路由表进行VPN国内外分流的办法 | Quentin的黑曜石之门</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Chnroutes 项目教程的目的是要达到通过执行路由脚本,可以让用户在使用vpn作为默认网络网关的时候, 不使用vpn进行对中国国内ip的访问, 从而减轻vpn的负担, 和增加访问国内网站的速度。
+需要利用一个开源项目 https://github.com/fivesheep/chnroutes 这个项目提供了可以直接使用的路由表和简易教程。
+Mac用户的安装
+下载 chnroutes.py">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通过路由表进行VPN国内外分流的办法">
+<meta property="og:url" content="http://git.chenkunonline.cn/2015/12/02/vpn-shunt/index.html">
+<meta property="og:site_name" content="Quentin的黑曜石之门">
+<meta property="og:description" content="Chnroutes 项目教程的目的是要达到通过执行路由脚本,可以让用户在使用vpn作为默认网络网关的时候, 不使用vpn进行对中国国内ip的访问, 从而减轻vpn的负担, 和增加访问国内网站的速度。
+需要利用一个开源项目 https://github.com/fivesheep/chnroutes 这个项目提供了可以直接使用的路由表和简易教程。
+Mac用户的安装
+下载 chnroutes.py">
+<meta property="og:updated_time" content="2016-06-16T14:25:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="通过路由表进行VPN国内外分流的办法">
+<meta name="twitter:description" content="Chnroutes 项目教程的目的是要达到通过执行路由脚本,可以让用户在使用vpn作为默认网络网关的时候, 不使用vpn进行对中国国内ip的访问, 从而减轻vpn的负担, 和增加访问国内网站的速度。
+需要利用一个开源项目 https://github.com/fivesheep/chnroutes 这个项目提供了可以直接使用的路由表和简易教程。
+Mac用户的安装
+下载 chnroutes.py">
+  
+    <link rel="alternate" href="/atom.xml" title="Quentin的黑曜石之门" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Quentin的黑曜石之门</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">硅基生命实验室的学术渣</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://git.chenkunonline.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vpn-shunt" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/02/vpn-shunt/" class="article-date">
+  <time datetime="2015-12-03T04:49:00.000Z" itemprop="datePublished">2015-12-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      通过路由表进行VPN国内外分流的办法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Chnroutes-项目"><a href="#Chnroutes-项目" class="headerlink" title="Chnroutes 项目"></a>Chnroutes 项目</h2><p><strong>教程的目的是要达到通过执行路由脚本,可以让用户在使用vpn作为默认网络网关的时候, 不使用vpn进行对中国国内ip的访问, 从而减轻vpn的负担, 和增加访问国内网站的速度。</strong></p>
+<p>需要利用一个开源项目 <a href="https://github.com/fivesheep/chnroutes" target="_blank" rel="external">https://github.com/fivesheep/chnroutes</a> 这个项目提供了可以直接使用的路由表和简易教程。</p>
+<h2 id="Mac用户的安装"><a href="#Mac用户的安装" class="headerlink" title="Mac用户的安装"></a>Mac用户的安装</h2><ul>
+<li>下载 <code>chnroutes.py</code> </li>
+<li>从终端进入下载目录, 执 <code>python chnroutes.py -p mac</code> , 执行完毕之后同一目录下将生成两个文件 <code>ip-up</code> 和 <code>ip-down</code></li>
+<li>把这两个文件copy到 <code>/etc/ppp</code> 目录, 并使用 <code>sudo chmod a+x ip-up ip-down</code> 命令把它们设置为可执行</li>
+<li>设置完毕, 重新连接vpn</li>
+</ul>
+<h2 id="Windows用户的安装"><a href="#Windows用户的安装" class="headerlink" title="Windows用户的安装"></a>Windows用户的安装</h2><ul>
+<li>下载 <code>chnroutes.py</code></li>
+<li>从终端进入下载目录, 执行 python chnroutes.py -p win, 执行之后会生成 <code>vpnup.bat</code> 和 <code>vpndown.bat</code> 两个文件.</li>
+</ul>
+<blockquote>
+<p>由于Windows上的pptp不支持拨号脚本, 所以也只能在进行拨号之前手动执行 <code>vpnup.bat</code> 文件以设置路由表. 而在断开vpn之后, 如果你觉得有必要, 可以运行 <code>vpndown.bat</code> 把这些路由信息给清理掉.</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><blockquote>
+<p>连接VPN后打开<a href="http://www.ip138.com/" target="_blank" rel="external">http://www.ip138.com/</a> 和 <a href="https://www.whatismyip.com/" target="_blank" rel="external">https://www.whatismyip.com/</a></p>
+</blockquote>
+<p>前者会显示你的国内上网ip，后者会显示你国外VPN的ip</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>路由表每隔两三个月需要更新一次</li>
+</ul>
+<p><strong>另外，对于Windows的用户而言：</strong></p>
+<ul>
+<li><p>重启后添加的所有规则会失效<br>可以替换bat中「route add」为「route -p add」设置永久路由。<br>使用一个叫SetRoute的软件，可以备份系统当前路由表方便下次使用。</p>
+</li>
+<li><p>批处理运行速度过慢。<br>因为需要一次性添加几千行，会比较慢，办法可以参考上面的两个办法，慢就慢一次。</p>
+</li>
+</ul>
+<h2 id="chnroutes-py"><a href="#chnroutes-py" class="headerlink" title="chnroutes.py"></a>chnroutes.py</h2><p>文件源码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="keyword">import</span> argparse</div><div class="line"><span class="keyword">import</span> math</div><div class="line"><span class="keyword">import</span> textwrap</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_ovpn</span><span class="params">(metric)</span>:</span></div><div class="line">    results = fetch_ip_data()  </div><div class="line">    rfile=open(<span class="string">'routes.txt'</span>,<span class="string">'w'</span>)</div><div class="line">    <span class="keyword">for</span> ip,mask,_ <span class="keyword">in</span> results:</div><div class="line">        route_item=<span class="string">"route %s %s net_gateway %d\n"</span>%(ip,mask,metric)</div><div class="line">        rfile.write(route_item)</div><div class="line">    rfile.close()</div><div class="line">    <span class="keyword">print</span> <span class="string">"Usage: Append the content of the newly created routes.txt to your openvpn config file,"</span> \</div><div class="line">          <span class="string">" and also add 'max-routes %d', which takes a line, to the head of the file."</span> % (len(results)+<span class="number">20</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_linux</span><span class="params">(metric)</span>:</span></div><div class="line">    results = fetch_ip_data()</div><div class="line">    upscript_header=textwrap.dedent(<span class="string">"""\</span></div><div class="line">    #!/bin/bash</div><div class="line">    export PATH="/bin:/sbin:/usr/sbin:/usr/bin"</div><div class="line">    </div><div class="line">    OLDGW=`ip route show | grep '^default' | sed -e 's/default via \\([^ ]*\\).*/\\1/'`</div><div class="line">    </div><div class="line">    if [ $OLDGW == '' ]; then</div><div class="line">        exit 0</div><div class="line">    fi</div><div class="line">    </div><div class="line">    if [ ! -e /tmp/vpn_oldgw ]; then</div><div class="line">        echo $OLDGW &gt; /tmp/vpn_oldgw</div><div class="line">    fi</div><div class="line">    </div><div class="line">    """)</div><div class="line">    </div><div class="line">    downscript_header=textwrap.dedent(<span class="string">"""\</span></div><div class="line">    #!/bin/bash</div><div class="line">    export PATH="/bin:/sbin:/usr/sbin:/usr/bin"</div><div class="line">    </div><div class="line">    OLDGW=`cat /tmp/vpn_oldgw`</div><div class="line">    </div><div class="line">    """)</div><div class="line">    </div><div class="line">    upfile=open(<span class="string">'ip-pre-up'</span>,<span class="string">'w'</span>)</div><div class="line">    downfile=open(<span class="string">'ip-down'</span>,<span class="string">'w'</span>)</div><div class="line">    </div><div class="line">    upfile.write(upscript_header)</div><div class="line">    upfile.write(<span class="string">'\n'</span>)</div><div class="line">    downfile.write(downscript_header)</div><div class="line">    downfile.write(<span class="string">'\n'</span>)</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> ip,mask,_ <span class="keyword">in</span> results:</div><div class="line">        upfile.write(<span class="string">'route add -net %s netmask %s gw $OLDGW\n'</span>%(ip,mask))</div><div class="line">        downfile.write(<span class="string">'route del -net %s netmask %s\n'</span>%(ip,mask))</div><div class="line"></div><div class="line">    downfile.write(<span class="string">'rm /tmp/vpn_oldgw\n'</span>)</div><div class="line"></div><div class="line"></div><div class="line">    <span class="keyword">print</span> <span class="string">"For pptp only, please copy the file ip-pre-up to the folder/etc/ppp,"</span> \</div><div class="line">          <span class="string">"and copy the file ip-down to the folder /etc/ppp/ip-down.d."</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_mac</span><span class="params">(metric)</span>:</span></div><div class="line">    results=fetch_ip_data()</div><div class="line">    </div><div class="line">    upscript_header=textwrap.dedent(<span class="string">"""\</span></div><div class="line">    #!/bin/sh</div><div class="line">    export PATH="/bin:/sbin:/usr/sbin:/usr/bin"</div><div class="line">    </div><div class="line">    OLDGW=`netstat -nr | grep '^default' | grep -v 'ppp' | sed 's/default *\\([0-9\.]*\\) .*/\\1/' | awk '&#123;if($1)&#123;print $1&#125;&#125;'`</div><div class="line">    if [ ! -e /tmp/pptp_oldgw ]; then</div><div class="line">        echo "$&#123;OLDGW&#125;" &gt; /tmp/pptp_oldgw</div><div class="line">    fi</div><div class="line">    </div><div class="line">    dscacheutil -flushcache</div><div class="line">    route add 10.0.0.0/8 "$&#123;OLDGW&#125;"</div><div class="line">    route add 172.16.0.0/12 "$&#123;OLDGW&#125;"</div><div class="line">    route add 192.168.0.0/16 "$&#123;OLDGW&#125;"</div><div class="line">    """)</div><div class="line">    </div><div class="line">    downscript_header=textwrap.dedent(<span class="string">"""\</span></div><div class="line">    #!/bin/sh</div><div class="line">    export PATH="/bin:/sbin:/usr/sbin:/usr/bin"</div><div class="line">    </div><div class="line">    if [ ! -e /tmp/pptp_oldgw ]; then</div><div class="line">            exit 0</div><div class="line">    fi</div><div class="line">    </div><div class="line">    ODLGW=`cat /tmp/pptp_oldgw`</div><div class="line">    route delete 10.0.0.0/8 "$&#123;OLDGW&#125;"</div><div class="line">    route delete 172.16.0.0/12 "$&#123;OLDGW&#125;"</div><div class="line">    route delete 192.168.0.0/16 "$&#123;OLDGW&#125;"</div><div class="line">    """)</div><div class="line">    </div><div class="line">    upfile=open(<span class="string">'ip-up'</span>,<span class="string">'w'</span>)</div><div class="line">    downfile=open(<span class="string">'ip-down'</span>,<span class="string">'w'</span>)</div><div class="line">    </div><div class="line">    upfile.write(upscript_header)</div><div class="line">    upfile.write(<span class="string">'\n'</span>)</div><div class="line">    downfile.write(downscript_header)</div><div class="line">    downfile.write(<span class="string">'\n'</span>)</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> ip,_,mask <span class="keyword">in</span> results:</div><div class="line">        upfile.write(<span class="string">'route add %s/%s "$&#123;OLDGW&#125;"\n'</span>%(ip,mask))</div><div class="line">        downfile.write(<span class="string">'route delete %s/%s $&#123;OLDGW&#125;\n'</span>%(ip,mask))</div><div class="line">    </div><div class="line">    downfile.write(<span class="string">'\n\nrm /tmp/pptp_oldgw\n'</span>)</div><div class="line">    upfile.close()</div><div class="line">    downfile.close()</div><div class="line">    </div><div class="line">    <span class="keyword">print</span> <span class="string">"For pptp on mac only, please copy ip-up and ip-down to the /etc/ppp folder,"</span> \</div><div class="line">          <span class="string">"don't forget to make them executable with the chmod command."</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_win</span><span class="params">(metric)</span>:</span></div><div class="line">    results = fetch_ip_data()  </div><div class="line"></div><div class="line">    upscript_header=textwrap.dedent(<span class="string">"""@echo off</span></div><div class="line">    for /F "tokens=3" %%* in ('route print ^| findstr "\\&lt;0.0.0.0\\&gt;"') do set "gw=%%*"</div><div class="line">    </div><div class="line">    """)</div><div class="line">    </div><div class="line">    upfile=open(<span class="string">'vpnup.bat'</span>,<span class="string">'w'</span>)</div><div class="line">    downfile=open(<span class="string">'vpndown.bat'</span>,<span class="string">'w'</span>)</div><div class="line">    </div><div class="line">    upfile.write(upscript_header)</div><div class="line">    upfile.write(<span class="string">'\n'</span>)</div><div class="line">    upfile.write(<span class="string">'ipconfig /flushdns\n\n'</span>)</div><div class="line">    </div><div class="line">    downfile.write(<span class="string">"@echo off"</span>)</div><div class="line">    downfile.write(<span class="string">'\n'</span>)</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> ip,mask,_ <span class="keyword">in</span> results:</div><div class="line">        upfile.write(<span class="string">'route add %s mask %s %s metric %d\n'</span>%(ip,mask,<span class="string">"%gw%"</span>,metric))</div><div class="line">        downfile.write(<span class="string">'route delete %s\n'</span>%(ip))</div><div class="line">    </div><div class="line">    upfile.close()</div><div class="line">    downfile.close()</div><div class="line">    </div><div class="line"><span class="comment">#    up_vbs_wrapper=open('vpnup.vbs','w')</span></div><div class="line"><span class="comment">#    up_vbs_wrapper.write('Set objShell = CreateObject("Wscript.shell")\ncall objShell.Run("vpnup.bat",0,FALSE)')</span></div><div class="line"><span class="comment">#    up_vbs_wrapper.close()</span></div><div class="line"><span class="comment">#    down_vbs_wrapper=open('vpndown.vbs','w')</span></div><div class="line"><span class="comment">#    down_vbs_wrapper.write('Set objShell = CreateObject("Wscript.shell")\ncall objShell.Run("vpndown.bat",0,FALSE)')</span></div><div class="line"><span class="comment">#    down_vbs_wrapper.close()</span></div><div class="line">    </div><div class="line">    <span class="keyword">print</span> <span class="string">"For pptp on windows only, run vpnup.bat before dialing to vpn,"</span> \</div><div class="line">          <span class="string">"and run vpndown.bat after disconnected from the vpn."</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_android</span><span class="params">(metric)</span>:</span></div><div class="line">    results = fetch_ip_data()</div><div class="line">    </div><div class="line">    upscript_header=textwrap.dedent(<span class="string">"""\</span></div><div class="line">    #!/bin/sh</div><div class="line">    alias nestat='/system/xbin/busybox netstat'</div><div class="line">    alias grep='/system/xbin/busybox grep'</div><div class="line">    alias awk='/system/xbin/busybox awk'</div><div class="line">    alias route='/system/xbin/busybox route'</div><div class="line">    </div><div class="line">    OLDGW=`netstat -rn | grep ^0\.0\.0\.0 | awk '&#123;print $2&#125;'`</div><div class="line">    </div><div class="line">    """)</div><div class="line">    </div><div class="line">    downscript_header=textwrap.dedent(<span class="string">"""\</span></div><div class="line">    #!/bin/sh</div><div class="line">    alias route='/system/xbin/busybox route'</div><div class="line">    </div><div class="line">    """)</div><div class="line">    </div><div class="line">    upfile=open(<span class="string">'vpnup.sh'</span>,<span class="string">'w'</span>)</div><div class="line">    downfile=open(<span class="string">'vpndown.sh'</span>,<span class="string">'w'</span>)</div><div class="line">    </div><div class="line">    upfile.write(upscript_header)</div><div class="line">    upfile.write(<span class="string">'\n'</span>)</div><div class="line">    downfile.write(downscript_header)</div><div class="line">    downfile.write(<span class="string">'\n'</span>)</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> ip,mask,_ <span class="keyword">in</span> results:</div><div class="line">        upfile.write(<span class="string">'route add -net %s netmask %s gw $OLDGW\n'</span>%(ip,mask))</div><div class="line">        downfile.write(<span class="string">'route del -net %s netmask %s\n'</span>%(ip,mask))</div><div class="line">    </div><div class="line">    upfile.close()</div><div class="line">    downfile.close()</div><div class="line">    </div><div class="line">    <span class="keyword">print</span> <span class="string">"Old school way to call up/down script from openvpn client. "</span> \</div><div class="line">          <span class="string">"use the regular openvpn 2.1 method to add routes if it's possible"</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fetch_ip_data</span><span class="params">()</span>:</span></div><div class="line">    <span class="comment">#fetch data from apnic</span></div><div class="line">    <span class="keyword">print</span> <span class="string">"Fetching data from apnic.net, it might take a few minutes, please wait..."</span></div><div class="line">    url=<span class="string">r'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest'</span></div><div class="line">    data=urllib2.urlopen(url).read()</div><div class="line">    </div><div class="line">    cnregex=re.compile(<span class="string">r'apnic\|cn\|ipv4\|[0-9\.]+\|[0-9]+\|[0-9]+\|a.*'</span>,re.IGNORECASE)</div><div class="line">    cndata=cnregex.findall(data)</div><div class="line">    </div><div class="line">    results=[]</div><div class="line"></div><div class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> cndata:</div><div class="line">        unit_items=item.split(<span class="string">'|'</span>)</div><div class="line">        starting_ip=unit_items[<span class="number">3</span>]</div><div class="line">        num_ip=int(unit_items[<span class="number">4</span>])</div><div class="line">        </div><div class="line">        imask=<span class="number">0xffffffff</span>^(num_ip<span class="number">-1</span>)</div><div class="line">        <span class="comment">#convert to string</span></div><div class="line">        imask=hex(imask)[<span class="number">2</span>:]</div><div class="line">        mask=[<span class="number">0</span>]*<span class="number">4</span></div><div class="line">        mask[<span class="number">0</span>]=imask[<span class="number">0</span>:<span class="number">2</span>]</div><div class="line">        mask[<span class="number">1</span>]=imask[<span class="number">2</span>:<span class="number">4</span>]</div><div class="line">        mask[<span class="number">2</span>]=imask[<span class="number">4</span>:<span class="number">6</span>]</div><div class="line">        mask[<span class="number">3</span>]=imask[<span class="number">6</span>:<span class="number">8</span>]</div><div class="line">        </div><div class="line">        <span class="comment">#convert str to int</span></div><div class="line">        mask=[ int(i,<span class="number">16</span> ) <span class="keyword">for</span> i <span class="keyword">in</span> mask]</div><div class="line">        mask=<span class="string">"%d.%d.%d.%d"</span>%tuple(mask)</div><div class="line">        </div><div class="line">        <span class="comment">#mask in *nix format</span></div><div class="line">        mask2=<span class="number">32</span>-int(math.log(num_ip,<span class="number">2</span>))</div><div class="line">        </div><div class="line">        results.append((starting_ip,mask,mask2))</div><div class="line">         </div><div class="line">    <span class="keyword">return</span> results</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</div><div class="line">    parser=argparse.ArgumentParser(description=<span class="string">"Generate routing rules for vpn."</span>)</div><div class="line">    parser.add_argument(<span class="string">'-p'</span>,<span class="string">'--platform'</span>,</div><div class="line">                        dest=<span class="string">'platform'</span>,</div><div class="line">                        default=<span class="string">'openvpn'</span>,</div><div class="line">                        nargs=<span class="string">'?'</span>,</div><div class="line">                        help=<span class="string">"Target platforms, it can be openvpn, mac, linux,"</span> </div><div class="line">                        <span class="string">"win, android. openvpn by default."</span>)</div><div class="line">    parser.add_argument(<span class="string">'-m'</span>,<span class="string">'--metric'</span>,</div><div class="line">                        dest=<span class="string">'metric'</span>,</div><div class="line">                        default=<span class="number">5</span>,</div><div class="line">                        nargs=<span class="string">'?'</span>,</div><div class="line">                        type=int,</div><div class="line">                        help=<span class="string">"Metric setting for the route rules"</span>)</div><div class="line">    </div><div class="line">    args = parser.parse_args()</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> args.platform.lower() == <span class="string">'openvpn'</span>:</div><div class="line">        generate_ovpn(args.metric)</div><div class="line">    <span class="keyword">elif</span> args.platform.lower() == <span class="string">'linux'</span>:</div><div class="line">        generate_linux(args.metric)</div><div class="line">    <span class="keyword">elif</span> args.platform.lower() == <span class="string">'mac'</span>:</div><div class="line">        generate_mac(args.metric)</div><div class="line">    <span class="keyword">elif</span> args.platform.lower() == <span class="string">'win'</span>:</div><div class="line">        generate_win(args.metric)</div><div class="line">    <span class="keyword">elif</span> args.platform.lower() == <span class="string">'android'</span>:</div><div class="line">        generate_android(args.metric)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">print</span>&gt;&gt;sys.stderr, <span class="string">"Platform %s is not supported."</span>%args.platform</div><div class="line">        exit(<span class="number">1</span>)</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://git.chenkunonline.cn/2015/12/02/vpn-shunt/" data-id="civ33v1cb000c9su19ohrhm5x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VPN/">VPN</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/28/data-structures-and-algorithm-analysis-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数据结构与算法分析（一）：基础算法分析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/16/mvn-study/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Maven 学习笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Alfred/">Alfred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Coding/">Coding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/七牛/">七牛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/保险/">保险</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图床/">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Alfred/" style="font-size: 10px;">Alfred</a> <a href="/tags/Coding/" style="font-size: 10px;">Coding</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 20px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/七牛/" style="font-size: 10px;">七牛</a> <a href="/tags/保险/" style="font-size: 10px;">保险</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/04/17/vim-tutorial/">Vim编辑器实用基础</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/16/linux-tutorial/">Linux 使用教程</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/09/sublime-text-3-settings-sync/">Sublime Text 3 配置同步</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/">利用Alfred Workflow快速上传粘贴板图片至七牛图床并在Markdown中引用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/28/data-structures-and-algorithm-analysis-1/">数据结构与算法分析（一）：基础算法分析</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Quentin<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
