@@ -1,110 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Sublime Text 3 配置同步 | Quentin的黑曜石之门</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="你是否有过Sublime Text 3 在各台机器下的配置不能同步而带来的种种困扰？ 你是否想过能够随便打开一台电脑都有自己熟悉的Editor环境？下面我利用官方推荐的方法，教大家同步自己的配置。
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Quentin"><meta name="description" content="你是否有过SublimeText3在各台机器下的配置不能同步而带来的种种困扰？你是否想过能够随便打开一台电脑都有自己熟悉的Editor环境？下面我利用官方推荐的方法，教大家同步自己的配置。Sublime新人们，我已经为你们打造了一个包含一些基本（主要）插件的配置环境，"><meta name="keywords" content="Sublime Text"><title>Sublime Text 3 配置同步 · Quentin的黑曜石之门</title><link rel="icon" href="/favicon.ico"><link rel="canonical" href="http://git.chenkunonline.cn/2016/04/09/sublime-text-3-settings-sync/"><link rel="alternate" href="/atom.xml" title="Quentin的黑曜石之门"><link rel="stylesheet" href="/fonts/iconfont/iconfont.css"><link rel="stylesheet" href="/css/style.css"><script type="text/javascript">var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?Your baidu Analytics ID";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-Sublime新人们，我已经为你们打造了一个包含一些基本（主要）插件的配置环境，可以方便Java、Python以及前端开发人员使用，具体使用的插件请详见后面。
-
-部署教程Fork我的仓库点击进入仓库地">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Sublime Text 3 配置同步">
-<meta property="og:url" content="http://git.chenkunonline.cn/2016/04/09/sublime-text-3-settings-sync/index.html">
-<meta property="og:site_name" content="Quentin的黑曜石之门">
-<meta property="og:description" content="你是否有过Sublime Text 3 在各台机器下的配置不能同步而带来的种种困扰？ 你是否想过能够随便打开一台电脑都有自己熟悉的Editor环境？下面我利用官方推荐的方法，教大家同步自己的配置。
-
-Sublime新人们，我已经为你们打造了一个包含一些基本（主要）插件的配置环境，可以方便Java、Python以及前端开发人员使用，具体使用的插件请详见后面。
-
-部署教程Fork我的仓库点击进入仓库地">
-<meta property="og:image" content="https://packagecontrol.io/readmes/img/d0545a784bcadd0df626c55ef74954eeffc44b63.png">
-<meta property="og:image" content="https://packagecontrol.io/readmes/img/2c23129492d6d74b8f9139711578e9ad0d1115a0.png">
-<meta property="og:updated_time" content="2016-06-16T14:26:39.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sublime Text 3 配置同步">
-<meta name="twitter:description" content="你是否有过Sublime Text 3 在各台机器下的配置不能同步而带来的种种困扰？ 你是否想过能够随便打开一台电脑都有自己熟悉的Editor环境？下面我利用官方推荐的方法，教大家同步自己的配置。
-
-Sublime新人们，我已经为你们打造了一个包含一些基本（主要）插件的配置环境，可以方便Java、Python以及前端开发人员使用，具体使用的插件请详见后面。
-
-部署教程Fork我的仓库点击进入仓库地">
-<meta name="twitter:image" content="https://packagecontrol.io/readmes/img/d0545a784bcadd0df626c55ef74954eeffc44b63.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Quentin的黑曜石之门" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
-</head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Quentin的黑曜石之门</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">硅基生命实验室的学术渣</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://git.chenkunonline.cn"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-sublime-text-3-settings-sync" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/09/sublime-text-3-settings-sync/" class="article-date">
-  <time datetime="2016-04-09T07:48:00.000Z" itemprop="datePublished">2016-04-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Sublime Text 3 配置同步
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>你是否有过Sublime Text 3 在各台机器下的配置不能同步而带来的种种困扰？ 你是否想过能够随便打开一台电脑都有自己熟悉的Editor环境？下面我利用官方推荐的方法，教大家同步自己的配置。</p>
+ga('create', 'Your Google Analytics ID', 'auto');
+ga('send', 'pageview');</script></head><body><div id="main"><header><a href="/." class="logo">Quentin的黑曜石之门</a><ul class="nav"><li class="nav-link"><a href="/" target="_self">首页</a></li><li class="nav-link"><a href="/archives/" target="_self">归档</a></li><li class="nav-link"><a href="/categories/" target="_self">分类</a></li><li class="nav-link"><a href="/tags/" target="_self">标签</a></li><li class="nav-link"><a href="/about/" target="_self">关于</a></li></ul></header><section id="container"><article class="post"><h1 class="post-title">Sublime Text 3 配置同步</h1><span class="post-time">2016年4月9日</span><div id="sidebar" class="post-sidebar"><h3 class="heading">目录</h3><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#部署教程"><span class="toc-text">部署教程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fork我的仓库"><span class="toc-text">Fork我的仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-ST3"><span class="toc-text">安装 ST3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Package-Control"><span class="toc-text">安装Package Control</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#同步设置"><span class="toc-text">同步设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于配色"><span class="toc-text">关于配色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件说明"><span class="toc-text">插件说明</span></a></li></ol></div><div class="post-content"><p>你是否有过Sublime Text 3 在各台机器下的配置不能同步而带来的种种困扰？ 你是否想过能够随便打开一台电脑都有自己熟悉的Editor环境？下面我利用官方推荐的方法，教大家同步自己的配置。</p>
 <blockquote>
 <p>Sublime新人们，我已经为你们打造了一个包含一些基本（主要）插件的配置环境，可以方便<code>Java</code>、<code>Python</code>以及<code>前端</code>开发人员使用，具体使用的插件请详见后面。</p>
 </blockquote>
@@ -150,139 +57,16 @@ Sublime新人们，我已经为你们打造了一个包含一些基本（主要�
 <li>SideBarEnhancements：文件夹侧边增强</li>
 <li>Theme - Spacegray</li>
 </ul>
+</div></article><div class="tags"><a href="/tags/Sublime-Text/">Sublime Text</a></div><div class="paginator"><a href="/2016/04/16/linux-tutorial/" class="prev"><i class="iconfont icon-left"></i><span> 上一页</span></a><a href="/2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/" class="next"><span>下一页</span><i class="iconfont icon-right"></i></a></div><section id="comments"><div id="disqus_thread"></div></section><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'http://git.chenkunonline.cn/2016/04/09/sublime-text-3-settings-sync/';
+    this.page.identifier = '2016/04/09/sublime-text-3-settings-sync/';
+    this.page.title = 'Sublime Text 3 配置同步';
+};
+(function() {
+var d = document, s = d.createElement('script');
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://git.chenkunonline.cn/2016/04/09/sublime-text-3-settings-sync/" data-id="civ33v1c800099su1t3ngiyn2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li></ul>
+s.src = '//Your disqus ID.disqus.com/embed.js';
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/04/16/linux-tutorial/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Linux 使用教程
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">利用Alfred Workflow快速上传粘贴板图片至七牛图床并在Markdown中引用</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Alfred/">Alfred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Coding/">Coding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/七牛/">七牛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/保险/">保险</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图床/">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Alfred/" style="font-size: 10px;">Alfred</a> <a href="/tags/Coding/" style="font-size: 10px;">Coding</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 20px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/七牛/" style="font-size: 10px;">七牛</a> <a href="/tags/保险/" style="font-size: 10px;">保险</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2016/04/17/vim-tutorial/">Vim编辑器实用基础</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/16/linux-tutorial/">Linux 使用教程</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/09/sublime-text-3-settings-sync/">Sublime Text 3 配置同步</a>
-          </li>
-        
-          <li>
-            <a href="/2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/">利用Alfred Workflow快速上传粘贴板图片至七牛图床并在Markdown中引用</a>
-          </li>
-        
-          <li>
-            <a href="/2016/01/28/data-structures-and-algorithm-analysis-1/">数据结构与算法分析（一）：基础算法分析</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2016 Quentin<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
-</body>
-</html>
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();</script></section><footer><div class="copyright"><p class="power">Powered by <a href="https://hexo.io/">Hexo</a> and Theme by <a href="https://github.com/ahonn/hexo-theme-even"> Even</a></p><p class="since">&copy;2016<span class="heart"><i class="iconfont icon-heart"></i></span><span class="author">Quentin</span></p></div><label id="back2top"><i class="iconfont icon-up"></i></label></footer></div><script src="/js/zepto.min.js"></script><script src="/js/theme.js"></script></body></html>

@@ -1,129 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Vim编辑器实用基础 | Quentin的黑曜石之门</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="教程整理自实验楼Edward讲师的课程。
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Quentin"><meta name="description" content="教程整理自实验楼Edward讲师的课程。首先Vim按键速查卡镇楼：不喜欢看文字的同学可接通过下面这个游戏直接学习Vim（我还没通关，后面似乎要付费了😂）：VimAdventures核心用法我把Vim的核心用法总结为移动、跳转、插入、删除、复制、粘贴、撤销、"><meta name="keywords" content="Vim"><title>Vim编辑器实用基础 · Quentin的黑曜石之门</title><link rel="icon" href="/favicon.ico"><link rel="canonical" href="http://git.chenkunonline.cn/2016/04/17/vim-tutorial/"><link rel="alternate" href="/atom.xml" title="Quentin的黑曜石之门"><link rel="stylesheet" href="/fonts/iconfont/iconfont.css"><link rel="stylesheet" href="/css/style.css"><script type="text/javascript">var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?Your baidu Analytics ID";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-首先Vim按键速查卡镇楼：
- 
-不喜欢看文字的同学可接通过下面这个游戏直接学习Vim（我还没通关，后面似乎要付费了😂）：
-Vim Adventures
-
-
-核心用法我把Vim的核心用法总结为移动、跳转、插入、删除、复制、粘贴、撤销、查找、打开、保存、退出。只要掌握了这几个，就可以进行简单的编辑了，所以：">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Vim编辑器实用基础">
-<meta property="og:url" content="http://git.chenkunonline.cn/2016/04/17/vim-tutorial/index.html">
-<meta property="og:site_name" content="Quentin的黑曜石之门">
-<meta property="og:description" content="教程整理自实验楼Edward讲师的课程。
-
-首先Vim按键速查卡镇楼：
- 
-不喜欢看文字的同学可接通过下面这个游戏直接学习Vim（我还没通关，后面似乎要付费了😂）：
-Vim Adventures
-
-
-核心用法我把Vim的核心用法总结为移动、跳转、插入、删除、复制、粘贴、撤销、查找、打开、保存、退出。只要掌握了这几个，就可以进行简单的编辑了，所以：">
-<meta property="og:image" content="http://7xin49.com1.z0.glb.clouddn.com/vim_cheat_sheet_for_programmers_print.png-1920.jpg">
-<meta property="og:image" content="http://coolshell.cn//wp-content/uploads/2012/04/vimadventuresgamefun.jpg">
-<meta property="og:image" content="https://dn-anything-about-doc.qbox.me/md041716vim.gif">
-<meta property="og:image" content="https://dn-anything-about-doc.qbox.me/md041716vim2+.gif">
-<meta property="og:image" content="https://dn-anything-about-doc.qbox.me/md041717vim3+.gif">
-<meta property="og:image" content="https://dn-anything-about-doc.qbox.me/md041718vim5+.gif">
-<meta property="og:image" content="https://dn-anything-about-doc.qbox.me/md041718vim6+.gif">
-<meta property="og:image" content="https://dn-anything-about-doc.qbox.me/md041719vim7+.gif">
-<meta property="og:image" content="https://dn-anything-about-doc.qbox.me/md041719vim8+.gif">
-<meta property="og:updated_time" content="2016-06-16T14:25:26.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vim编辑器实用基础">
-<meta name="twitter:description" content="教程整理自实验楼Edward讲师的课程。
-
-首先Vim按键速查卡镇楼：
- 
-不喜欢看文字的同学可接通过下面这个游戏直接学习Vim（我还没通关，后面似乎要付费了😂）：
-Vim Adventures
-
-
-核心用法我把Vim的核心用法总结为移动、跳转、插入、删除、复制、粘贴、撤销、查找、打开、保存、退出。只要掌握了这几个，就可以进行简单的编辑了，所以：">
-<meta name="twitter:image" content="http://7xin49.com1.z0.glb.clouddn.com/vim_cheat_sheet_for_programmers_print.png-1920.jpg">
-  
-    <link rel="alternate" href="/atom.xml" title="Quentin的黑曜石之门" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
-</head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Quentin的黑曜石之门</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">硅基生命实验室的学术渣</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://git.chenkunonline.cn"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-vim-tutorial" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/17/vim-tutorial/" class="article-date">
-  <time datetime="2016-04-17T20:26:00.000Z" itemprop="datePublished">2016-04-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Vim编辑器实用基础
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
+ga('create', 'Your Google Analytics ID', 'auto');
+ga('send', 'pageview');</script></head><body><div id="main"><header><a href="/." class="logo">Quentin的黑曜石之门</a><ul class="nav"><li class="nav-link"><a href="/" target="_self">首页</a></li><li class="nav-link"><a href="/archives/" target="_self">归档</a></li><li class="nav-link"><a href="/categories/" target="_self">分类</a></li><li class="nav-link"><a href="/tags/" target="_self">标签</a></li><li class="nav-link"><a href="/about/" target="_self">关于</a></li></ul></header><section id="container"><article class="post"><h1 class="post-title">Vim编辑器实用基础</h1><span class="post-time">2016年4月17日</span><div id="sidebar" class="post-sidebar"><h3 class="heading">目录</h3><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#核心用法"><span class="toc-text">核心用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#移动"><span class="toc-text">移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跳转"><span class="toc-text">跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插入"><span class="toc-text">插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除"><span class="toc-text">删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复制"><span class="toc-text">复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#粘贴"><span class="toc-text">粘贴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#撤销"><span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找"><span class="toc-text">查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打开"><span class="toc-text">打开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保存退出"><span class="toc-text">保存退出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速入门"><span class="toc-text">快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vim的基本模式"><span class="toc-text">Vim的基本模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本模式的切换"><span class="toc-text">基本模式的切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vim中的操作"><span class="toc-text">Vim中的操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vim文档编辑"><span class="toc-text">Vim文档编辑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vim重复命令"><span class="toc-text">Vim重复命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#游标的快速跳转"><span class="toc-text">游标的快速跳转</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#行间跳转"><span class="toc-text">行间跳转</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#行内跳转"><span class="toc-text">行内跳转</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复制粘贴和剪切"><span class="toc-text">复制粘贴和剪切</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#复制及粘贴文本"><span class="toc-text">复制及粘贴文本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#剪切及粘贴"><span class="toc-text">剪切及粘贴</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符的替换及撤销-Undo操作"><span class="toc-text">字符的替换及撤销(Undo操作)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#替换和撤销-Undo-命令"><span class="toc-text">替换和撤销(Undo)命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快速缩进"><span class="toc-text">快速缩进</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用命令进行快速调整缩进操作"><span class="toc-text">使用命令进行快速调整缩进操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shiftwidth命令"><span class="toc-text">shiftwidth命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#调整文本位置"><span class="toc-text">调整文本位置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找-1"><span class="toc-text">查找</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#快速查找"><span class="toc-text">快速查找</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#高级查找"><span class="toc-text">高级查找</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进阶内容"><span class="toc-text">进阶内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多文件编辑"><span class="toc-text">多文件编辑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用Vim编辑多个文件"><span class="toc-text">使用Vim编辑多个文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#进入vim后打开新文件"><span class="toc-text">进入vim后打开新文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#恢复文件"><span class="toc-text">恢复文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可视模式"><span class="toc-text">可视模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#视窗操作"><span class="toc-text">视窗操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#功能设定"><span class="toc-text">功能设定</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Vim的功能设定"><span class="toc-text">Vim的功能设定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取目前的设定"><span class="toc-text">获取目前的设定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set功能的说明"><span class="toc-text">set功能的说明</span></a></li></ol></li></ol></li></ol></div><div class="post-content"><blockquote>
 <p>教程整理自<a href="http://www.shiyanlou.com" target="_blank" rel="external">实验楼</a>Edward讲师的课程。</p>
 </blockquote>
 <p>首先Vim按键速查卡镇楼：</p>
@@ -711,130 +599,16 @@ Vim Adventures
 <blockquote>
 <p>更多详细参数请参考Vim手册</p>
 </blockquote>
+</div></article><div class="tags"><a href="/tags/Vim/">Vim</a></div><div class="paginator"><a href="/2016/04/16/linux-tutorial/" class="next"><span>下一页</span><i class="iconfont icon-right"></i></a></div><section id="comments"><div id="disqus_thread"></div></section><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'http://git.chenkunonline.cn/2016/04/17/vim-tutorial/';
+    this.page.identifier = '2016/04/17/vim-tutorial/';
+    this.page.title = 'Vim编辑器实用基础';
+};
+(function() {
+var d = document, s = d.createElement('script');
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://git.chenkunonline.cn/2016/04/17/vim-tutorial/" data-id="civ33v1cd000e9su1jjco4m16" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/">Vim</a></li></ul>
+s.src = '//Your disqus ID.disqus.com/embed.js';
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2016/04/16/linux-tutorial/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Linux 使用教程</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Alfred/">Alfred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Coding/">Coding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/七牛/">七牛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/保险/">保险</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图床/">图床</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Alfred/" style="font-size: 10px;">Alfred</a> <a href="/tags/Coding/" style="font-size: 10px;">Coding</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 20px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/七牛/" style="font-size: 10px;">七牛</a> <a href="/tags/保险/" style="font-size: 10px;">保险</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2016/04/17/vim-tutorial/">Vim编辑器实用基础</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/16/linux-tutorial/">Linux 使用教程</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/09/sublime-text-3-settings-sync/">Sublime Text 3 配置同步</a>
-          </li>
-        
-          <li>
-            <a href="/2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/">利用Alfred Workflow快速上传粘贴板图片至七牛图床并在Markdown中引用</a>
-          </li>
-        
-          <li>
-            <a href="/2016/01/28/data-structures-and-algorithm-analysis-1/">数据结构与算法分析（一）：基础算法分析</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2016 Quentin<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
-</body>
-</html>
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();</script></section><footer><div class="copyright"><p class="power">Powered by <a href="https://hexo.io/">Hexo</a> and Theme by <a href="https://github.com/ahonn/hexo-theme-even"> Even</a></p><p class="since">&copy;2016<span class="heart"><i class="iconfont icon-heart"></i></span><span class="author">Quentin</span></p></div><label id="back2top"><i class="iconfont icon-up"></i></label></footer></div><script src="/js/zepto.min.js"></script><script src="/js/theme.js"></script></body></html>
