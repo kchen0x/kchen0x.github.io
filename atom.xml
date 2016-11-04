@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://git.chenkunonline.cn/"/>
-  <updated>2016-06-16T14:25:26.000Z</updated>
+  <updated>2016-11-04T05:49:48.000Z</updated>
   <id>http://git.chenkunonline.cn/</id>
   
   <author>
@@ -14,6 +14,153 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo Media Plugin Owl</title>
+    <link href="http://git.chenkunonline.cn/2016/11/03/hexo-plugin-owl/"/>
+    <id>http://git.chenkunonline.cn/2016/11/03/hexo-plugin-owl/</id>
+    <published>2016-11-04T05:46:02.000Z</published>
+    <updated>2016-11-04T05:49:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>An useful media tag for <a href="https://hexo.io" target="_blank" rel="external">Hexo</a> 3.x, <a href="http://m80126colin.github.io/hexo-tag-owl-demo/" target="_blank" rel="external">Demo page</a></p>
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><ul>
+<li>Various videos and images sources embedding</li>
+<li>Support videos website<ul>
+<li><a href="https://www.youtube.com/" target="_blank" rel="external">Youtube</a></li>
+<li><a href="http://www.nicovideo.jp/" target="_blank" rel="external">Niconico</a></li>
+<li><a href="http://www.bilibili.com/" target="_blank" rel="external">Bilibili</a></li>
+<li><a href="https://vimeo.com/" target="_blank" rel="external">Vimeo</a></li>
+<li><a href="http://www.tudou.com/" target="_blank" rel="external">Tudou</a></li>
+<li><a href="http://www.youku.com/" target="_blank" rel="external">Youku</a></li>
+<li><a href="http://v.qq.com/" target="_blank" rel="external">Tencent</a></li>
+</ul>
+</li>
+<li>Support images sources<ul>
+<li>Local images</li>
+<li><a href="http://giphy.com/" target="_blank" rel="external">Giphy</a></li>
+</ul>
+</li>
+<li>Auto stylesheet embedding</li>
+</ul>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>Run the following command in the root directory of hexo:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-tag-owl --save</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h3 id="Component-Concept"><a href="#Component-Concept" class="headerlink" title="Component Concept"></a>Component Concept</h3><p>All components are wrapped by a <code>&lt;div&gt;</code> tag with several classes. All components have at least one class <code>.owl-media</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;owl-media&quot;&gt;[component]&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="Auto-Stylesheet-Embedding"><a href="#Auto-Stylesheet-Embedding" class="headerlink" title="Auto Stylesheet Embedding"></a>Auto Stylesheet Embedding</h3><p>Because the components are lack of CSS, everyone can add some CSS for one’s preference. Here provide a default CSS written in stylus at <code>lib/asset/css.styl</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">owl:</div><div class="line">  css: default</div><div class="line">  file: owl.css</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>css</strong>: whether insert default stylesheet or not, with following values<ul>
+<li><code>default</code>: use default stylesheet at <code>lib/asset/css.styl</code></li>
+<li><code>custom</code>: use custom stylesheet with path at <strong>file</strong></li>
+<li><code>none</code>: unable this feature</li>
+<li>default values: <code>none</code></li>
+</ul>
+</li>
+<li><strong>file</strong>: assign the path of stylesheet when <strong>css</strong> is not <code>none</code>, and default value is <code>owl.css</code></li>
+</ul>
+<h2 id="Videos"><a href="#Videos" class="headerlink" title="Videos"></a>Videos</h2><p>Every components of this category have additional class <code>.owl-video</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;owl-media owl-video&quot;&gt;[component]&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>Each videos source will add additional class <code>.owl-[source]</code>:</p>
+<ul>
+<li>Youtube: <code>.owl-youtube</code></li>
+<li>Niconico: <code>.owl-niconico</code></li>
+<li>Bilibili: <code>.owl-bilibili</code></li>
+<li>Vimeo: <code>.owl-vimeo</code></li>
+<li>Tudou: <code>.owl-tudou</code></li>
+<li>Youku: <code>.owl-youku</code></li>
+<li>Tencent: <code>.owl-tencent</code></li>
+</ul>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;% owl youtube youtube_id %&#125;</div><div class="line">&#123;% owl niconico niconico_id [type] %&#125;</div><div class="line">&#123;% owl bilibili bilibili_id [page] %&#125;</div><div class="line">&#123;% owl vimeo vimeo_id %&#125;</div><div class="line">&#123;% owl tudou tudou_id %&#125;</div><div class="line">&#123;% owl youku youku_id %&#125;</div><div class="line">&#123;% owl tencent tencent_id %&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>youtube_id</strong> - video id on Youtube</li>
+<li><strong>vimeo_id</strong> - video id in Vimeo.</li>
+<li>Niconico<ul>
+<li><strong>niconico_id</strong> - video id in Niconico.</li>
+<li><strong>type</strong> - embeded type. There are only <code>thumb</code> and <code>watch</code> two options. Default is set as <code>thumb</code>.<ul>
+<li><code>thumb</code>: set nico in thumb mode with extra class <code>.niconico-thumb</code></li>
+<li><code>watch</code>: set nico in watch mode with extra class <code>.niconico-watch</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bilibili<ul>
+<li><strong>bilibili_id</strong> - video id in Bilibili. You can use either <code>av247371</code> or <code>247371</code>.</li>
+<li><strong>page</strong> - if video have several clips, you can add a number indicated the video.</li>
+</ul>
+</li>
+<li><strong>tudou_id</strong> - video id in Tudou.</li>
+<li><strong>youku_id</strong> - video id in Youku. You can use either <code>id_XMTc3MzcxMjQw</code> or <code>XMTc3MzcxMjQw</code>.</li>
+<li><strong>tencent_id</strong> - video id in Tencent Video.</li>
+</ul>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;% owl youtube YtuAOT_c2EA %&#125;</div><div class="line">&#123;% owl niconico sm1494658 %&#125;</div><div class="line">&#123;% owl niconico sm1494658 watch %&#125;</div><div class="line">&#123;% owl bilibili av247371 %&#125;</div><div class="line">&#123;% owl bilibili 247371 %&#125;</div><div class="line">&#123;% owl bilibili av367901 2 %&#125;</div><div class="line">&#123;% owl vimeo 5566538 %&#125;</div><div class="line">&#123;% owl tudou pRsx83aRLLs %&#125;</div><div class="line">&#123;% owl youku id_XMTc3MzcxMjQw %&#125;</div><div class="line">&#123;% owl tencent o03134mlm8j %&#125;</div></pre></td></tr></table></figure>
+<h2 id="Images"><a href="#Images" class="headerlink" title="Images"></a>Images</h2><p>Every components of this category have additional class <code>.owl-image</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;owl-media owl-image&quot;&gt;[component]&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="Local-Images"><a href="#Local-Images" class="headerlink" title="Local Images"></a>Local Images</h3><p>Insert your image from blog\’s path.</p>
+<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% owl local image_path %&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>image_path</strong> - relative path from your blog.</li>
+</ul>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#123;% owl local img/img.jpg %&#125;</div><div class="line">&#123;% owl local another-img.gif %&#125;</div></pre></td></tr></table></figure>
+<h3 id="Giphy"><a href="#Giphy" class="headerlink" title="Giphy"></a>Giphy</h3><p>Insert your gif from Giphy.</p>
+<h4 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% owl giphy giphy_id %&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>giphy_id</strong> - giphy id</li>
+</ul>
+<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% owl giphy AxqJJOBkWHXW %&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;An useful media tag for &lt;a href=&quot;https://hexo.io&quot;&gt;Hexo&lt;/a&gt; 3.x, &lt;a href=&quot;http://m80126colin.github.io/hexo-tag-owl-demo/&quot;&gt;Demo page&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Features&quot;&gt;&lt;a href=&quot;#Features&quot; class=&quot;headerlink&quot; title=&quot;Features&quot;&gt;&lt;/a&gt;Features&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Various videos and images sources embedding&lt;/li&gt;
+&lt;li&gt;Support videos website&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/&quot;&gt;Youtube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.nicovideo.jp/&quot;&gt;Niconico&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.bilibili.com/&quot;&gt;Bilibili&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://vimeo.com/&quot;&gt;Vimeo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.tudou.com/&quot;&gt;Tudou&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.youku.com/&quot;&gt;Youku&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://v.qq.com/&quot;&gt;Tencent&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Support images sources&lt;ul&gt;
+&lt;li&gt;Local images&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://giphy.com/&quot;&gt;Giphy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Auto stylesheet embedding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Installation&quot;&gt;&lt;a href=&quot;#Installation&quot; class=&quot;headerlink&quot; title=&quot;Installation&quot;&gt;&lt;/a&gt;Installation&lt;/h2&gt;&lt;p&gt;Run the following command in the root directory of hexo:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install hexo-tag-owl --save&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="http://git.chenkunonline.cn/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Test</title>
+    <link href="http://git.chenkunonline.cn/2016/11/03/test/"/>
+    <id>http://git.chenkunonline.cn/2016/11/03/test/</id>
+    <published>2016-11-04T05:39:04.000Z</published>
+    <updated>2016-11-04T06:36:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script>]]></content>
+    
+    <summary type="html">
+    
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;
+    
+    </summary>
+    
+    
+      <category term="test" scheme="http://git.chenkunonline.cn/tags/test/"/>
+    
+  </entry>
   
   <entry>
     <title>Vim编辑器实用基础</title>
@@ -2237,6 +2384,115 @@
     
     
       <category term="Markdown" scheme="http://git.chenkunonline.cn/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>好疼的金圣叹</title>
+    <link href="http://git.chenkunonline.cn/2015/03/28/jinshengtan-hurt/"/>
+    <id>http://git.chenkunonline.cn/2015/03/28/jinshengtan-hurt/</id>
+    <published>2015-03-28T07:21:46.000Z</published>
+    <updated>2016-11-04T06:52:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
+<p>【来自《独唱团》第一辑。BY：<strong>咪蒙</strong>】</p>
+</blockquote>
+<h3 id="广告x金圣叹"><a href="#广告x金圣叹" class="headerlink" title="广告x金圣叹"></a>广告x金圣叹</h3><p>他是17世纪的精神先锋。</p>
+<p>他的使命是惊世骇俗。</p>
+<p>乱世中，他最达观。浊世里，他最清醒。</p>
+<p>他是清醒的酒鬼，玩世不恭的才子，爱吃狗肉的佛教徒，精通哲学的神棍，恶毒的文艺批评家，视规则如狗屎的学者，反礼教的孝子慈父。</p>
+<p>他属于中国历代文人中有趣、任性又精神分裂的稀有物种。</p>
+<h3 id="狱警x金圣叹"><a href="#狱警x金圣叹" class="headerlink" title="狱警x金圣叹"></a>狱警x金圣叹</h3><p>“我是南京监狱狱警。今天金圣叹被分到我的辖区了。”</p>
+<p>这是1661年中秋节前夕天涯社区最红爆料贴。楼主ID为“《越狱》是部脑残剧”。</p>
+<p>“金圣叹很难搞。一会摆出莫测高深的装B样，据说在想‘半夜两更半’的下联；一会儿又很亢奋地跟我讨论一线城市房价。丫那小身板，瘦骨嶙峋的，想打他吧，最近全国监狱搞形象工程，查出来要扣老子奖金。不过哥还是赚到了，提前买了100本他的书让他签名，感兴趣的朋友请光临我的淘宝网店。金圣叹临死前的绝笔，全球限量发行。哥很低调，拒绝人肉！”</p>
+<p>当天各大媒体、门户网站集体陷入癫狂状态。狗仔24小时在监狱周边蹲点守候最新八卦。没办法，金圣叹啊，年度作家首富、出版界大腕、星象学家、预言大师，连续5年当选全国娱记最喜爱的名人NO.1——作为一个偶像派“文化超男”，他时不时登上娱乐头条，标题都很重口味。比如“和花美男十指相扣，金圣叹是gay？”“金圣叹携表妹海边度假72小时，疑似近亲乱伦”。作为“清朝第一博主”，金圣叹的博客篇篇有爆点。他向历代文化名人开炮，骂刘辰翁是奴才，苏轼没有大局观，晏殊的才气如“痴狗咬块”。他列出人生最爽33件事，件件恶趣味：私密部位长疮，关起门用热水洗一洗泡一泡，爽；看到别人放风筝时线突然断了，爽；听说有人刚死了，一打听，原来是城中第一心机鬼，爽翻天！</p>
+<p>而现在，最轰动的新闻是，金圣叹因涉嫌参与聚众闹事被最高法院判了死刑。公检法全面封锁消息，居然有想钱想疯了的狱警出来爆料，媒体们无法淡定。</p>
+<p>第二篇爆料贴又引发网络瘫痪。</p>
+<p>“我冒死又来了。金圣叹的死刑明天执行。刚才他把我神神秘秘地叫过去，特诚恳的拜托我，准许他写封遗书，让我带给他家属。靠。看在我老婆是他铁粉的份上，我才勉强答应了。金圣叹千叮咛万嘱咐让我不要看遗书内容，但万一他Y的写了反动言论，老子要受牵连的啊。哥很纠结，大家说我该怎么办？”狱警很懂得跟网民互动。</p>
+<p>当在4小时之内获得50多万跟帖，大部分都是要求楼主“尊重民众知情权、公布遗书内容”时，楼主终于善解人意地再次现身。</p>
+<p>“我来了。哥不是怕出事嘛，专门请示了监狱长，在他的指示下我们监控了这封信的内容。说实话，打开信的时候，哥手都是抖的。金圣叹好歹版税都赚了几千万，这遗书少不了要写点财产去向、银行密码什么的，最次也是点学术秘籍、名人八卦，把消息卖给八卦小报也赚翻了。哥要发达了。等下，我接个电话。”</p>
+<p>万千网友欲火焚身地等待下文。</p>
+<p>“我打开那张纸，金圣叹写的是：‘大儿子，你要看清楚，咸菜和黄豆一起吃，有核桃的味道。这个独家发明一传，我就死而无憾！’哥被雷惨了。金圣叹，你强！”</p>
+<p>第二天，金圣叹被押上刑场，连同其他17位“乱党”被集体处决，据现场网友爆料，当时宛如巨星演唱会，万人空巷。天朝电视台直播时，只给了一个远景，一行简洁的字幕：恐怖分子死有余辜。</p>
+<p>两天后，狱警再度爆料：“砍金圣叹头的那位刽子手现在已经成为我们公检法系统的红人了。据他说，金圣叹死之前，恳请刽子手优先杀自己，省得看到其他朋友被杀，不爽。那刽子手肯定不干噻，金圣叹就说，我身上藏有银票，你先杀了我，钱都归你了。刽子手想‘人之将死其言也善’，就网开一面优先杀了他，搜了半天，真的从他两边耳朵里各搜出一个小纸团。乱激动的，打开一看，你们猜是啥？”</p>
+<p>这狱警要是去写悬疑小说，东野圭吾要失业的啊。</p>
+<p>“一个纸团上写的‘好’。另一个写的‘疼’。”</p>
+<p>有网友猜测，金圣叹是在模仿鱼玄机。王小波的小说《寻找无双》里，鱼玄机死刑前，最纠结的事有三件：要不要穿白裙子看起来更像模范犯人；在牢里胸部饿瘦了早知道买有衬垫的胸罩；必须请狱卒买副太阳眼镜增加明星范儿。</p>
+<p>有网友表白，临死都这么有幽默感，大叔，你好萌！</p>
+<h3 id="同学x金圣叹"><a href="#同学x金圣叹" class="headerlink" title="同学x金圣叹"></a>同学x金圣叹</h3><p>金圣叹是时代的否定者。</p>
+<p>他的离经叛道始自10岁。据ID为“欢迎清穿”的网友称，金圣叹和他是发小，读书时还是睡在他上铺的兄弟。当时金圣叹在私塾当插班生，作为一个大龄文盲，他完全不走五讲四美三热爱路线。他听老师讲《大学》、《中庸》、《论语》、《孟子》时，却产生了与澳洲动画片《玛丽与马克思》中男主角相呼应的情绪：“困茫”——困惑加茫然的合体。金圣叹经常听着听着就睡着了，醒了就跟同桌“欢迎清穿”抱怨：“学四书有个屁用啊？太无聊了。这老头唠唠叨叨有完没完，是不是磕了药？如果所有的书都这么千篇一律，大爷我不念了。”</p>
+<p>金圣叹是行动派，很巧的生了场大病，办了休学。成名后接受记者采访，他说：“我对清朝教育体制早已失望，教材根本不说人话。幸好我11岁的时候读了《水浒》、《西厢》这类所谓‘非主流’读物，才发现这世界上的书并不全是狗屎。”</p>
+<p>从学生时代开始，他就与社会的游戏规则互不兼容。</p>
+<p>“欢迎清穿”同学还慷慨地向记者透露了几个金圣叹在考场上的八卦。</p>
+<p>有一次考生员，作文题目和现代高考题目保持了同样的智商：《如此则动心否乎》——遇到这些事你动不动心？金圣叹是这样写的：“空山穷谷之中，黄金万两；露白葭苍而外，有一美人，试问夫子动心否乎？曰：动动动动动动动动动动动动动动动动动动动动动动动动动动动动动动动动动动动动动动动动。”考官一数，39个加大号的动字，把试卷填满，气得骂金圣叹朽木不可雕。金圣叹不以为意：孟子不是曰过，吾四十不动心；孔子也曰过，四十而不惑。所以1岁-39岁在荒郊野外看到钞票和美女不动心，那不是傻B吗？</p>
+<p>一次是乡试，题目是《西子来矣》，让大家根据越国西施出使吴国这一史实写一篇议论文。金圣叹的答案很幼齿：开东城，西子不来；开南城，西子不来；开北城，西子不来！开西城，则西子来矣！西子来矣。</p>
+<p>主考官很有娱乐精神地配合他写批注：秀才去矣！秀才去矣！金圣叹又落榜了。</p>
+<p>又是一次乡试。作文题目是“孟子将见王”。金圣叹在答卷的四角分别写了一个“吁”字。照例主考官又被雷焦了。金圣叹解释：“填空题、阅读题都写了40多次孟子了，不用再重复；至于见王，见梁惠王、梁襄王、齐宣王都差不多，也不必写了。只有‘将’字可以写一下。你没看过戏吗？王上朝之前，都有四个内侍在周围喊‘吁’。这就是‘将’。”主考官当场崩溃。</p>
+<p>教育界怒了，真以为我们是病猫！县里派了两位很有声望的专家，职位是教谕和训导，要给金圣叹一点颜色看看。两人闭关思索七七四十九天，炮制出一个高明的题目：《人之所以异于禽兽者几希》，并意淫了金圣叹的各种难堪表情。这一次，金圣叹创造了一分钟交卷的新纪录：禽兽不可以教谕，即教谕亦禽兽也；禽兽不可以训导，即训导亦禽兽也。据说，教谕和训导结伴去看了心理医生。</p>
+<p>本次过招被网友们称为“禽兽门”，金圣叹完胜。</p>
+<p>这些八卦在网络上疯狂转载，金圣叹的微博粉丝数一夜暴增20万。</p>
+<p>连90后都很哈他。都是玩叛逆，为什么金圣叹如此有创意？</p>
+<p>对此，金圣叹给媒体的解释是，90后算什么？“自古至今，只我一人是大材”。</p>
+<p>他的兴趣爱好就是调戏社会。科学是神圣不可侵犯的，他偏要一再侵犯。考场是装腔作势的，他偏要一派天真。</p>
+<p>如果清朝也有《世说新语》，金圣叹会被纳入《任诞篇》。古代圣贤倡导的是温柔敦厚、仁者爱人，但他是刻薄刁钻的毒舌派；儒家社会鼓励的是一本正经、积极入世，但他是游戏人间的逍遥家。他把一切既定规则当做跨栏道具，每一次跨越都有型有款。</p>
+<p>金圣叹说：我亦弃世。</p>
+<p>其实，这个时代配不上他。</p>
+<h3 id="施耐庵x金圣叹"><a href="#施耐庵x金圣叹" class="headerlink" title="施耐庵x金圣叹"></a>施耐庵x金圣叹</h3><p>1641年，怪才金圣叹腻歪了惹同代人生气，决定来点刺激的，把已经死了很久的施耐庵再气死一次。</p>
+<p>《水浒》金圣叹评点本出版。</p>
+<p>据说，施耐庵隔着时空向金圣叹竖起了中指。</p>
+<p>在施耐庵看来，金圣叹对他的心血之作《水浒》简直是一种强奸。</p>
+<p>一般的点评本，也就是写个总批，来个序言，然后每页来点眉批或夹注，这些加工虽然施耐庵也不是很乐意，但介于并未破坏小说整体性，他也忍了。</p>
+<p>“但是，金圣叹卑鄙无耻！”施耐庵接受《穿越壹周刊》记者采访时，情绪有点失控。“金圣叹欺世盗名！他不喜欢后50回，说我狗尾续貂，直接把后面删了，只保留前70回，自己造了个意淫的结局，还不要脸的宣布，这才是原本。盗版把正版都干掉了！我能淡定吗？完全不尊重原著者版权！他写了篇序，冒充是我写的。他动不动就从文章中间插入，写些毫不相干的破事，我设计的叙述高潮经常被他的屁话打断，我不得不指出，你们清朝的版权法相当的不完善！”</p>
+<p>记者假装斡旋：“金圣叹奉你为偶像，他不是在点评本的开头就讴歌你了嘛：‘天下之文章，无有出《水浒》之右者；天下之格物君子，无有出施耐庵先生右者。’”</p>
+<p>“他这话很中肯。但是，不能因为你爱一个女人你就合法强奸她，还任意肢解吧？法律！！明白？”施耐庵又补充了一句，“还有，作为一个有多年临床经验的专业医生，我对金圣叹的忠告是，你的躁郁症继续治疗。”</p>
+<p>但读者哪管施耐庵高不高兴，金圣叹的点评本，在图书市场制造了空前轰动。清初百姓哪里见过这种妖孽读物？他们对金圣叹的无厘头点评手法、大亮透露日常八卦的恶趣味和一些类似成功学的心灵母鸡汤迷得神魂颠倒，不仅平民追捧，连知识分子也着了迷，他们从没想到，文学批评可以用这么有想象力的方式去做，奇谈怪论大面积分布。金圣叹上来就说，“乱自上作”，官僚集团其实小人集团，他倡导言论自由，孔子说“天下有道则庶人不议”，金圣叹则指出这不是议与不议的问题，而是敢议与不敢议的问题。他认为文人的创作自由与言论自由才是天下一等大事。他最恨伪善，极度讨厌宋江。“一时学者爱读圣叹书，几乎家置一篇。”</p>
+<p>金圣叹继续生猛。</p>
+<p>几年后，金批《西厢记》问世。《西厢记》是什么故事？张生迷恋崔莺莺的漂亮脸蛋和性感肉体，两人从一夜情发展为多夜情，张生娶了崔莺莺，还惦记着要和红娘搞3P。这是低级趣味，是情色文学，但金圣叹说，西厢记是一部神作，足以与《离骚》、《史记》、《杜诗》并列，是史上最伟大的巨著！</p>
+<p>当时民众就被震撼了：儒家经典和情色小说并提，金圣叹，你有种！</p>
+<p>金圣叹号召大家虔诚地读《西厢记》，必须焚香读之、对雪读之、对花读之、与美人并坐读之、与道人对坐读之……因为这份虔诚，金圣叹对《西厢记》只是做了</p>
+<p>些小手术，尽管他不喜欢第五本，认为是“伧夫”所为，张生变成猪八戒，隋莹莹变成了木头人，但他没有把第五本删掉了事，还是保留下来，并且恶狠狠地说：“何必续，如何续，偏要续，我便看你续！”一副泼妇骂街的姿态。</p>
+<p>在新书出版的记者招待会上，金圣叹上来就说，指责《西厢记》淫秽的人，那是淫者见淫。他指出，中国文人最大的一项虚伪，就是认为君子可以好色，但不能淫。好色是高贵情感，淫是低俗作为，事实上，好色和淫只是机会与条件的问题，淫是天赋人权！发乎情止乎礼，根本就是违背人性的狗屁！</p>
+<p>他的言论，像一把华丽的剑，刺穿了现实。</p>
+<p>金圣叹的一位虔诚粉丝，广东人廖柴舟为了写好《金圣叹先生传》，以制作精品纪录片的精神，做了大量实地考察、人物访谈和资料收集，最后得出一个严肃的结论：金圣叹之所以那么牛B，全部秘密在于被某个神灵附体。</p>
+<p>只能说，金圣叹的才情和见地大大超出同时代的人的理解与想象。</p>
+<p>他跑得太快，时代在他后面气喘吁吁。</p>
+<h3 id="归庄x金圣叹"><a href="#归庄x金圣叹" class="headerlink" title="归庄x金圣叹"></a>归庄x金圣叹</h3><p>凭藉两本书长期占据图书畅销榜首位，当红作家金圣叹成为媒体曝光率最高的名人，他在各种文学研讨会上亮相，尖脸秃额，目光如电，插科打诨，妙语连珠，到任何场合都成为当之无愧的焦点。各大媒体都邀请他登上封面，酒迹斑斑的破烂长衫和鼓鼓囊囊的LV钱包成为他的两大logo，这种乡镇企业家范儿被当朝时尚男士争相效仿。</p>
+<p>追捧和攻击对于名人来说，向来是买一赠一的必然配置。</p>
+<p>尤侗、陆士衡等文人都在各种媒体上大骂金圣叹。反金圣叹小组中最活跃的斗士，当属归庄，他在当红辩论节目《一席一虎谈》上炮轰金圣叹，“金圣叹就是一邪教教主。他的水浒点评本，是‘倡乱之书’；他的西厢记点评本，是‘诲淫之书’。这样一个不顾礼仪廉耻的反动文人，败坏社会风气、扰乱学术氛围，竟然被公众奉为意见领袖、精神偶像，只能说，大家都被他蒙蔽了！”</p>
+<p>归庄红了。金圣叹的粉丝对他展开了疯狂围剿，他的百度贴吧当晚就被爆吧。归庄继续抱着金圣叹的大腿炒作，他向八卦小报透露，金圣叹招了一帮花美男当学生，实际上对学生大搞潜规则。</p>
+<p>但金圣叹这次让媒体失望了。他不接招。据说，金圣叹唯一的动作是把MSN签名改成“如果我没回复你，那是因为我太拽了”，又据说，他披了马甲在论坛上玩，引用了英国诗人兰德的两句诗：我和谁都不争/和谁争我都不屑。</p>
+<p>世界的游戏规则从来都在他个人好恶之下。他的本名很菜市场，叫金采，他给自己改名为“圣叹”，不是期望受到圣人的赞叹——或许他更希望赢得圣人的愤慨。“圣叹”出自《论语》，孔子和众弟子郊游，让大家谈理想谈人生，曾点很装B地说，“暮春者，春服既成，冠者五六人，童子六七人，浴乎沂，风乎舞雩，咏而归。”孔子对曾点的理想表示喟叹，“吾与点也”。曾点是一个狂者，金圣叹也以愤青著称，他推崇的是以轻狂的态度过闲适人生。对于同样是狂者的归庄的种种攻讦，他置若罔闻。如同王朔跳起来骂金庸，后者却假装没听见。</p>
+<p>后来，《才子必读古文》的选评出版，金圣叹的人气再次抵达高潮，这次图书营销主打一个“意外”。一个科举制度的叛逆者，突然编辑出版了一套考试类用书，亲自教大家看什么书才能在考试中拿高分——让世人大跌眼镜的同时又纷纷好奇他这次会对经典古文如何嘲弄？</p>
+<p>金圣叹负责为这个单调的世界提供意外。现在，这些意外卖了个好价钱。</p>
+<p>而历史给了他更大的意外。</p>
+<p>1660年，北京传来消息，帝国最高独裁者——顺治皇帝对金圣叹的作品发表了赞美之词，“此是古文高手，莫以时文眼看他”，金圣叹得此知己，扬眉吐气，激动得“感而泣下，因向北叩首”。</p>
+<p>一个社会的逆子，却对最高统治者的赏识感激涕零，这让历代批评家崩溃。</p>
+<p>所有人都以为金圣叹从此将平步青云，包括金圣叹自己都很傻很天真地幻想为皇帝讲经的场面。他以为统治者已经拥有足够的智慧和胸怀包容他带有“异端”色彩的言论，而事实上这可能是顺治一时心血来潮表演一下自己的大度而已。</p>
+<p>金圣叹的政治抱负还没来得及施展就遭遇了“哭庙案”——吴县县长任维初把赈灾粮拿出来高价卖给百姓，激起民怨，一帮知识分子借顺治驾崩的契机，组织反贪游行，在文庙中先圣牌位前痛哭流涕，发泄自己的不满。当朝者的处理方式是，将包括金圣叹在内的18位核心人物“斩立决”。当金圣叹刚刚决定成为朝廷的拥戴者，就当即被作为朝廷的叛逆者处死，这是怎样的笑话和讽刺？</p>
+<p>鲁迅说金圣叹的死，是因为他早被官绅们认为是坏货的缘故。在古代，知识阶层可以享有同性恋、狎妓、吸毒等各种自由，但不可以对政治秩序说三道四。祢衡击鼓骂曹操，嵇康要“非汤武而薄周礼”，李贽则说什么男女平等、理学吃人，金圣叹拿人生当实验，挑战当权者底线，但其实这些游戏不太好玩。清朝政府将金圣叹的死当成一项热身，之后直接实施文字狱，连犯上作乱的标签都懒得贴。</p>
+<p>社会表彰活着的顺从者和死去的叛逆者，而文人不过是时代的点缀而已。金圣叹将死之时，才真正地意识到这一点，他借着死亡做出最后一场表演。据南京狱警的最后一次爆料说，金圣叹的头被砍下来，脸上还挂着微笑。</p>
+<p>《CMM报》时事评论员写道，这笑容具有后现代结构主义特征，表达了金圣叹对这个荒诞世界的超然和拒绝。</p>
+<h3 id="完"><a href="#完" class="headerlink" title="完"></a>完</h3><blockquote>
+<p>这篇文章也是我高中以来除了《郑智与谭望嵩传》和《明朝那些事儿》之后，看过的最有意思的一篇文章。</p>
+<p>作者的才气文笔还有文字的驾驭能力都好的没话说，所以我愿意用一下午的时间逐字逐句的打出来和有识之士分享分享。</p>
+<p>欲想知金圣叹其人，请移步当当网或卓越网，搜索‘金圣叹全集’慢慢观摩。但愚以为维基google百度皆可，因为这篇文章里，他只是个皮偶。重要的是灯光下投射的影子。</p>
+<p>祝君阅读愉快。</p>
+<p>最后感谢作者咪蒙，提供了一个有意思的故事。</p>
+<p>——豆瓣·胡多多</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;blockquote&gt;
+&lt;p&gt;【来自《独唱团》第一辑。BY：&lt;strong&gt;咪蒙&lt;/strong&gt;】&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;广告x金圣叹&quot;&gt;&lt;a h
+    
+    </summary>
+    
+    
+      <category term="杂文" scheme="http://git.chenkunonline.cn/tags/%E6%9D%82%E6%96%87/"/>
     
   </entry>
   

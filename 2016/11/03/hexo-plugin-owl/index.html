@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Quentin"><meta name="description" content="AnusefulmediatagforHexo3.x,DemopageFeaturesVariousvideosandimagessourcesembeddingSupportvideoswebsiteYoutubeNiconicoBil"><meta name="keywords" content="Hexo"><title>Hexo Media Plugin Owl · Quentin</title><link rel="icon" href="/favicon.ico"><link rel="canonical" href="http://git.chenkunonline.cn/2016/11/03/hexo-plugin-owl/"><link rel="alternate" href="/atom.xml" title="Quentin"><link rel="stylesheet" href="/fonts/iconfont/iconfont.css"><link rel="stylesheet" href="/css/style.css"><script type="text/javascript">var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?Your baidu Analytics ID";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'Your Google Analytics ID', 'auto');
+ga('send', 'pageview');</script></head><body><div id="main"><header><a href="/." class="logo">Quentin</a><ul class="nav"><li class="nav-link"><a href="/" target="_self">Home</a></li><li class="nav-link"><a href="/archives/" target="_self">Archives</a></li><li class="nav-link"><a href="/tags/" target="_self">Tags</a></li><li class="nav-link"><a href="/about/" target="_self">About</a></li></ul></header><section id="container"><article class="post"><h1 class="post-title">Hexo Media Plugin Owl</h1><span class="post-time">Nov 3, 2016</span><div id="sidebar" class="post-sidebar"><h3 class="heading">Contents</h3><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Features"><span class="toc-text">Features</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Installation"><span class="toc-text">Installation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Component-Concept"><span class="toc-text">Component Concept</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Auto-Stylesheet-Embedding"><span class="toc-text">Auto Stylesheet Embedding</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Videos"><span class="toc-text">Videos</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Usage"><span class="toc-text">Usage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples"><span class="toc-text">Examples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Images"><span class="toc-text">Images</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Local-Images"><span class="toc-text">Local Images</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Usage-1"><span class="toc-text">Usage</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Giphy"><span class="toc-text">Giphy</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Usage-2"><span class="toc-text">Usage</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-1"><span class="toc-text">Example</span></a></li></ol></li></ol></li></ol></div><div class="post-content"><script src="/assets/js/APlayer.min.js"> </script><p>An useful media tag for <a href="https://hexo.io" target="_blank" rel="external">Hexo</a> 3.x, <a href="http://m80126colin.github.io/hexo-tag-owl-demo/" target="_blank" rel="external">Demo page</a></p>
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><ul>
+<li>Various videos and images sources embedding</li>
+<li>Support videos website<ul>
+<li><a href="https://www.youtube.com/" target="_blank" rel="external">Youtube</a></li>
+<li><a href="http://www.nicovideo.jp/" target="_blank" rel="external">Niconico</a></li>
+<li><a href="http://www.bilibili.com/" target="_blank" rel="external">Bilibili</a></li>
+<li><a href="https://vimeo.com/" target="_blank" rel="external">Vimeo</a></li>
+<li><a href="http://www.tudou.com/" target="_blank" rel="external">Tudou</a></li>
+<li><a href="http://www.youku.com/" target="_blank" rel="external">Youku</a></li>
+<li><a href="http://v.qq.com/" target="_blank" rel="external">Tencent</a></li>
+</ul>
+</li>
+<li>Support images sources<ul>
+<li>Local images</li>
+<li><a href="http://giphy.com/" target="_blank" rel="external">Giphy</a></li>
+</ul>
+</li>
+<li>Auto stylesheet embedding</li>
+</ul>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>Run the following command in the root directory of hexo:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-tag-owl --save</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h3 id="Component-Concept"><a href="#Component-Concept" class="headerlink" title="Component Concept"></a>Component Concept</h3><p>All components are wrapped by a <code>&lt;div&gt;</code> tag with several classes. All components have at least one class <code>.owl-media</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;owl-media&quot;&gt;[component]&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="Auto-Stylesheet-Embedding"><a href="#Auto-Stylesheet-Embedding" class="headerlink" title="Auto Stylesheet Embedding"></a>Auto Stylesheet Embedding</h3><p>Because the components are lack of CSS, everyone can add some CSS for one’s preference. Here provide a default CSS written in stylus at <code>lib/asset/css.styl</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">owl:</div><div class="line">  css: default</div><div class="line">  file: owl.css</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>css</strong>: whether insert default stylesheet or not, with following values<ul>
+<li><code>default</code>: use default stylesheet at <code>lib/asset/css.styl</code></li>
+<li><code>custom</code>: use custom stylesheet with path at <strong>file</strong></li>
+<li><code>none</code>: unable this feature</li>
+<li>default values: <code>none</code></li>
+</ul>
+</li>
+<li><strong>file</strong>: assign the path of stylesheet when <strong>css</strong> is not <code>none</code>, and default value is <code>owl.css</code></li>
+</ul>
+<h2 id="Videos"><a href="#Videos" class="headerlink" title="Videos"></a>Videos</h2><p>Every components of this category have additional class <code>.owl-video</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;owl-media owl-video&quot;&gt;[component]&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>Each videos source will add additional class <code>.owl-[source]</code>:</p>
+<ul>
+<li>Youtube: <code>.owl-youtube</code></li>
+<li>Niconico: <code>.owl-niconico</code></li>
+<li>Bilibili: <code>.owl-bilibili</code></li>
+<li>Vimeo: <code>.owl-vimeo</code></li>
+<li>Tudou: <code>.owl-tudou</code></li>
+<li>Youku: <code>.owl-youku</code></li>
+<li>Tencent: <code>.owl-tencent</code></li>
+</ul>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;% owl youtube youtube_id %&#125;</div><div class="line">&#123;% owl niconico niconico_id [type] %&#125;</div><div class="line">&#123;% owl bilibili bilibili_id [page] %&#125;</div><div class="line">&#123;% owl vimeo vimeo_id %&#125;</div><div class="line">&#123;% owl tudou tudou_id %&#125;</div><div class="line">&#123;% owl youku youku_id %&#125;</div><div class="line">&#123;% owl tencent tencent_id %&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>youtube_id</strong> - video id on Youtube</li>
+<li><strong>vimeo_id</strong> - video id in Vimeo.</li>
+<li>Niconico<ul>
+<li><strong>niconico_id</strong> - video id in Niconico.</li>
+<li><strong>type</strong> - embeded type. There are only <code>thumb</code> and <code>watch</code> two options. Default is set as <code>thumb</code>.<ul>
+<li><code>thumb</code>: set nico in thumb mode with extra class <code>.niconico-thumb</code></li>
+<li><code>watch</code>: set nico in watch mode with extra class <code>.niconico-watch</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bilibili<ul>
+<li><strong>bilibili_id</strong> - video id in Bilibili. You can use either <code>av247371</code> or <code>247371</code>.</li>
+<li><strong>page</strong> - if video have several clips, you can add a number indicated the video.</li>
+</ul>
+</li>
+<li><strong>tudou_id</strong> - video id in Tudou.</li>
+<li><strong>youku_id</strong> - video id in Youku. You can use either <code>id_XMTc3MzcxMjQw</code> or <code>XMTc3MzcxMjQw</code>.</li>
+<li><strong>tencent_id</strong> - video id in Tencent Video.</li>
+</ul>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;% owl youtube YtuAOT_c2EA %&#125;</div><div class="line">&#123;% owl niconico sm1494658 %&#125;</div><div class="line">&#123;% owl niconico sm1494658 watch %&#125;</div><div class="line">&#123;% owl bilibili av247371 %&#125;</div><div class="line">&#123;% owl bilibili 247371 %&#125;</div><div class="line">&#123;% owl bilibili av367901 2 %&#125;</div><div class="line">&#123;% owl vimeo 5566538 %&#125;</div><div class="line">&#123;% owl tudou pRsx83aRLLs %&#125;</div><div class="line">&#123;% owl youku id_XMTc3MzcxMjQw %&#125;</div><div class="line">&#123;% owl tencent o03134mlm8j %&#125;</div></pre></td></tr></table></figure>
+<h2 id="Images"><a href="#Images" class="headerlink" title="Images"></a>Images</h2><p>Every components of this category have additional class <code>.owl-image</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;owl-media owl-image&quot;&gt;[component]&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="Local-Images"><a href="#Local-Images" class="headerlink" title="Local Images"></a>Local Images</h3><p>Insert your image from blog\’s path.</p>
+<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% owl local image_path %&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>image_path</strong> - relative path from your blog.</li>
+</ul>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#123;% owl local img/img.jpg %&#125;</div><div class="line">&#123;% owl local another-img.gif %&#125;</div></pre></td></tr></table></figure>
+<h3 id="Giphy"><a href="#Giphy" class="headerlink" title="Giphy"></a>Giphy</h3><p>Insert your gif from Giphy.</p>
+<h4 id="Usage-2"><a href="#Usage-2" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% owl giphy giphy_id %&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>giphy_id</strong> - giphy id</li>
+</ul>
+<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% owl giphy AxqJJOBkWHXW %&#125;</div></pre></td></tr></table></figure>
+</div></article><div class="tags"><a href="/tags/Hexo/">Hexo</a></div><div class="paginator"><a href="/2016/11/03/test/" class="next"><span>Next</span><i class="iconfont icon-right"></i></a></div><section id="comments"><div id="disqus_thread"></div></section><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'http://git.chenkunonline.cn/2016/11/03/hexo-plugin-owl/';
+    this.page.identifier = '2016/11/03/hexo-plugin-owl/';
+    this.page.title = 'Hexo Media Plugin Owl';
+};
+(function() {
+var d = document, s = d.createElement('script');
+
+s.src = '//Quentin.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();</script></section><footer><div class="copyright"><p class="power">Powered by <a href="https://hexo.io/">Hexo</a> and Theme by <a href="https://github.com/ahonn/hexo-theme-even"> Even</a></p><p class="since">&copy;2014-2016<span class="heart"><i class="iconfont icon-heart"></i></span><span class="author">Quentin</span></p></div><label id="back2top"><i class="iconfont icon-up"></i></label></footer></div><script src="/js/zepto.min.js"></script><script src="/js/theme.js"></script></body></html>
