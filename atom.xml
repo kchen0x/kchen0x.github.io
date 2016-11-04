@@ -1229,7 +1229,7 @@
     <published>2015-11-17T07:39:00.000Z</published>
     <updated>2015-11-19T09:01:00.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Maven-学习笔记"><a href="#Maven-学习笔记" class="headerlink" title="Maven 学习笔记"></a>Maven 学习笔记</h1><h2 id="Maven-简介"><a href="#Maven-简介" class="headerlink" title="Maven 简介"></a>Maven 简介</h2><p>Maven 的作用：</p>
+    <content type="html"><![CDATA[<h2 id="Maven-简介"><a href="#Maven-简介" class="headerlink" title="Maven 简介"></a>Maven 简介</h2><p>Maven 的作用：</p>
 <ul>
 <li>构建工具</li>
 <li>依赖管理</li>
@@ -1477,7 +1477,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Maven-学习笔记&quot;&gt;&lt;a href=&quot;#Maven-学习笔记&quot; class=&quot;headerlink&quot; title=&quot;Maven 学习笔记&quot;&gt;&lt;/a&gt;Maven 学习笔记&lt;/h1&gt;&lt;h2 id=&quot;Maven-简介&quot;&gt;&lt;a href=&quot;#Maven-简介&quot; class=&quot;headerlink&quot; title=&quot;Maven 简介&quot;&gt;&lt;/a&gt;Maven 简介&lt;/h2&gt;&lt;p&gt;Maven 的作用：&lt;/p&gt;
+      &lt;h2 id=&quot;Maven-简介&quot;&gt;&lt;a href=&quot;#Maven-简介&quot; class=&quot;headerlink&quot; title=&quot;Maven 简介&quot;&gt;&lt;/a&gt;Maven 简介&lt;/h2&gt;&lt;p&gt;Maven 的作用：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;构建工具&lt;/li&gt;
 &lt;li&gt;依赖管理&lt;/li&gt;
