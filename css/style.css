@@ -368,7 +368,7 @@ th {
   padding: 0; }
 
 html {
-  font-size: 100%;
+  font-size: 106%;
   box-sizing: border-box; }
 
 body {
@@ -378,7 +378,7 @@ body {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5;
+  line-height: 1.7;
   color: #34495e;
   background: #fefefe;
   scroll-behavior: smooth;
@@ -432,7 +432,7 @@ header {
       padding: 20px 10px; }
       header .nav .nav-link a {
         font-size: 18px;
-        line-height: 1.5; }
+        line-height: 1.7; }
       header .nav .nav-link :hover, header .nav .nav-link .active {
         transition: 0.1s ease-out;
         border-radius: 2px;
