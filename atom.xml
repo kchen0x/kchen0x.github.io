@@ -143,26 +143,6 @@
   </entry>
   
   <entry>
-    <title>Test</title>
-    <link href="http://git.chenkunonline.cn/2016/11/03/test/"/>
-    <id>http://git.chenkunonline.cn/2016/11/03/test/</id>
-    <published>2016-11-04T05:39:04.000Z</published>
-    <updated>2016-11-04T06:36:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script>]]></content>
-    
-    <summary type="html">
-    
-      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;
-    
-    </summary>
-    
-    
-      <category term="test" scheme="http://git.chenkunonline.cn/tags/test/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Vim编辑器实用基础</title>
     <link href="http://git.chenkunonline.cn/2016/04/17/vim-tutorial/"/>
     <id>http://git.chenkunonline.cn/2016/04/17/vim-tutorial/</id>
