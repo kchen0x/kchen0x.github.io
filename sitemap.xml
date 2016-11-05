@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://kchen.cc/2016/11/05/echarts-in-hexo/</loc>
+    
+    <lastmod>2016-11-05T20:11:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://kchen.cc/2014/11/05/test/</loc>
+    
+    <lastmod>2016-11-05T20:10:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://kchen.cc/2015/11/03/go-to-sa-city/</loc>
     
     <lastmod>2016-11-05T18:16:54.000Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://kchen.cc/2016/11/04/new-beginning/</loc>
     
     <lastmod>2016-11-05T17:39:11.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://kchen.cc/2014/11/05/test/</loc>
-    
-    <lastmod>2016-11-05T17:25:00.000Z</lastmod>
     
   </url>
   

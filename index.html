@@ -11,7 +11,79 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-41464607-2', 'auto');
-ga('send', 'pageview');</script></head><body><div id="main"><header><a href="/." class="logo">K. Chen</a><ul class="nav"><li class="nav-link"><a href="/" class="active">Home</a></li><li class="nav-link"><a href="/archives/" target="_self">Archives</a></li><li class="nav-link"><a href="/tags/" target="_self">Tags</a></li><li class="nav-link"><a href="/about/" target="_self">About</a></li></ul></header><section id="container"><ul class="home"><li class="post-item"><article class="post"><h2 class="post-title"><a href="/2016/11/04/new-beginning/" class="post-link">博客搬迁记</a></h2><span class="post-time">Nov 4, 2016</span><div class="post-content"><h2 id="域名搬迁"><a href="#域名搬迁" class="headerlink" title="域名搬迁"></a>域名搬迁</h2><blockquote>
+ga('send', 'pageview');</script></head><body><div id="main"><header><a href="/." class="logo">K. Chen</a><ul class="nav"><li class="nav-link"><a href="/" class="active">Home</a></li><li class="nav-link"><a href="/archives/" target="_self">Archives</a></li><li class="nav-link"><a href="/tags/" target="_self">Tags</a></li><li class="nav-link"><a href="/about/" target="_self">About</a></li></ul></header><section id="container"><ul class="home"><li class="post-item"><article class="post"><h2 class="post-title"><a href="/2016/11/05/echarts-in-hexo/" class="post-link">在 Hexo 中引入 ECharts 图表</a></h2><span class="post-time">Nov 5, 2016</span><div class="post-content"><script src="/assets/js/APlayer.min.js"> </script><div id="echarts1975" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts1975'));
+
+        // 指定图表的配置项和数据
+        var option = {
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data:['利润', '支出', '收入']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    yAxis : [
+        {
+            type : 'category',
+            axisTick : {show: false},
+            data : ['周一','周二','周三','周四','周五','周六','周日']
+        }
+    ],
+    series : [
+        {
+            name:'利润',
+            type:'bar',
+            itemStyle : {
+                normal: {
+                    label: {show: true, position: 'inside'}
+                }
+            },
+            data:[200, 170, 240, 244, 200, 220, 210]
+        },
+        {
+            name:'收入',
+            type:'bar',
+            stack: '总量',
+            itemStyle: {
+                normal: {
+                    label : {show: true}
+                }
+            },
+            data:[320, 302, 341, 374, 390, 450, 420]
+        },
+        {
+            name:'支出',
+            type:'bar',
+            stack: '总量',
+            itemStyle: {normal: {
+                label : {show: true, position: 'left'}
+            }},
+            data:[-120, -132, -101, -134, -190, -230, -210]
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+</div></article></li><li class="post-item"><article class="post"><h2 class="post-title"><a href="/2016/11/04/new-beginning/" class="post-link">博客搬迁记</a></h2><span class="post-time">Nov 4, 2016</span><div class="post-content"><h2 id="域名搬迁"><a href="#域名搬迁" class="headerlink" title="域名搬迁"></a>域名搬迁</h2><blockquote>
 <p>新家搬迁到了 <a href="http://kchen.cc">KChen.cc</a> </p>
 </blockquote>
 <p>昨天看到阿里万网在搞双十一的活动，许多域名购买都在打折，阿里大力鼓吹 <code>.me</code> 域名迎接个人域名时代的到来，所以 <code>.me</code> 域名的打折力度也最猛。想想自己当初脑子一热买的 <code>chenkunonline.cn</code> 的域名，长到有时候我自己都要敲错，再看看这些新鲜的顶级域名们，不由动了换个域名的心思，开始在万网浏览了起来。</p>
@@ -92,20 +164,4 @@ ga('send', 'pageview');</script></head><body><div id="main"><header><a href="/."
 </ul>
 <blockquote>
 <p>由于Windows上的pptp不支持拨号脚本, 所以也只能在进行拨号之前手动执行 <code>vpnup.bat</code> 文件以设置路由表. 而在断开vpn之后, 如果你觉得有必要, 可以运行 <code>vpndown.bat</code> 把这些路由信息给清理掉.</p>
-</blockquote></div><a href="/2015/12/02/vpn-shunt/" class="read-more">Read more..</a></article></li><li class="post-item"><article class="post"><h2 class="post-title"><a href="/2015/11/16/mvn-study/" class="post-link">Maven 学习笔记</a></h2><span class="post-time">Nov 16, 2015</span><div class="post-content"><h2 id="Maven-简介"><a href="#Maven-简介" class="headerlink" title="Maven 简介"></a>Maven 简介</h2><p>Maven 的作用：</p>
-<ul>
-<li>构建工具</li>
-<li>依赖管理</li>
-<li>项目信息</li>
-</ul>
-<p>还可以用来进行极限编程（XP）和敏捷开发、瀑布开发。</p>
-<h2 id="Maven-的安装和配置"><a href="#Maven-的安装和配置" class="headerlink" title="Maven 的安装和配置"></a>Maven 的安装和配置</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
-<li>下载Maven 3</li>
-<li>解压安装</li>
-<li>配置环境变量<ul>
-<li><code>%M2_HOME%</code></li>
-<li><code>path = %M2_HOME%/bin</code></li>
-</ul>
-</li>
-</ul>
-<p>在Mac下，可以直接使用BrewHome的<code>brew install</code>来安装。</p></div><a href="/2015/11/16/mvn-study/" class="read-more">Read more..</a></article></li></ul><div class="paginator"><a href="/page/2/" class="next"><span>Next</span><i class="iconfont icon-right"></i></a></div></section><footer><div class="social"><a href="mailto:quentin.chen@foxmail.com" title="email" class="iconfont icon-email"></a><a href="https://www.facebook.com/quentin.chenkun" title="facebook" class="iconfont icon-facebook"></a><a href="https://github.com/quentin-chen" title="github" class="iconfont icon-github"></a><a href="http://weibo.com/quentinchen" title="weibo" class="iconfont icon-weibo"></a><a href="https://www.zhihu.com/people/chen-kun-92-07" title="zhihu" class="iconfont icon-zhihu"></a><a href="/atom.xml" title="rss" class="iconfont icon-rss"></a></div><div class="copyright"><p class="power">Powered by <a href="https://hexo.io/">Hexo</a> and Theme by <a href="https://github.com/ahonn/hexo-theme-even"> Even</a></p><p class="since">&copy;2014-2016<span class="heart"><i class="iconfont icon-heart"></i></span><span class="author">Kun Chen</span></p></div><div id="back2top"><i class="iconfont icon-up"></i></div></footer></div><script src="/js/zepto.min.js"></script><script src="/js/theme.js"></script></body></html>
+</blockquote></div><a href="/2015/12/02/vpn-shunt/" class="read-more">Read more..</a></article></li></ul><div class="paginator"><a href="/page/2/" class="next"><span>Next</span><i class="iconfont icon-right"></i></a></div></section><footer><div class="social"><a href="mailto:quentin.chen@foxmail.com" title="email" class="iconfont icon-email"></a><a href="https://www.facebook.com/quentin.chenkun" title="facebook" class="iconfont icon-facebook"></a><a href="https://github.com/quentin-chen" title="github" class="iconfont icon-github"></a><a href="http://weibo.com/quentinchen" title="weibo" class="iconfont icon-weibo"></a><a href="https://www.zhihu.com/people/chen-kun-92-07" title="zhihu" class="iconfont icon-zhihu"></a><a href="/atom.xml" title="rss" class="iconfont icon-rss"></a></div><div class="copyright"><p class="power">Powered by <a href="https://hexo.io/">Hexo</a> and Theme by <a href="https://github.com/ahonn/hexo-theme-even"> Even</a></p><p class="since">&copy;2014-2016<span class="heart"><i class="iconfont icon-heart"></i></span><span class="author">Kun Chen</span></p></div><div id="back2top"><i class="iconfont icon-up"></i></div></footer></div><script src="/js/zepto.min.js"></script><script src="/js/theme.js"></script></body></html>
