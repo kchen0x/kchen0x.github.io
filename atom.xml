@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Quentin</title>
+  <title>K. Chen</title>
   <subtitle>硅基生命实验室的学术渣</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://git.chenkunonline.cn/"/>
+  <link href="http://kchen.cc/"/>
   <updated>2016-11-04T05:49:48.000Z</updated>
-  <id>http://git.chenkunonline.cn/</id>
+  <id>http://kchen.cc/</id>
   
   <author>
-    <name>Quentin</name>
+    <name>Kun Chen</name>
     
   </author>
   
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hexo Media Plugin Owl</title>
-    <link href="http://git.chenkunonline.cn/2016/11/03/hexo-plugin-owl/"/>
-    <id>http://git.chenkunonline.cn/2016/11/03/hexo-plugin-owl/</id>
+    <link href="http://kchen.cc/2016/11/03/hexo-plugin-owl/"/>
+    <id>http://kchen.cc/2016/11/03/hexo-plugin-owl/</id>
     <published>2016-11-04T05:46:02.000Z</published>
     <updated>2016-11-04T05:49:48.000Z</updated>
     
@@ -138,14 +138,14 @@
     </summary>
     
     
-      <category term="Hexo" scheme="http://git.chenkunonline.cn/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://kchen.cc/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Vim编辑器实用基础</title>
-    <link href="http://git.chenkunonline.cn/2016/04/17/vim-tutorial/"/>
-    <id>http://git.chenkunonline.cn/2016/04/17/vim-tutorial/</id>
+    <link href="http://kchen.cc/2016/04/17/vim-tutorial/"/>
+    <id>http://kchen.cc/2016/04/17/vim-tutorial/</id>
     <published>2016-04-17T20:26:00.000Z</published>
     <updated>2016-06-16T14:25:26.000Z</updated>
     
@@ -755,14 +755,14 @@
     </summary>
     
     
-      <category term="Vim" scheme="http://git.chenkunonline.cn/tags/Vim/"/>
+      <category term="Vim" scheme="http://kchen.cc/tags/Vim/"/>
     
   </entry>
   
   <entry>
     <title>Linux 使用教程</title>
-    <link href="http://git.chenkunonline.cn/2016/04/16/linux-tutorial/"/>
-    <id>http://git.chenkunonline.cn/2016/04/16/linux-tutorial/</id>
+    <link href="http://kchen.cc/2016/04/16/linux-tutorial/"/>
+    <id>http://kchen.cc/2016/04/16/linux-tutorial/</id>
     <published>2016-04-16T21:17:00.000Z</published>
     <updated>2016-06-16T14:26:49.000Z</updated>
     
@@ -1053,14 +1053,14 @@
     </summary>
     
     
-      <category term="Linux" scheme="http://git.chenkunonline.cn/tags/Linux/"/>
+      <category term="Linux" scheme="http://kchen.cc/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Sublime Text 3 配置同步</title>
-    <link href="http://git.chenkunonline.cn/2016/04/09/sublime-text-3-settings-sync/"/>
-    <id>http://git.chenkunonline.cn/2016/04/09/sublime-text-3-settings-sync/</id>
+    <link href="http://kchen.cc/2016/04/09/sublime-text-3-settings-sync/"/>
+    <id>http://kchen.cc/2016/04/09/sublime-text-3-settings-sync/</id>
     <published>2016-04-09T07:48:00.000Z</published>
     <updated>2016-06-16T14:26:39.000Z</updated>
     
@@ -1124,14 +1124,14 @@
     </summary>
     
     
-      <category term="Sublime Text" scheme="http://git.chenkunonline.cn/tags/Sublime-Text/"/>
+      <category term="Sublime Text" scheme="http://kchen.cc/tags/Sublime-Text/"/>
     
   </entry>
   
   <entry>
     <title>利用Alfred Workflow快速上传粘贴板图片至七牛图床并在Markdown中引用</title>
-    <link href="http://git.chenkunonline.cn/2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/"/>
-    <id>http://git.chenkunonline.cn/2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/</id>
+    <link href="http://kchen.cc/2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/"/>
+    <id>http://kchen.cc/2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/</id>
     <published>2016-03-20T05:51:00.000Z</published>
     <updated>2016-03-19T15:04:45.000Z</updated>
     
@@ -1245,20 +1245,20 @@
     </summary>
     
     
-      <category term="Alfred" scheme="http://git.chenkunonline.cn/tags/Alfred/"/>
+      <category term="Alfred" scheme="http://kchen.cc/tags/Alfred/"/>
     
-      <category term="七牛" scheme="http://git.chenkunonline.cn/tags/%E4%B8%83%E7%89%9B/"/>
+      <category term="七牛" scheme="http://kchen.cc/tags/%E4%B8%83%E7%89%9B/"/>
     
-      <category term="图床" scheme="http://git.chenkunonline.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
+      <category term="图床" scheme="http://kchen.cc/tags/%E5%9B%BE%E5%BA%8A/"/>
     
-      <category term="Markdown" scheme="http://git.chenkunonline.cn/tags/Markdown/"/>
+      <category term="Markdown" scheme="http://kchen.cc/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>数据结构与算法分析（一）：基础算法分析</title>
-    <link href="http://git.chenkunonline.cn/2016/01/28/data-structures-and-algorithm-analysis-1/"/>
-    <id>http://git.chenkunonline.cn/2016/01/28/data-structures-and-algorithm-analysis-1/</id>
+    <link href="http://kchen.cc/2016/01/28/data-structures-and-algorithm-analysis-1/"/>
+    <id>http://kchen.cc/2016/01/28/data-structures-and-algorithm-analysis-1/</id>
     <published>2016-01-28T08:20:00.000Z</published>
     <updated>2016-06-15T04:42:40.000Z</updated>
     
@@ -1274,18 +1274,18 @@
     </summary>
     
     
-      <category term="数据结构" scheme="http://git.chenkunonline.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="http://kchen.cc/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="算法" scheme="http://git.chenkunonline.cn/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://kchen.cc/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="java" scheme="http://git.chenkunonline.cn/tags/java/"/>
+      <category term="java" scheme="http://kchen.cc/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>通过路由表进行VPN国内外分流的办法</title>
-    <link href="http://git.chenkunonline.cn/2015/12/02/vpn-shunt/"/>
-    <id>http://git.chenkunonline.cn/2015/12/02/vpn-shunt/</id>
+    <link href="http://kchen.cc/2015/12/02/vpn-shunt/"/>
+    <id>http://kchen.cc/2015/12/02/vpn-shunt/</id>
     <published>2015-12-03T04:49:00.000Z</published>
     <updated>2016-06-16T14:25:25.000Z</updated>
     
@@ -1343,16 +1343,16 @@
     </summary>
     
     
-      <category term="VPN" scheme="http://git.chenkunonline.cn/tags/VPN/"/>
+      <category term="VPN" scheme="http://kchen.cc/tags/VPN/"/>
     
-      <category term="Mac" scheme="http://git.chenkunonline.cn/tags/Mac/"/>
+      <category term="Mac" scheme="http://kchen.cc/tags/Mac/"/>
     
   </entry>
   
   <entry>
     <title>Maven 学习笔记</title>
-    <link href="http://git.chenkunonline.cn/2015/11/16/mvn-study/"/>
-    <id>http://git.chenkunonline.cn/2015/11/16/mvn-study/</id>
+    <link href="http://kchen.cc/2015/11/16/mvn-study/"/>
+    <id>http://kchen.cc/2015/11/16/mvn-study/</id>
     <published>2015-11-17T07:39:00.000Z</published>
     <updated>2015-11-19T09:01:00.000Z</updated>
     
@@ -1625,16 +1625,16 @@
     </summary>
     
     
-      <category term="Maven" scheme="http://git.chenkunonline.cn/tags/Maven/"/>
+      <category term="Maven" scheme="http://kchen.cc/tags/Maven/"/>
     
-      <category term="笔记" scheme="http://git.chenkunonline.cn/tags/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://kchen.cc/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>养老保险和投资收益对比</title>
-    <link href="http://git.chenkunonline.cn/2015/11/09/insurance-vs-investiment/"/>
-    <id>http://git.chenkunonline.cn/2015/11/09/insurance-vs-investiment/</id>
+    <link href="http://kchen.cc/2015/11/09/insurance-vs-investiment/"/>
+    <id>http://kchen.cc/2015/11/09/insurance-vs-investiment/</id>
     <published>2015-11-09T18:22:00.000Z</published>
     <updated>2015-11-17T22:59:00.000Z</updated>
     
@@ -1707,14 +1707,14 @@
     </summary>
     
     
-      <category term="保险" scheme="http://git.chenkunonline.cn/tags/%E4%BF%9D%E9%99%A9/"/>
+      <category term="保险" scheme="http://kchen.cc/tags/%E4%BF%9D%E9%99%A9/"/>
     
   </entry>
   
   <entry>
     <title>你们去卅城</title>
-    <link href="http://git.chenkunonline.cn/2015/11/03/go-to-sa-city/"/>
-    <id>http://git.chenkunonline.cn/2015/11/03/go-to-sa-city/</id>
+    <link href="http://kchen.cc/2015/11/03/go-to-sa-city/"/>
+    <id>http://kchen.cc/2015/11/03/go-to-sa-city/</id>
     <published>2015-11-04T07:58:06.000Z</published>
     <updated>2016-11-04T07:05:38.000Z</updated>
     
@@ -1830,14 +1830,14 @@
     </summary>
     
     
-      <category term="杂文" scheme="http://git.chenkunonline.cn/tags/%E6%9D%82%E6%96%87/"/>
+      <category term="杂文" scheme="http://kchen.cc/tags/%E6%9D%82%E6%96%87/"/>
     
   </entry>
   
   <entry>
     <title>写让别人能读懂的代码</title>
-    <link href="http://git.chenkunonline.cn/2015/10/05/How-to-write-a-reading-friendly-code/"/>
-    <id>http://git.chenkunonline.cn/2015/10/05/How-to-write-a-reading-friendly-code/</id>
+    <link href="http://kchen.cc/2015/10/05/How-to-write-a-reading-friendly-code/"/>
+    <id>http://kchen.cc/2015/10/05/How-to-write-a-reading-friendly-code/</id>
     <published>2015-10-06T04:00:00.000Z</published>
     <updated>2015-12-02T13:16:13.000Z</updated>
     
@@ -2012,14 +2012,14 @@
     </summary>
     
     
-      <category term="Coding" scheme="http://git.chenkunonline.cn/tags/Coding/"/>
+      <category term="Coding" scheme="http://kchen.cc/tags/Coding/"/>
     
   </entry>
   
   <entry>
     <title>Markdown 入门-最轻量的文字编辑语言</title>
-    <link href="http://git.chenkunonline.cn/2015/10/05/Markdown-Manual/"/>
-    <id>http://git.chenkunonline.cn/2015/10/05/Markdown-Manual/</id>
+    <link href="http://kchen.cc/2015/10/05/Markdown-Manual/"/>
+    <id>http://kchen.cc/2015/10/05/Markdown-Manual/</id>
     <published>2015-10-05T20:00:00.000Z</published>
     <updated>2016-06-15T05:03:40.000Z</updated>
     
@@ -2486,14 +2486,14 @@
     </summary>
     
     
-      <category term="Markdown" scheme="http://git.chenkunonline.cn/tags/Markdown/"/>
+      <category term="Markdown" scheme="http://kchen.cc/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>好疼的金圣叹</title>
-    <link href="http://git.chenkunonline.cn/2015/03/28/jinshengtan-hurt/"/>
-    <id>http://git.chenkunonline.cn/2015/03/28/jinshengtan-hurt/</id>
+    <link href="http://kchen.cc/2015/03/28/jinshengtan-hurt/"/>
+    <id>http://kchen.cc/2015/03/28/jinshengtan-hurt/</id>
     <published>2015-03-28T07:21:46.000Z</published>
     <updated>2016-11-04T07:10:04.000Z</updated>
     
@@ -2608,7 +2608,7 @@
     </summary>
     
     
-      <category term="杂文" scheme="http://git.chenkunonline.cn/tags/%E6%9D%82%E6%96%87/"/>
+      <category term="杂文" scheme="http://kchen.cc/tags/%E6%9D%82%E6%96%87/"/>
     
   </entry>
   
