@@ -1245,13 +1245,13 @@
     </summary>
     
     
+      <category term="Markdown" scheme="http://kchen.cc/tags/Markdown/"/>
+    
       <category term="Alfred" scheme="http://kchen.cc/tags/Alfred/"/>
     
       <category term="七牛" scheme="http://kchen.cc/tags/%E4%B8%83%E7%89%9B/"/>
     
       <category term="图床" scheme="http://kchen.cc/tags/%E5%9B%BE%E5%BA%8A/"/>
-    
-      <category term="Markdown" scheme="http://kchen.cc/tags/Markdown/"/>
     
   </entry>
   
@@ -2320,7 +2320,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;address@example.com&gt;</div></pre></td></tr></table></figure>
 <p>会被转换为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;&amp;#x6D;&amp;#x61;i&amp;#x6C;&amp;#x74;&amp;#x6F;:&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;&quot;&gt;&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;</div></pre></td></tr></table></figure>
-<p>浏览器会将它渲染为一个可点击的链接，并正确显示 <a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x61;&#100;&#100;&#114;&#101;&#x73;&#115;&#64;&#101;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#x6f;&#x6d;">&#x61;&#100;&#100;&#114;&#101;&#x73;&#115;&#64;&#101;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#x6f;&#x6d;</a>。</p>
+<p>浏览器会将它渲染为一个可点击的链接，并正确显示 <a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#58;&#x61;&#x64;&#x64;&#x72;&#x65;&#x73;&#115;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;">&#x61;&#x64;&#x64;&#x72;&#x65;&#x73;&#115;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;</a>。</p>
 <p>这种实体编码的小方法可以骗过一些收集邮件地址的机器人，不过它确实无法骗过所有的机器人。有总比没有强，聊胜于无。能阻止一点就阻止一点好了。</p>
 <h3 id="反斜杠"><a href="#反斜杠" class="headerlink" title="反斜杠"></a>反斜杠</h3><p>Markdown 可以利用 <code>\</code> 反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果，你可以在星号的前面加上反斜杠：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\*我只想用星号来强调这段内容\*</div></pre></td></tr></table></figure>
@@ -2469,7 +2469,7 @@
 <p>至于移动端，由于屏幕大小受到限制，我认为使用系统自带的「文本编辑器」就可以了，并不需要特别的工具。</p>
 <hr>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>花了几个日日夜夜的功夫，终于把这篇文章写完了，其间为了找参考资料和构思全文布局，花了不少时间和心思。希望这篇文章可以帮到大家，带大家走进 Markdown 的世界。如果大家有什么问题的话，可以到我的微博给我留言，也可以给我写 E-mail。最后，希望喜欢这篇文章的朋友多多转载。谢谢大家耐心看完！（看到这里的都是<strong>真爱</strong>）</p>
-<p>微博：<a href="http://weibo.com/quentinchen/" target="_blank" rel="external">@悦华</a><br>邮箱：<a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#x71;&#x75;&#101;&#110;&#116;&#x69;&#x6e;&#x2e;&#99;&#104;&#101;&#x6e;&#64;&#102;&#x6f;&#x78;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#x71;&#x75;&#101;&#110;&#116;&#x69;&#x6e;&#x2e;&#99;&#104;&#101;&#x6e;&#64;&#102;&#x6f;&#x78;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;</a></p>
+<p>微博：<a href="http://weibo.com/quentinchen/" target="_blank" rel="external">@悦华</a><br>邮箱：<a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x71;&#117;&#101;&#x6e;&#116;&#105;&#x6e;&#x2e;&#x63;&#104;&#x65;&#x6e;&#x40;&#102;&#111;&#x78;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;">&#x71;&#117;&#101;&#x6e;&#116;&#105;&#x6e;&#x2e;&#x63;&#104;&#x65;&#x6e;&#x40;&#102;&#111;&#x78;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;</a></p>
 <hr>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://daringfireball.net/projects/markdown/syntax" target="_blank" rel="external">Markdown - John Gruber - Daring Fireball</a><br><a href="http://zh.wikipedia.org/wiki/Markdown#cite_note-md-1/" target="_blank" rel="external">Markdown - 维基百科</a><br><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown 语法说明 (简体中文版) - Wow!Ubuntu</a><br><a href="http://www.ituring.com.cn/article/775" target="_blank" rel="external">Markdown 语法 - shukebete - 图灵社区</a><br><a href="http://www.yangzhiping.com/tech/r-markdown-knitr.html/" target="_blank" rel="external">Markdown 写作浅谈 - 阳志平</a><br><a href="http://yuedu.baidu.com/ebook/7408817d5f0e7cd184253681" target="_blank" rel="external">Markdown - Macin Chen</a><br><a href="http://apple4us.com/2012/02/why-writers-should-use-markdown/" target="_blank" rel="external">为什么作家应该用 Markdown 保存自己的文稿 - Lawrence Li</a><br><a href="http://www.jianshu.com/p/q81RER" target="_blank" rel="external">献给写作者的 Markdown 新手指南 - 简书</a><br><a href="https://www.zybuluo.com/chanvee/note/10788/" target="_blank" rel="external">Cmd Markdown 简明语法手册</a><br><a href="http://codego.net/328489/" target="_blank" rel="external">如何创建和链接到 Multimarkdown 命名锚 - CodeGo</a><br><a href="http://www.jianshu.com/p/dcffb6f60fe2" target="_blank" rel="external">Markdown 编辑器之比较 - 怀瑾握瑜</a></p>
 <p>[^Swartz]: Aaron Swartz，1986年11月8日－2013年1月11日，一位程序员、作家、政治组织策划人和积极行动主义者。他年仅14岁就参与创造RSS 1.0规格，因而在程式设计圈当中声名大噪。2011年7月19日他被指控自 JSTOR 非法下载大量学术期刊文章，并遭联邦政府起诉被捕，因而获得主流媒体关注。Swartz 是 Demand Progress 和 Progressive Change Campaign Committee 的共同创办人。他曾住在美国马萨诸塞州的剑桥，于2013年1月11日自杀。</p>
