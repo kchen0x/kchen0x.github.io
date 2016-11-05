@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kchen.cc/"/>
-  <updated>2016-11-05T23:32:58.000Z</updated>
+  <updated>2016-11-05T23:48:55.000Z</updated>
   <id>http://kchen.cc/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://kchen.cc/2016/11/05/echarts-in-hexo/"/>
     <id>http://kchen.cc/2016/11/05/echarts-in-hexo/</id>
     <published>2016-11-05T19:56:09.000Z</published>
-    <updated>2016-11-05T23:32:58.000Z</updated>
+    <updated>2016-11-05T23:48:55.000Z</updated>
     
     <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
 <p>图上的按钮可以点击交互🙂</p>
@@ -36,11 +36,11 @@ for (var i = 0; i < 100; i++) {
 }
 </script>
 
-<div id="echarts3370" style="width: 100%;height: 250px;margin: 0 auto"></div>
+<div id="echarts2214" style="width: 100%;height: 250px;margin: 0 auto"></div>
 <script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts3370'));
+        var myChart = echarts.init(document.getElementById('echarts2214'));
 
         // 指定图表的配置项和数据
         var option = option = {
@@ -107,11 +107,11 @@ for (var i = 0; i < 100; i++) {
 <p>我们来看一个使用样例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">&#123;% echarts 400 &apos;81%&apos; %&#125;</div><div class="line">&#123;</div><div class="line">    tooltip : &#123;</div><div class="line">        trigger: &apos;axis&apos;,</div><div class="line">        axisPointer : &#123;            // 坐标轴指示器，坐标轴触发有效</div><div class="line">            type : &apos;shadow&apos;        // 默认为直线，可选为：&apos;line&apos; | &apos;shadow&apos;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    legend: &#123;</div><div class="line">        data:[&apos;利润&apos;, &apos;支出&apos;, &apos;收入&apos;]</div><div class="line">    &#125;,</div><div class="line">    grid: &#123;</div><div class="line">        left: &apos;3%&apos;,</div><div class="line">        right: &apos;4%&apos;,</div><div class="line">        bottom: &apos;3%&apos;,</div><div class="line">        containLabel: true</div><div class="line">    &#125;,</div><div class="line">    xAxis : [</div><div class="line">        &#123;</div><div class="line">            type : &apos;value&apos;</div><div class="line">        &#125;</div><div class="line">    ],</div><div class="line">    yAxis : [</div><div class="line">        &#123;</div><div class="line">            type : &apos;category&apos;,</div><div class="line">            axisTick : &#123;show: false&#125;,</div><div class="line">            data : [&apos;周一&apos;,&apos;周二&apos;,&apos;周三&apos;,&apos;周四&apos;,&apos;周五&apos;,&apos;周六&apos;,&apos;周日&apos;]</div><div class="line">        &#125;</div><div class="line">    ],</div><div class="line">    series : [</div><div class="line">        &#123;</div><div class="line">            name:&apos;利润&apos;,</div><div class="line">            type:&apos;bar&apos;,</div><div class="line">            itemStyle : &#123;</div><div class="line">                normal: &#123;</div><div class="line">                    label: &#123;show: true, position: &apos;inside&apos;&#125;</div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            data:[200, 170, 240, 244, 200, 220, 210]</div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            name:&apos;收入&apos;,</div><div class="line">            type:&apos;bar&apos;,</div><div class="line">            stack: &apos;总量&apos;,</div><div class="line">            itemStyle: &#123;</div><div class="line">                normal: &#123;</div><div class="line">                    label : &#123;show: true&#125;</div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            data:[320, 302, 341, 374, 390, 450, 420]</div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            name:&apos;支出&apos;,</div><div class="line">            type:&apos;bar&apos;,</div><div class="line">            stack: &apos;总量&apos;,</div><div class="line">            itemStyle: &#123;normal: &#123;</div><div class="line">                label : &#123;show: true, position: &apos;left&apos;&#125;</div><div class="line">            &#125;&#125;,</div><div class="line">            data:[-120, -132, -101, -134, -190, -230, -210]</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;;</div><div class="line">&#123;% endecharts %&#125;</div></pre></td></tr></table></figure>
 <p>上述代码渲染出来的 Echarts 图表如下：</p>
-<div id="echarts1434" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<div id="echarts8816" style="width: 81%;height: 400px;margin: 0 auto"></div>
 <script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts1434'));
+        var myChart = echarts.init(document.getElementById('echarts8816'));
 
         // 指定图表的配置项和数据
         var option = {
@@ -195,11 +195,11 @@ for (var i = 0; i < 100; i++) {
 <p>然后我们可以通过点击<strong>显示代码</strong>得到 ECharts 的配置参数：</p>
 <p><img src="http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/ebe5dd074d1eaf2b305cf609ff43a988.png-960.jpg" alt="配置参数"></p>
 <p>把这段配置参数拷贝复制到我们的博客里面，直接粘贴到 ECharts <code>tag</code> 里面，就可以了：</p>
-<div id="echarts5958" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<div id="echarts1768" style="width: 81%;height: 400px;margin: 0 auto"></div>
 <script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts5958'));
+        var myChart = echarts.init(document.getElementById('echarts1768'));
 
         // 指定图表的配置项和数据
         var option = {
@@ -219,6 +219,7 @@ for (var i = 0; i < 100; i++) {
         }
     },
     legend: {
+        bottom: 5,
         data: ["女性", "男性"]
     },
     toolbox: {
@@ -228,16 +229,6 @@ for (var i = 0; i < 100; i++) {
                 show: true
             },
             dataZoom: {
-                show: true
-            },
-            dataView: {
-                show: true,
-                readOnly: true
-            },
-            restore: {
-                show: true
-            },
-            saveAsImage: {
                 show: true
             }
         }
@@ -275,6 +266,9 @@ for (var i = 0; i < 100; i++) {
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
 </script>
+<blockquote>
+<p>Tips: 右上角的<strong>区域缩放</strong>工具可以缩放图中的局部区域，试试看吧。</p>
+</blockquote>
 <p>怎么样，是不是非常的方便。</p>
 ]]></content>
     
@@ -294,11 +288,11 @@ for (var i = 0; i &lt; 100; i++) {
 }
 &lt;/script&gt;
 
-&lt;div id=&quot;echarts3370&quot; style=&quot;width: 100%;height: 250px;margin: 0 auto&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;echarts2214&quot; style=&quot;width: 100%;height: 250px;margin: 0 auto&quot;&gt;&lt;/div&gt;
 &lt;script src=&quot;http://echarts.baidu.com/dist/echarts.common.min.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById(&#39;echarts3370&#39;));
+        var myChart = echarts.init(document.getElementById(&#39;echarts2214&#39;));
 
         // 指定图表的配置项和数据
         var option = option = {
