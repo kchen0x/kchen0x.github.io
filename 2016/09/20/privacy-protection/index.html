@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Kun Chen"><meta name="description" content="优点选用Shadowsocks配合Proxifier来制定代理规则，FireFox来实现代理浏览。可以有主力浏览器Chrome、Safari用于办公的同时，FireFox实现完全隐私的网页浏览。在公司网络下可以有选择的暴露自己浏览记录，公共网络下可以完全保护自"><meta name="keywords" content="网络"><title>如何在公司网络中保护上网隐私不被监控 · K. Chen</title><link rel="icon" href="/favicon.ico"><link rel="canonical" href="http://kchen.cc/2016/09/20/privacy-protection/"><link rel="alternate" href="/atom.xml" title="K. Chen"><link rel="stylesheet" href="/fonts/iconfont/iconfont.css"><link rel="stylesheet" href="/css/style.css"><script type="text/javascript">var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?Your baidu Analytics ID";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'Your Google Analytics ID', 'auto');
+ga('send', 'pageview');</script></head><body><div id="main"><header><a href="/." class="logo">K. Chen</a><ul class="nav"><li class="nav-link"><a href="/" target="_self">Home</a></li><li class="nav-link"><a href="/archives/" target="_self">Archives</a></li><li class="nav-link"><a href="/tags/" target="_self">Tags</a></li><li class="nav-link"><a href="/about/" target="_self">About</a></li></ul></header><section id="container"><article class="post"><h1 class="post-title">如何在公司网络中保护上网隐私不被监控</h1><span class="post-time">Sep 20, 2016</span><div id="sidebar" class="post-sidebar"><h3 class="heading">Contents</h3><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#优点"><span class="toc-text">优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shadowsock-的设置"><span class="toc-text">Shadowsock 的设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Proxifier-的设置"><span class="toc-text">Proxifier 的设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#添加-Proxies"><span class="toc-text">添加 Proxies</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加-Rules-："><span class="toc-text">添加 Rules ：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置远程-DNS-解析"><span class="toc-text">配置远程 DNS 解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-FireFox-隐蔽所有上网信息"><span class="toc-text">配置 FireFox 隐蔽所有上网信息</span></a></li></ol></div><div class="post-content"><script src="/assets/js/APlayer.min.js"> </script><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>选用 Shadowsocks 配合 Proxifier 来制定代理规则，FireFox 来实现代理浏览。</p>
+<p>可以有主力浏览器 Chrome、Safari 用于办公的同时，FireFox 实现完全隐私的网页浏览。在公司网络下可以有选择的暴露自己浏览记录，公共网络下可以完全保护自己不被窥探。（如果使用 FireFox 作为主力浏览器的话，同样可以用 Chrome 来作为隐私浏览器）</p>
+<h2 id="Shadowsock-的设置"><a href="#Shadowsock-的设置" class="headerlink" title="Shadowsock 的设置"></a>Shadowsock 的设置</h2><p>首先需要有 Shadowsocks 的服务器，无论是去买还是还是自己搭，服务器的地址选在什么地方（这决定了访问速度和是否可以翻墙）都可以。</p>
+<p>然后在 <a href="https://shadowsocks.org/en/index.html" target="_blank" rel="external">https://shadowsocks.org/en/index.html</a> 下载并安装 Shadowsocks 的客户端，安装完后打开并添加新的代理服务器。</p>
+<h2 id="Proxifier-的设置"><a href="#Proxifier-的设置" class="headerlink" title="Proxifier 的设置"></a>Proxifier 的设置</h2><h3 id="添加-Proxies"><a href="#添加-Proxies" class="headerlink" title="添加 Proxies"></a>添加 Proxies</h3><p>可以选择Https、Socks4、Socks5，此处我们选择配合 Shadowsocks 使用，所以选择Socks5。</p>
+<p>地址填写127.0.0.1，端口1080，协议SOCKS Version 5，完成。</p>
+<h3 id="添加-Rules-："><a href="#添加-Rules-：" class="headerlink" title="添加 Rules ："></a>添加 Rules ：</h3><p>首先确定有以下三条 Rules：</p>
+<ul>
+<li>Applications: Shadowsocks, Target: Any, Action: Direct</li>
+<li>Applications: Any, Target: localhost; 127.0.0.1; ::1; %ComputerName%, Action: Direct</li>
+<li>Applications: Any, Target: Any, Action: Direct</li>
+</ul>
+<p>然后添加 Firefox 来实现代理：</p>
+<ul>
+<li>Applications: fi*fox, Target: Any, Action: Proxy SOCKS5</li>
+</ul>
+<blockquote>
+<p>Tips: 其实在这里你可以书写各种各样的规则来决定自己其他网络服务（比如聊天软件）经过代理加密。</p>
+</blockquote>
+<h3 id="配置远程-DNS-解析"><a href="#配置远程-DNS-解析" class="headerlink" title="配置远程 DNS 解析"></a>配置远程 DNS 解析</h3><p>在 DNS 中勾选 Resolve hostname through proxy 即可在服务器端解析 DNS， 保证本地信息不会泄露。</p>
+<h2 id="配置-FireFox-隐蔽所有上网信息"><a href="#配置-FireFox-隐蔽所有上网信息" class="headerlink" title="配置 FireFox 隐蔽所有上网信息"></a>配置 FireFox 隐蔽所有上网信息</h2><p>至此使用 FireFox 上网产生的所有信息从本地到服务器端已经处于加密状态，无法在这一环节被任何手段监听，但是如果你是用的是 Autoproxy 而不是 Proxifier 做的浏览器代理，就会在本地解析 DNS 这样访问的 DNS 解析就会被监听，所以需要在 FireFox 中作如下改动：</p>
+<ul>
+<li>打开 FireFox，在地址栏输入 <code>about:fonfig</code></li>
+<li>搜索 <code>network.dns.disableIPv6</code>，双击把值改成 True （如果服务器不支持 ipv6）</li>
+<li>搜索 <code>network.proxy.socks_remote_dns</code>，双击把值改成 True （如果使用 Autoproxy 进行代理）</li>
+</ul>
+<p>打开 FireFox 并启动无痕浏览模式，这样使用 FireFox 的所有浏览记录都将不会被监听，可以放心使用了。</p>
+</div></article><div class="tags"><a href="/tags/网络/">网络</a></div><div class="paginator"><a href="/2016/11/03/hexo-plugin-owl/" class="prev"><i class="iconfont icon-left"></i><span> Prev</span></a><a href="/2016/04/17/vim-tutorial/" class="next"><span>Next</span><i class="iconfont icon-right"></i></a></div><section id="comments"><div id="disqus_thread"></div></section><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'http://kchen.cc/2016/09/20/privacy-protection/';
+    this.page.identifier = '2016/09/20/privacy-protection/';
+    this.page.title = '如何在公司网络中保护上网隐私不被监控';
+};
+(function() {
+var d = document, s = d.createElement('script');
+
+s.src = '//Quentin.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();</script></section><footer><div class="social"><a href="mailto:quentin.chen@foxmail.com" title="email" class="iconfont icon-email"></a><a href="https://www.facebook.com/quentin.chenkun" title="facebook" class="iconfont icon-facebook"></a><a href="https://github.com/quentin-chen" title="github" class="iconfont icon-github"></a><a href="http://weibo.com/quentinchen" title="weibo" class="iconfont icon-weibo"></a><a href="https://www.zhihu.com/people/chen-kun-92-07" title="zhihu" class="iconfont icon-zhihu"></a><a href="/atom.xml" title="rss" class="iconfont icon-rss"></a></div><div class="copyright"><p class="power">Powered by <a href="https://hexo.io/">Hexo</a> and Theme by <a href="https://github.com/ahonn/hexo-theme-even"> Even</a></p><p class="since">&copy;2014-2016<span class="heart"><i class="iconfont icon-heart"></i></span><span class="author">Kun Chen</span></p></div><div id="back2top"><i class="iconfont icon-up"></i></div></footer></div><script src="/js/zepto.min.js"></script><script src="/js/theme.js"></script></body></html>

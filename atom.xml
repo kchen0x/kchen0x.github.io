@@ -192,6 +192,53 @@
   </entry>
   
   <entry>
+    <title>如何在公司网络中保护上网隐私不被监控</title>
+    <link href="http://kchen.cc/2016/09/20/privacy-protection/"/>
+    <id>http://kchen.cc/2016/09/20/privacy-protection/</id>
+    <published>2016-09-20T13:19:23.000Z</published>
+    <updated>2016-11-05T07:45:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>选用 Shadowsocks 配合 Proxifier 来制定代理规则，FireFox 来实现代理浏览。</p>
+<p>可以有主力浏览器 Chrome、Safari 用于办公的同时，FireFox 实现完全隐私的网页浏览。在公司网络下可以有选择的暴露自己浏览记录，公共网络下可以完全保护自己不被窥探。（如果使用 FireFox 作为主力浏览器的话，同样可以用 Chrome 来作为隐私浏览器）</p>
+<h2 id="Shadowsock-的设置"><a href="#Shadowsock-的设置" class="headerlink" title="Shadowsock 的设置"></a>Shadowsock 的设置</h2><p>首先需要有 Shadowsocks 的服务器，无论是去买还是还是自己搭，服务器的地址选在什么地方（这决定了访问速度和是否可以翻墙）都可以。</p>
+<p>然后在 <a href="https://shadowsocks.org/en/index.html" target="_blank" rel="external">https://shadowsocks.org/en/index.html</a> 下载并安装 Shadowsocks 的客户端，安装完后打开并添加新的代理服务器。</p>
+<h2 id="Proxifier-的设置"><a href="#Proxifier-的设置" class="headerlink" title="Proxifier 的设置"></a>Proxifier 的设置</h2><h3 id="添加-Proxies"><a href="#添加-Proxies" class="headerlink" title="添加 Proxies"></a>添加 Proxies</h3><p>可以选择Https、Socks4、Socks5，此处我们选择配合 Shadowsocks 使用，所以选择Socks5。</p>
+<p>地址填写127.0.0.1，端口1080，协议SOCKS Version 5，完成。</p>
+<h3 id="添加-Rules-："><a href="#添加-Rules-：" class="headerlink" title="添加 Rules ："></a>添加 Rules ：</h3><p>首先确定有以下三条 Rules：</p>
+<ul>
+<li>Applications: Shadowsocks, Target: Any, Action: Direct</li>
+<li>Applications: Any, Target: localhost; 127.0.0.1; ::1; %ComputerName%, Action: Direct</li>
+<li>Applications: Any, Target: Any, Action: Direct</li>
+</ul>
+<p>然后添加 Firefox 来实现代理：</p>
+<ul>
+<li>Applications: fi*fox, Target: Any, Action: Proxy SOCKS5</li>
+</ul>
+<blockquote>
+<p>Tips: 其实在这里你可以书写各种各样的规则来决定自己其他网络服务（比如聊天软件）经过代理加密。</p>
+</blockquote>
+<h3 id="配置远程-DNS-解析"><a href="#配置远程-DNS-解析" class="headerlink" title="配置远程 DNS 解析"></a>配置远程 DNS 解析</h3><p>在 DNS 中勾选 Resolve hostname through proxy 即可在服务器端解析 DNS， 保证本地信息不会泄露。</p>
+<h2 id="配置-FireFox-隐蔽所有上网信息"><a href="#配置-FireFox-隐蔽所有上网信息" class="headerlink" title="配置 FireFox 隐蔽所有上网信息"></a>配置 FireFox 隐蔽所有上网信息</h2><p>至此使用 FireFox 上网产生的所有信息从本地到服务器端已经处于加密状态，无法在这一环节被任何手段监听，但是如果你是用的是 Autoproxy 而不是 Proxifier 做的浏览器代理，就会在本地解析 DNS 这样访问的 DNS 解析就会被监听，所以需要在 FireFox 中作如下改动：</p>
+<ul>
+<li>打开 FireFox，在地址栏输入 <code>about:fonfig</code></li>
+<li>搜索 <code>network.dns.disableIPv6</code>，双击把值改成 True （如果服务器不支持 ipv6）</li>
+<li>搜索 <code>network.proxy.socks_remote_dns</code>，双击把值改成 True （如果使用 Autoproxy 进行代理）</li>
+</ul>
+<p>打开 FireFox 并启动无痕浏览模式，这样使用 FireFox 的所有浏览记录都将不会被监听，可以放心使用了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h2 id=&quot;优点&quot;&gt;&lt;a href=&quot;#优点&quot; class=&quot;headerlink&quot; title=&quot;优点&quot;&gt;&lt;/a&gt;优点&lt;/h2&gt;&lt;p&gt;选用 Shadowsocks 配合 Pr
+    
+    </summary>
+    
+    
+      <category term="网络" scheme="http://kchen.cc/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vim编辑器实用基础</title>
     <link href="http://kchen.cc/2016/04/17/vim-tutorial/"/>
     <id>http://kchen.cc/2016/04/17/vim-tutorial/</id>
