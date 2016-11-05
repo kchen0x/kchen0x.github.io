@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kchen.cc/"/>
-  <updated>2016-11-05T16:44:22.000Z</updated>
+  <updated>2016-11-05T16:51:57.000Z</updated>
   <id>http://kchen.cc/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://kchen.cc/2016/11/04/new-beginning/"/>
     <id>http://kchen.cc/2016/11/04/new-beginning/</id>
     <published>2016-11-05T03:12:40.000Z</published>
-    <updated>2016-11-05T16:44:22.000Z</updated>
+    <updated>2016-11-05T16:51:57.000Z</updated>
     
     <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
 <p>新家搬迁到了 <a href="http://kchen.cc">KChen.cc</a> </p>
@@ -35,11 +35,10 @@
 <p>最后，我和<a href="http://blog.sciencenet.cn/blog-502444-564473.html" target="_blank" rel="external">「中国人在发表英文论文时汉字姓名究竟应该如何写？」- 赵斌的博文</a> 一文达成了共识，为了保持和自己的论文和刊物保持一致，应该使用认可度最高的英文汉字缩写方案，所以我敲定了 K. Chen 这个缩写形式。而且「<strong>陈</strong>」作为中国的大姓，其拼音在英语世界也是很好辨认的，这比保留 Kun 好了许多。</p>
 <a id="more"></a>
 <hr>
-<p>借着域名搬迁的东风，我又重新研究起了前段时间无缘无故死掉的 Hexo[^hexo]。许久不看，我发现 Hexo 的更新非常巨大，最大的变化当然就是相当强悍和丰富的插件库了，已经有100多个插件被收录到了官方的插件列表里面去，丰富的插件系统的接入支持，使得 Hexo 的功能变得十分强大。</p>
+<p>借着域名搬迁的东风，我又重新研究起了前段时间无缘无故死掉的 Hexo<a href="A fast, simple &amp; powerful blog framework.">^ hexo</a>。许久不看，我发现 Hexo 的更新非常巨大，最大的变化当然就是相当强悍和丰富的插件库了，已经有100多个插件被收录到了官方的插件列表里面去，丰富的插件系统的接入支持，使得 Hexo 的功能变得十分强大。</p>
 <p>比如 BrowserSync 可以动态预览自己的网页，Deploy 可以快速部署网站到不同的博客系统，Aplayer 可以支持强大的多媒体接入等等。 这些功能都让作为静态博客系统的 Hexo 变得灵活多变起来。虽然在后期的浏览中，我发现其实许多插件都已经没有人在维护，导致依赖库过期或者 bug 没有修复等问题，但是，好在这是一个开源的项目，随着时间的推移，会有越来越多的人加入到插件开发的行列中来，也会有更多的大神来实现各种痛点功能。</p>
 <p>另外一个大的发现就是，现在官方收录的主题比之前多出了许多，而且依赖新的特性，其中非常多的主题都有很漂亮的显示效果，我之前一直在使用的 yilla 自从上次宕了以后就出现的一些小毛病，所以这次我又细细地挑选了一遍所有的主题，最后发现 <a href="http://www.ahonn.me" target="_blank" rel="external">Ahonn 君</a>开发的 <a href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="external">Even</a> 主题这种小清新的配色和设计是我的心头好，所以果断安装用之。发现一些小 Bug，在 Github 上和作者积极地交流中。</p>
 <p>总的说来，自己的博客从域名到主题都全新的换了一套。希望自己以后可以多抽出些时间，多记录，多思考，多分享。</p>
-<p>[^hexo]: A fast, simple &amp; powerful blog framework.</p>
 ]]></content>
     
     <summary type="html">
