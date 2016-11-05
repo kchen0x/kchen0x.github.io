@@ -1814,9 +1814,10 @@
     <link href="http://kchen.cc/2015/11/03/go-to-sa-city/"/>
     <id>http://kchen.cc/2015/11/03/go-to-sa-city/</id>
     <published>2015-11-04T07:58:06.000Z</published>
-    <updated>2016-11-05T05:26:38.000Z</updated>
+    <updated>2016-11-05T18:16:54.000Z</updated>
     
     <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><img src="http://src.aidiao.com/city/photo/guangzhou/1421984043971.jpg" alt="卅城"></p>
+<div id="aplayer0" class="aplayer" style="margin-bottom: 20px;"></div><script>var aplayer0 = new APlayer({element: document.getElementById("aplayer0"),narrow: false,autoplay: true,showlrc: 0,music : {title: "Cloud Atlas End Title",author: "Tom Tykwer",url: "/media/Cloud Atlas End Title.mp3",pic: ""}});aplayer0.init();</script>
 <blockquote>
 <p>【来自《独唱团》第一辑。BY：北山】</p>
 </blockquote>
@@ -1917,6 +1918,7 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;http://src.aidiao.com/city/photo/guangzhou/1421984043971.jpg&quot; alt=&quot;卅城&quot;&gt;&lt;/p&gt;
+&lt;div id=&quot;aplayer0&quot; class=&quot;aplayer&quot; style=&quot;margin-bottom: 20px;&quot;&gt;&lt;/div&gt;&lt;script&gt;var aplayer0 = new APlayer({element: document.getElementById(&quot;aplayer0&quot;),narrow: false,autoplay: true,showlrc: 0,music : {title: &quot;Cloud Atlas End Title&quot;,author: &quot;Tom Tykwer&quot;,url: &quot;/media/Cloud Atlas End Title.mp3&quot;,pic: &quot;&quot;}});aplayer0.init();&lt;/script&gt;
 &lt;blockquote&gt;
 &lt;p&gt;【来自《独唱团》第一辑。BY：北山】&lt;/p&gt;
 &lt;/blockquote&gt;
