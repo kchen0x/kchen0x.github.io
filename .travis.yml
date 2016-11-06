@@ -14,17 +14,17 @@ install:
   - npm install # 安装额外不在 package.json 中的插件
 
 script:
-  - hexo g
+  - hexo g -d
 
-after_script:
-  - cd ./public
-  - git init
-  - git config user.name "Quentin_Chen"
-  - git config user.email "quentin.chen@foxmail.com"
-  - git add .
-  - git commit -m "Updated from TravisCI"
-  - git push --force --quiet "https://${githubToken}@${githubREF}" master:master
-# E: Build LifeCycle
+# after_script:
+#   - cd ./public
+#   - git init
+#   - git config user.name "Quentin_Chen"
+#   - git config user.email "quentin.chen@foxmail.com"
+#   - git add .
+#   - git commit -m "Updated from TravisCI"
+#   - git push --force --quiet "https://${githubToken}@${githubREF}" master:master
+# # E: Build LifeCycle
 
 env:
  global:
