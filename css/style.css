@@ -374,7 +374,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lantinghei SC", "Source Han Sans", "Helvetica Neue", Arial, sans-serif;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -410,7 +410,7 @@ h6 {
   font-size: 16px; }
 
 #main {
-  width: 800px;
+  width: 740px;
   margin: 0 auto; }
 
 #container {
@@ -426,7 +426,7 @@ header {
   header .nav {
     float: right;
     margin-top: 0;
-    font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
     header .nav .nav-link {
       display: inline-block;
       padding: 20px 10px; }
@@ -454,7 +454,7 @@ footer {
     margin-bottom: 10px;
     color: #8a8a8a;
     text-align: center;
-    font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
     footer .copyright .heart {
       margin: 0 5px; }
       footer .copyright .heart .icon-heart {
@@ -484,7 +484,7 @@ footer {
     margin: 0px;
     font-weight: 400;
     font-size: 26px;
-    font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
     .post .post-title .post-link:hover {
       border-bottom: 2px solid #c05b4d;
       transition: 0.1s; }
@@ -494,32 +494,32 @@ footer {
     color: #8a8a8a; }
   .post .post-content h1 {
     font-weight: 400;
-    font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
     .post .post-content h1:target {
       color: #c05b4d; }
   .post .post-content h2 {
     font-weight: 400;
-    font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
     .post .post-content h2:target {
       color: #c05b4d; }
   .post .post-content h3 {
     font-weight: 400;
-    font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
     .post .post-content h3:target {
       color: #c05b4d; }
   .post .post-content h4 {
     font-weight: 400;
-    font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
     .post .post-content h4:target {
       color: #c05b4d; }
   .post .post-content h5 {
     font-weight: 400;
-    font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
     .post .post-content h5:target {
       color: #c05b4d; }
   .post .post-content h6 {
     font-weight: 400;
-    font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
     .post .post-content h6:target {
       color: #c05b4d; }
   .post .post-content .headerlink:hover {
@@ -566,9 +566,9 @@ footer {
   width: 200px;
   position: absolute;
   padding: 10px;
-  margin-left: 780px;
+  margin-left: 720px;
   font-size: 15px;
-  font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif;
+  font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif;
   border-radius: 5px;
   background: rgba(248, 245, 236, 0.6);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
@@ -593,7 +593,7 @@ footer {
 code, pre {
   padding: 7px;
   font-size: 13px;
-  font-family: Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: Monaco, Consolas, Menlo, Consolas, monospace;
   background: #f8f5ec; }
 
 code {
@@ -713,7 +713,7 @@ code {
     display: inline-block;
     font-weight: bold;
     font-size: 20px;
-    font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
     .paginator .prev span,
     .paginator .next span {
       margin: 0 5px; }
@@ -739,7 +739,7 @@ code {
   .home .read-more {
     color: #c05b4d;
     font-size: 1.1em;
-    font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
     .home .read-more:hover {
       border-bottom: 1px solid #c05b4d; }
 
@@ -749,12 +749,12 @@ code {
   max-width: 520px; }
   .archive .tags-title,
   .archive .categorys-title {
-    font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
   .archive .year {
     margin: 20px 0;
     font-size: 28px;
     font-weight: 400;
-    font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
   .archive .post-item {
     padding: 2px 10px;
     border-left: 1px solid #cacaca; }
@@ -783,7 +783,7 @@ code {
 .tags {
   margin-top: 35px;
   padding-top: 20px;
-  font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif;
+  font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif;
   border-top: 1px solid #e6e6e6; }
   .tags a {
     margin-right: 5px;
@@ -797,7 +797,7 @@ code {
   margin-bottom: 5em;
   text-align: center;
   color: #c05b4d;
-  font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+  font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
   .tagcloud .total {
     margin-bottom: 10px; }
     .tagcloud .total p {
@@ -822,7 +822,7 @@ code {
   margin-bottom: 5em;
   text-align: center;
   color: #c05b4d;
-  font-family: Athelas, Times New Roman, STHeiti, Microsoft Yahei, serif; }
+  font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
   .categories .total {
     margin-bottom: 20px; }
     .categories .total p {
@@ -848,7 +848,7 @@ code {
       color: #c05b4d;
       transform: scale(1.05); }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 740px) {
   #main {
     width: 100%; }
   header {
