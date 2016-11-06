@@ -374,7 +374,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: "Lantinghei SC", "Source Han Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -426,7 +426,7 @@ header {
   header .nav {
     float: right;
     margin-top: 0;
-    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
     header .nav .nav-link {
       display: inline-block;
       padding: 20px 10px; }
@@ -439,14 +439,15 @@ header {
         border-bottom: 2px solid #c05b4d; }
 
 footer {
-  padding-top: 2em; }
+  padding-top: 2em;
+  font-size: 11pt; }
   footer .social {
     display: block;
     text-align: center; }
     footer .social .iconfont {
       display: inline-block;
       margin-right: 10px;
-      font-size: 30px; }
+      font-size: 40px; }
       footer .social .iconfont:hover {
         color: #c05b4d; }
   footer .copyright {
@@ -454,7 +455,7 @@ footer {
     margin-bottom: 10px;
     color: #8a8a8a;
     text-align: center;
-    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
     footer .copyright .heart {
       margin: 0 5px; }
       footer .copyright .heart .icon-heart {
@@ -484,7 +485,7 @@ footer {
     margin: 0px;
     font-weight: 400;
     font-size: 26px;
-    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
     .post .post-title .post-link:hover {
       border-bottom: 2px solid #c05b4d;
       transition: 0.1s; }
@@ -494,32 +495,32 @@ footer {
     color: #8a8a8a; }
   .post .post-content h1 {
     font-weight: 400;
-    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
     .post .post-content h1:target {
       color: #c05b4d; }
   .post .post-content h2 {
     font-weight: 400;
-    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
     .post .post-content h2:target {
       color: #c05b4d; }
   .post .post-content h3 {
     font-weight: 400;
-    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
     .post .post-content h3:target {
       color: #c05b4d; }
   .post .post-content h4 {
     font-weight: 400;
-    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
     .post .post-content h4:target {
       color: #c05b4d; }
   .post .post-content h5 {
     font-weight: 400;
-    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
     .post .post-content h5:target {
       color: #c05b4d; }
   .post .post-content h6 {
     font-weight: 400;
-    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
     .post .post-content h6:target {
       color: #c05b4d; }
   .post .post-content .headerlink:hover {
@@ -568,7 +569,7 @@ footer {
   padding: 10px;
   margin-left: 720px;
   font-size: 15px;
-  font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif;
+  font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   border-radius: 5px;
   background: rgba(248, 245, 236, 0.6);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
@@ -713,7 +714,7 @@ code {
     display: inline-block;
     font-weight: bold;
     font-size: 20px;
-    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
     .paginator .prev span,
     .paginator .next span {
       margin: 0 5px; }
@@ -739,7 +740,7 @@ code {
   .home .read-more {
     color: #c05b4d;
     font-size: 1.1em;
-    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
     .home .read-more:hover {
       border-bottom: 1px solid #c05b4d; }
 
@@ -749,12 +750,12 @@ code {
   max-width: 520px; }
   .archive .tags-title,
   .archive .categorys-title {
-    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
   .archive .year {
     margin: 20px 0;
     font-size: 28px;
     font-weight: 400;
-    font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+    font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
   .archive .post-item {
     padding: 2px 10px;
     border-left: 1px solid #cacaca; }
@@ -783,7 +784,7 @@ code {
 .tags {
   margin-top: 35px;
   padding-top: 20px;
-  font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif;
+  font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   border-top: 1px solid #e6e6e6; }
   .tags a {
     margin-right: 5px;
@@ -797,7 +798,7 @@ code {
   margin-bottom: 5em;
   text-align: center;
   color: #c05b4d;
-  font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+  font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
   .tagcloud .total {
     margin-bottom: 10px; }
     .tagcloud .total p {
@@ -822,7 +823,7 @@ code {
   margin-bottom: 5em;
   text-align: center;
   color: #c05b4d;
-  font-family: Athelas, Times New Roman, "Lantinghei SC", "Source Han Sans", STHeiti, Microsoft Yahei, serif; }
+  font-family: Athelas, Times New Roman, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
   .categories .total {
     margin-bottom: 20px; }
     .categories .total p {
