@@ -19,7 +19,7 @@ script:
 after_success:
   - git config --global user.name "Quentin_Chen"
   - git config --global user.email "quentin.chen@foxmail.com"
-  - sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
+  - sed -i'' "/^ *repo/s~github\.com~${githubToken}@github.com~" _config.yml
   - cat _config.yml
   - hexo d
 # after_script:
