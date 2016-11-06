@@ -7,15 +7,21 @@ branches:
     - blog-source
 
 before_install:
-- npm install -g hexo-cli # 安装 hexo
+  - npm install -g hexo-cli # 安装 hexo
 
 # S: Build Lifecycle
 install:
   - npm install # 安装额外不在 package.json 中的插件
 
 script:
-  - hexo g -d
+  - hexo g
 
+after_success:
+  - git config --global user.name "Quentin_Chen"
+  - git config --global user.email "quentin.chen@foxmail.com"
+  - sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
+  - cat _config.yml
+  - hexo d
 # after_script:
 #   - cd ./public
 #   - git init
@@ -25,7 +31,3 @@ script:
 #   - git commit -m "Updated from TravisCI"
 #   - git push --force --quiet "https://${githubToken}@${githubREF}" master:master
 # # E: Build LifeCycle
-
-env:
- global:
-   - githubREF: github.com/quentin-chen/quentin-chen.github.io.git
