@@ -25,7 +25,6 @@ install:
   - npm install # 安装 package.json 中的插件
 
 script:
-  - mv ./.travis/echarts-template.html ./node_modules/hexo-tag-echarts
   - hexo generate
 
 after_success:
