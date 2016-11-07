@@ -82,7 +82,7 @@ Echarts 作为国产工具，在语言上对中文开发者有着天然的优势
 
 ## Hexo 中的 Echarts
 
-Hexo 的 [Echarts 插件![GitHub stars](https://img.shields.io/github/stars/quentin-chen/hexo-tag-echarts3.svg?style=social&label=Star)]()是我根据周旅军的原型插件[^1]开发的，已收录于 Hexo [官方插件页](https://hexo.io/plugins/)。插件的安装和使用非常的简单，只需要进入博客目录，然后安装：
+Hexo 的 [Echarts 插件![GitHub stars](https://img.shields.io/github/stars/quentin-chen/hexo-tag-echarts3.svg?style=social&label=Star)](https://github.com/quentin-chen/hexo-tag-echarts3)是我根据周旅军的原型插件[^1]开发的，已收录于 Hexo [官方插件页](https://hexo.io/plugins/)。插件的安装和使用非常的简单，只需要进入博客目录，然后安装：
 
 ```bash
 npm install hexo-tag-echarts3 --save
