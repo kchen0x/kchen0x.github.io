@@ -83,7 +83,7 @@ sitemap:
 deploy:
   - type: git
     repo: https://github.com/quentin-chen/quentin-chen.github.io.git
-  # - type: git
-  #   repo: git@git.coding.net:quentinchen/quentinchen.git,master
+  - type: git
+    repo: git@git.coding.net:quentinchen/quentinchen.git,master
   - type: baidu_url_submitter
 

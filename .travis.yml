@@ -7,6 +7,10 @@ branches:
     - blog-source
 
 before_install:
+  - openssl aes-256-cbc -K $encrypted_a0b7f0848317_key -iv $encrypted_a0b7f0848317_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
+  - eval $(ssh-agent)
+  - ssh-add ~/.ssh/id_rsa
   - npm install -g hexo-cli # 安装 hexo
   - git clone -b mod https://github.com/quentin-chen/hexo-theme-even.git themes/even
 
@@ -22,12 +26,4 @@ after_success:
   - git config --global user.email "quentin.chen@foxmail.com"
   - sed -i'' "/^ *repo/s~github\.com~${githubToken}@github.com~" _config.yml
   - hexo deploy
-# after_script:
-#   - cd ./public
-#   - git init
-#   - git config user.name "Quentin_Chen"
-#   - git config user.email "quentin.chen@foxmail.com"
-#   - git add .
-#   - git commit -m "Updated from TravisCI"
-#   - git push --force --quiet "https://${githubToken}@${githubREF}" master:master
-# # E: Build LifeCycle
+# E: Build LifeCycle
