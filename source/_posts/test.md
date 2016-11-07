@@ -75,4 +75,6 @@ This is a test[^1].
 };
 {% endecharts %}
 
+{% youtube FtWJfcLEEv0 %}
+
 [^1]: footnoets.
