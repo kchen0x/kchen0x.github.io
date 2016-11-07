@@ -11,7 +11,7 @@ before_install:
 
 # S: Build Lifecycle
 install:
-  - npm install --save hexo-deployer-git hexo-renderer-jade hexo-renderer-scss hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive hexo-generator-tag hexo-tag-owl hexo-tag-aplayer hexo-footnotes hexo-baidu-url-submit hexo-generator-seo-friendly-sitemap hexo-tag-echarts hexo-generator-category hexo-generator-index hexo-renderer-ejs hexo-renderer-stylus
+  # - npm install --save hexo-deployer-git hexo-renderer-jade hexo-renderer-scss hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive hexo-generator-tag hexo-tag-owl hexo-tag-aplayer hexo-footnotes hexo-baidu-url-submit hexo-generator-seo-friendly-sitemap hexo-tag-echarts hexo-generator-category hexo-generator-index hexo-renderer-ejs hexo-renderer-stylus
   - npm install # 安装额外不在 package.json 中的插件
 
 script:
