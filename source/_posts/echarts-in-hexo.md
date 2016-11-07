@@ -82,27 +82,27 @@ Echarts 作为国产工具，在语言上对中文开发者有着天然的优势
 
 ## Hexo 中的 Echarts
 
-Hexo 的 Echarts 插件由周旅军开发，已收录于 Hexo [官方插件页](https://hexo.io/plugins/)。插件的安装和使用非常的简单，只需要进入博客目录，然后安装：
+Hexo 的 Echarts 插件是我根据周旅军的原型插件[^1]开发的，已收录于 Hexo [官方插件页](https://hexo.io/plugins/)。插件的安装和使用非常的简单，只需要进入博客目录，然后安装：
 
 ```bash
-npm install hexo-tag-echarts --save
+npm install hexo-tag-echarts3 --save
 ```
 
 之后在文章内使用 ECharts 的 `tag` 就可以了：
 
 ```
-{% echarts 400 '81%' %}
+{% echarts 400 '85%' %}
 \\TODO option goes here
 {% endecharts %}
 
 ```
 
-其中 `echarts` 是标签名，不需要更改，`400` 是图表容器的高度，`81%` 是图表容器的相对宽度。而在 `tag` 之间的部分，则是需要自己填充的图表数据了。
+其中 `echarts` 是标签名，不需要更改，`400` 是图表容器的高度，`85%` 是图表容器的相对宽度。而在 `tag` 之间的部分，则是需要自己填充的图表数据了。
 
 我们来看一个使用样例：
 
 ```
-{% echarts 400 '81%' %}
+{% echarts 400 '85%' %}
 {
     tooltip : {
         trigger: 'axis',
@@ -341,3 +341,4 @@ ECharts 的官方文档详细的介绍了如何在开发中使用 ECharts，如�
 
 怎么样，是不是非常的方便。
 
+[^1]: 周旅军的 Echarts 插件已不再维护，我的几个 pull request 都没有响应，所以才根据它的原型，重做了这个新的插件。
