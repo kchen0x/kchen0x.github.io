@@ -5,7 +5,7 @@ tags:
     - Hexo
 ---
 
-An useful media tag for [Hexo] 3.x, [Demo page]
+An useful media tag for [Hexo] 3.x, [Demo page]. Keep for reference.
 
 ## Features ##
 
@@ -23,6 +23,8 @@ An useful media tag for [Hexo] 3.x, [Demo page]
   * [Giphy](http://giphy.com/)
 * Auto stylesheet embedding
 
+<!--more-->
+
 ## Installation ##
 
 Run the following command in the root directory of hexo:
@@ -30,8 +32,6 @@ Run the following command in the root directory of hexo:
 ```
 npm install hexo-tag-owl --save
 ```
-
-<!--more-->
 
 ## Introduction ##
 

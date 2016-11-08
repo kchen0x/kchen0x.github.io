@@ -8,9 +8,11 @@ tag:
 
 ## Chnroutes 项目
 
-**教程的目的是要达到通过执行路由脚本,可以让用户在使用vpn作为默认网络网关的时候, 不使用vpn进行对中国国内ip的访问, 从而减轻vpn的负担, 和增加访问国内网站的速度。**
+> 教程的目的是要达到通过执行路由脚本,可以让用户在使用vpn作为默认网络网关的时候, 不使用vpn进行对中国国内ip的访问, 从而减轻vpn的负担, 和增加访问国内网站的速度。
 
 需要利用一个开源项目 https://github.com/fivesheep/chnroutes 这个项目提供了可以直接使用的路由表和简易教程。
+
+<!--more-->
 
 ## Mac用户的安装
 
@@ -24,9 +26,7 @@ tag:
 - 下载 `chnroutes.py`
 - 从终端进入下载目录, 执行 python chnroutes.py -p win, 执行之后会生成 `vpnup.bat` 和 `vpndown.bat` 两个文件.
 
-> 由于Windows上的pptp不支持拨号脚本, 所以也只能在进行拨号之前手动执行 `vpnup.bat` 文件以设置路由表. 而在断开vpn之后, 如果你觉得有必要, 可以运行 `vpndown.bat` 把这些路由信息给清理掉.
-
-<!--more-->
+> 由于Windows上的pptp不支持拨号脚本, 所以也只能在进行拨号之前手动执行 `vpnup.bat` 文件以设置路由表. 而在断开vpn之后, 如果你觉得有必要, 可以运行 `vpndown.bat` 把这些路由信息给清理掉。
 
 ## 测试
 

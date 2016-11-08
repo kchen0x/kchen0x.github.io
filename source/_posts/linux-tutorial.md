@@ -11,11 +11,11 @@ tag:
 
 ![LinuxRoute](https://dn-anything-about-doc.qbox.me/linux_base/1-8.png)
 
+<!--more-->
+
 Unix族谱：
 
 ![UnixFamily](https://dn-anything-about-doc.qbox.me/linux_base/1-9.svg)
-
-<!--more-->
 
 ## 二、基本概念及操作
 

@@ -13,6 +13,8 @@ tag:
 
 不喜欢看文字的同学可接通过下面这个游戏直接学习Vim（我还没通关，后面似乎要付费了😂）：
 
+<!--more-->
+
 [Vim Adventures](http://vim-adventures.com)
 
 ![Vim Adventures](http://coolshell.cn//wp-content/uploads/2012/04/vimadventuresgamefun.jpg)
@@ -22,8 +24,6 @@ tag:
 ## 核心用法
 
 我把Vim的核心用法总结为移动、跳转、插入、删除、复制、粘贴、撤销、查找、打开、保存、退出。只要掌握了这几个，就可以进行简单的编辑了，所以：
-
-<!--more-->
 
 ### 移动
 

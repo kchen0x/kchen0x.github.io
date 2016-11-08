@@ -76,13 +76,13 @@ option = {
 
 ![ECharts](http://jquery-plugins.net/image/plugin/echarts-interactive-charting-library-by-baidu.png)
 
-在 [12 Best Charting Libraries for Web Developers - Christopher Watkins](http://blog.udacity.com/2016/03/12-best-charting-libraries-for-web-developers.html)  一文中，博主 Christopher Watkins 向我们介绍了 12 款为网页开发者推荐的绘图库。其中不乏大名鼎鼎的 Google Charts，D3.js 和 HighCharts 这样的富图表库，还有不少其他的特型图表库，它们在展示某些特定的图表时，非常出色。百度开发维护的 Echarts 当然也在其中。
+在 [12 Best Charting Libraries for Web Developers - Christopher Watkins](http://blog.udacity.com/2016/03/12-best-charting-libraries-for-web-developers.html)  一文中，博主 Christopher Watkins 向我们介绍了 12 款为网页开发者推荐的绘图库。其中不乏大名鼎鼎的 Google Charts，D3.js 和 HighCharts 这样的富图表库，还有不少其他的特型图表库，它们在展示某些特定的图表时，非常出色。百度开发维护的 ECharts 当然也在其中。
 
-Echarts 作为国产工具，在语言上对中文开发者有着天然的优势，官方文档对每一个细节、参数、配置都有详尽的说明，对于新手非常的友好。另外一个重要的方面，就是 Echarts 的图表颜值很高，默认的主题和配色可以呈现出优雅漂亮的图表。所以，我也一直选择 Echarts 作为我的网页图表绘图工具。
+ECharts 作为国产工具，在语言上对中文开发者有着天然的优势，官方文档对每一个细节、参数、配置都有详尽的说明，对于新手非常的友好。另外一个重要的方面，就是 ECharts 的图表颜值很高，默认的主题和配色可以呈现出优雅漂亮的图表。所以，我也一直选择 ECharts 作为我的网页图表绘图工具。
 
-## Hexo 中的 Echarts
+## Hexo 中的 ECharts
 
-Hexo 的 [Echarts 插件![GitHub stars](https://img.shields.io/github/stars/quentin-chen/hexo-tag-echarts3.svg?style=social&label=Star)](https://github.com/quentin-chen/hexo-tag-echarts3)是我根据周旅军的原型插件[^1]开发的，已收录于 Hexo [官方插件页](https://hexo.io/plugins/)。插件的安装和使用非常的简单，只需要进入博客目录，然后安装：
+Hexo 的 [ECharts 插件![GitHub stars](https://img.shields.io/github/stars/quentin-chen/hexo-tag-echarts3.svg?style=social&label=Star)](https://github.com/quentin-chen/hexo-tag-echarts3)是我根据周旅军的原型插件[^1]开发的，已收录于 Hexo [官方插件页](https://hexo.io/plugins/)。插件的安装和使用非常的简单，只需要进入博客目录，然后安装：
 
 ```bash
 npm install hexo-tag-echarts3 --save
@@ -167,7 +167,7 @@ npm install hexo-tag-echarts3 --save
 {% endecharts %}
 ```
 
-上述代码渲染出来的 Echarts 图表如下：
+上述代码渲染出来的 ECharts 图表如下：
 
 {% echarts 400 '81%' %}
 {
@@ -233,7 +233,7 @@ npm install hexo-tag-echarts3 --save
 };
 {% endecharts %}
 
-可以看到，在插件的帮助下，在 Hexo 中使用 Echarts 图表是非常方便的，而且得到的图表质量也非常的好。
+可以看到，在插件的帮助下，在 Hexo 中使用 ECharts 图表是非常方便的，而且得到的图表质量也非常的好。
 
 > 按照上例不能正确绘制图表的同学，请照下面的指导修改一下 ECharts 的模板文件。
 > 用编辑器打开博客目录下 `node_modules/hexo-tag-echarts/echarts-template.html` 文件。
@@ -254,7 +254,7 @@ npm install hexo-tag-echarts3 --save
 </script>
 ```
 
-> 这样便可以在使用 Echarts `tag` 的时候载入 JavaScript 资源了。
+> 这样便可以在使用 ECharts `tag` 的时候载入 JavaScript 资源了。
 
 ## 如何用好 ECharts
 
@@ -341,4 +341,4 @@ ECharts 的官方文档详细的介绍了如何在开发中使用 ECharts，如�
 
 怎么样，是不是非常的方便。
 
-[^1]: 周旅军的 Echarts 插件已不再维护，我的几个 pull request 都没有响应，所以才根据它的原型，重做了这个新的插件。
+[^1]: 周旅军的 ECharts 插件已不再维护，我的几个 pull request 都没有响应，所以才根据它的原型，重做了这个新的插件。

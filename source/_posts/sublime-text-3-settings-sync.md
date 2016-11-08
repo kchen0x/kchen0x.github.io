@@ -9,6 +9,8 @@ tag:
 
 > Sublime新人们，我已经为你们打造了一个包含一些基本（主要）插件的配置环境，可以方便`Java`、`Python`以及`前端`开发人员使用，具体使用的插件请详见后面。
 
+<!--more-->
+
 ## 部署教程
 
 ### Fork我的仓库
@@ -16,8 +18,6 @@ tag:
 [点击进入仓库地址](https://coding.net/u/quentinchen/p/User/git)
 
 把我的仓库fork到你自己的仓库（coding.net或者github都是可以的）里面去，以后就在自己的仓库下进行`push`和`pull`操作保持配置的同步了。
-
-<!--more-->
 
 > 不太熟悉Git的小伙伴，如果想偷个懒直接使用我的配置，可以直接点击仓库里的[下载](https://coding.net/u/quentinchen/p/User/git/archive/master)来代替后面的`git clone`部分。
 
