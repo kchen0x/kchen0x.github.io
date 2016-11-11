@@ -9,7 +9,7 @@ tags:
 
 Markdown 基本语法中并不包含脚注[^1](英文称为footnote，用于为正文补充注解（解释性加注）或标明被引用于正文或注解的数据源。一般，脚注会在文章内以符号或数字标示，然后在文章末端（也就是文章的「脚」），列出所有的补充、数据源的详情。脚注让编者补充细节之余，也不影响行文的聚焦，让版面显得更整齐。)语法，但是脚注作为一种常见的文本格式，对于文字编辑工作者，特别是像我这种喜欢插入引文的人而言，有着很大的使用需求。所以 [Multi-Markdown](https://github.com/fletcher/MultiMarkdown-5)[^2](MultiMarkdown, aka MMD, is a derivative of Markdown that adds new syntax features, such as footnotes, tables, and metadata.) 在其扩充语法集中增添了脚注的语法：
 
-<script src="https://gist.github.com/quentin-chen/cb783eacf359abdd112dddae1329aeb8.js"><!--这是一段 Gist 的代码片段--></script>
+<script src="https://coding.net/u/quentinchen/p/resources/git/raw/master/footnotes.js"><!--这是一段 Gist 的代码片段（coding 托管）--></script>
 
 <!--more-->
 
