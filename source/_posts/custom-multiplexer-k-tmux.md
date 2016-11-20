@@ -1,6 +1,6 @@
 title: 为你量身定制的终端多路器 k-tmux
 date: 2016/11/18 10:03:42
-updated: 
+updated: 2016/11/20 00:22:33
 tags:
     - tmux
     - terminal
@@ -118,7 +118,7 @@ sudo make install
 curl -OL https://github.com/tmux/tmux/releases/download/2.3/tmux-2.3.tar.gz
 tar -xvzf tmux-2.3.tar.gz
 cd tmux-2.3
-make
+./configure && make
 sudo make install
 ```
 
