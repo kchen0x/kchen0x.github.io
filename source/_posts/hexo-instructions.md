@@ -612,3 +612,5 @@ before_install:
 [官网]: https://travis-ci.org/
 [Travis CML Installation]: https://github.com/travis-ci/travis.rb#installation
 [Ruby]: http://www.ruby-lang.org/en/downloads/
+[官方列表]: https://hexo.io/themes/
+[yelee]: https://github.com/MOxFIVE/hexo-theme-yelee
