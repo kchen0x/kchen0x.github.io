@@ -17,31 +17,31 @@ tags:
 
 列出当前的规则：
 
-```
+```bash
 $ iptables -L -n
 ```
 
 列出当前的 `NAT` 规则：
 
-```
+```bash
 $ iptables -L -n -t nat
 ```
 
 阻断指定 IP 的流量：
 
-```
+```bash
 $ iptables -I INPUT -s 10.10.10.10 -j DROP
 ```
 
 允许指定 IP 的流量：
 
-```
+```bash
 $ iptables -I INPUT -s 10.10.10.10 -j ACCEPT
 ```
 
 允许指定端口的流量：
 
-```
+```bash
 $ iptables -I INPUT -p tcp -m tcp --dport 31415 -j ACCEPT
 ```
 
@@ -49,13 +49,13 @@ $ iptables -I INPUT -p tcp -m tcp --dport 31415 -j ACCEPT
 
 我们可以通过以下命令来检查当前路由表的防火墙状态：
 
-```
+```bash
 $ sudo iptables -L -n -v
 ```
 
 其中 `-L` 列出规则，`-v` 显示详细信息，我们通过 `-n` 标识禁止 DNS 方案来提高列出规则的速度。我们可以看到类似以下的输出：
 
-```
+```bash
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
  pkts bytes target     prot opt in     out     source               destination
   10   15    DROP       all --   *      *    192.64.174.69           0.0.0.0/0
@@ -69,4 +69,4 @@ Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
 
 其中有一条激活的 `INPUT` 规则，其阻止了来自 192.64.174.69 的所有流量。
 
-更多有关 `ipatable` 的使用，请参阅[相关资料](https://www.cyberciti.biz/faq/rhel-fedorta-linux-iptables-firewall-configuration-tutorial/)。
+> 更多有关 `ipatable` 的使用，请参阅[相关资料](https://www.cyberciti.biz/faq/rhel-fedorta-linux-iptables-firewall-configuration-tutorial/)。
