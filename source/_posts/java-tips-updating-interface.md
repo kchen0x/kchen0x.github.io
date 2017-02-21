@@ -3,6 +3,7 @@ date: 2017/02/19 16:57:50
 updated: 
 tags:
     - Java
+    - Tips
 ---
 
 假设有下列接口：

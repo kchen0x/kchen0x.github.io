@@ -1,8 +1,9 @@
-title: cat 命令的实用技巧
+title: Linux - cat 命令的实用技巧
 date: 2017/02/02 10:58:22
 updated: 
 tags:
     - Linux
+    - Tips
 ---
 
 GNU 文本程序实用技巧系列之——`cat`。`cat` 这个命令是 UNIX 爱好者所热爱的，也是厌恶 UNIX 的人所憎恶的。
