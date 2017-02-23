@@ -8,7 +8,7 @@ tags:
 
 `WeakHashMap` 是一种特别的 `Map` 实现，它的所有键都存储在 `WeakReference` 中。相较于 `HashMap`，`WeakHashMap` 与其功能基本完全一致，除了唯一一个显著的差别：如果 Java 的内存管理器不再有某个键对象的**强引用**，那么这个**条目**就会被从该 Map 中移除。
 
-我们这样来穿件一个 `WeakHashMap`：
+我们这样来创建一个 `WeakHashMap`：
 
 ```java
 HashMap map = new WeakHashMap();
