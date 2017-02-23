@@ -1,5 +1,6 @@
 title: 数据结构与算法分析（一）：基础算法分析
 date: 2016/1/28 00:20:00
+update: 2017/02/23 12:36:00
 tag: 
 - 数据结构
 - 算法 
@@ -12,6 +13,8 @@ tag:
 [数据结构与算法分析（一）：基础算法分析](https://www.zybuluo.com/fyywy520/note/277242)
 
 ![Mindmap](http://7xin49.com1.z0.glb.clouddn.com/img-mind-datastructure-1.png-960.jpg)
+
+<!--more-->
 
 ## 引论：递归例程设计的四条基本法则
 
