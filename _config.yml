@@ -62,7 +62,7 @@ pagination_dir: page
 
 # Generator-archive
 archive_generator:
-  per_page: 20  # 归档页文章数, 参数为 0 时不分页
+  per_page: 0  # 归档页文章数, 参数为 0 时不分页
   yearly: true
   monthly: false
   daily: false
