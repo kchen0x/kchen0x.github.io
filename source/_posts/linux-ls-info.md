@@ -29,7 +29,7 @@ tags:
 ```
 # free -m                # 查看内存使用量和交换区使用量
 # df -h                  # 查看各分区使用情况
-# du -sh <目录名>        # 查看指定目录的大小
+# du -sh <dir>           # 查看指定目录的大小
 # cat /proc/meminfo      # 查看内存信息
 # grep MemTotal /proc/meminfo   # 查看内存总量
 # grep MemFree /proc/meminfo    # 查看空闲内存量
@@ -69,10 +69,10 @@ tags:
 
 ```
 # w                      # 查看活动用户
-# id <用户名>            # 查看指定用户信息
+# id <username>          # 查看指定用户信息
 # last                   # 查看用户登录日志
-# cut -d: -f1 /etc/passwd   # 查看系统所有用户
-# cut -d: -f1 /etc/group    # 查看系统所有组
+# cut -d: -f1 /etc/passwd       # 查看系统所有用户
+# cut -d: -f1 /etc/group        # 查看系统所有组
 # crontab -l             # 查看当前用户的计划任务
 ```
 
