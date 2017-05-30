@@ -9,8 +9,7 @@ tags:
 相较于手动地**初始化**具有初始元素的 set、list 和 map，Java 提供了另外一种更直接和简便的方法来快速完成：**双花括号初始化**。例如下方的代码：
 
 ```java
-public Set<String> mySet = new 
-HashSet<String>();
+public Set<String> mySet = new HashSet<String>();
 mySet.add("one");
 mySet.add("two");
 mySet.add("three");
