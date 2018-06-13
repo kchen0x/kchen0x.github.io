@@ -31,5 +31,6 @@ after_success:
   - git config --global user.name "Kun Chen"
   - git config --global user.email "kchen2991@gmail.com"
   - sed -i'' "/^ *repo/s~github\.com~${githubToken}@github.com~" _config.yml
+  - sed -i'' "/^ *repo/s~git@git\.coding~https:\/\/quentinchen:${codingToken}@git\.coding~"
   - hexo deploy
 # E: Build LifeCycle
