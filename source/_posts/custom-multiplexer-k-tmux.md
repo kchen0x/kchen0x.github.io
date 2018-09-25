@@ -135,7 +135,7 @@ cp ~/.tmux.conf ~/.tmux.conf_bak
 
 2. 获取配置文件
 
-curl https://raw.githubusercontent.com/quentin-chen/k-tmux/master/tmux.conf > ~/.tmux.conf
+curl https://raw.githubusercontent.com/kchen0x/k-tmux/master/tmux.conf > ~/.tmux.conf
 
 3. 完成安装
 ```
@@ -143,7 +143,7 @@ curl https://raw.githubusercontent.com/quentin-chen/k-tmux/master/tmux.conf > ~/
 #### 使用 Github 软连接方式
 
 ```bash
-git clone https://github.com/qunetin-chen/k-tmux.git
+git clone https://github.com/kchen0x/k-tmux.git
 ln -s $PWD/k-tmux/tmux.conf ~/.tmux.conf
 ```
 
