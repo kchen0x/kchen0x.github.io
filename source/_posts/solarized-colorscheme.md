@@ -66,7 +66,7 @@ Solarized 配色的使用范围很广：
 
 还有网站和各种出版物等都可以使用。
 
-![screenshot](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/5fbcd923003434962c387ad1b43a6939.png-960.jpg)
+![screenshot](http://data.kchen.cc/mac_qrsync/5fbcd923003434962c387ad1b43a6939.png-960.jpg)
 
 这是我在我在 iTerm2、Tmux 和 Vim 中搭配使用的 Solarized dark 配色。
 

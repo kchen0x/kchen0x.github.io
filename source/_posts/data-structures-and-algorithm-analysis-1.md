@@ -12,7 +12,7 @@ tag:
 
 [数据结构与算法分析（一）：基础算法分析](https://www.zybuluo.com/fyywy520/note/277242)
 
-![Mindmap](http://7xin49.com1.z0.glb.clouddn.com/img-mind-datastructure-1.png-960.jpg)
+![Mindmap](http://data.kchen.cc/img-mind-datastructure-1.png-960.jpg)
 
 <!--more-->
 

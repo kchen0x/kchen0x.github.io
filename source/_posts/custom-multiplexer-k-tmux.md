@@ -53,13 +53,13 @@ tags:
 
 下面看看 tmux 复用后的实际效果：
 
-![mutiplexer](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/e63751170c3cc32863ada94b1527f581.png-960.jpg)
+![mutiplexer](http://data.kchen.cc/mac_qrsync/e63751170c3cc32863ada94b1527f581.png-960.jpg)
 
 左下角显示了当前我所在的会话名称 `Test` 以及当前窗口和窗格编号 `1-3`，下方中间部分显示了该会话下的窗口，当前激活的是窗口 `[1:htop]`，右下角是系统时间。这是我自己配置的状态栏。
 
 上方主体部分是当前窗口的窗格切割：
 
-![panes](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/2fe242a247e55ffecc33467aede4259a.png-960.jpg)
+![panes](http://data.kchen.cc/mac_qrsync/2fe242a247e55ffecc33467aede4259a.png-960.jpg)
 
 我在 1 中打开了 vim 编写文本，在 2 中使用 `htop` 查看系统进程，在 3 中准备执行某个命令。三个窗格互不干扰，平行工作，而且优雅整洁。
 

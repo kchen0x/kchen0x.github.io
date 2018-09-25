@@ -21,7 +21,7 @@ tags:
 
  在 RDS 中需要为自己的数据库配置安全组权限，也即 `3306` 端口需要向 EC 主机开放：
 
-![SG](http://7xin49.com1.z0.glb.clouddn.com/mac:rt67ujbt678ijbt78ijbty.png-960.jpg)
+![SG](http://data.kchen.cc/mac:rt67ujbt678ijbt78ijbty.png-960.jpg)
 
 其中，选择类型为 `MYSQL/Aurora`，这样可以开启 `3306` 端口，把来源定义为我的 IP 以及 EC 主机所在安全组。（只需要键入主机名，AWS 可以自动适配）
 

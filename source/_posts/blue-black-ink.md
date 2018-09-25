@@ -17,5 +17,5 @@ tags:
 
 所以，我能理解我为什么钟爱蓝黑。
 
-![蓝黑](http://7xin49.com1.z0.glb.clouddn.com/blue-black-ink.jpg-960.jpg)
+![蓝黑](http://data.kchen.cc/blue-black-ink.jpg-960.jpg)
 

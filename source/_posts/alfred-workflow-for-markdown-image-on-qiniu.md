@@ -40,11 +40,11 @@ Markdown最大的缺陷就是不能方便的在文章中插入本地图片，所
 
 在你的空间的**数据处理**中应该配置好「图片样式」：新建图片样式。
 
-![style](http://7xin49.com1.z0.glb.clouddn.com/4be39d7cf43e26849216aa2a61709d8c.png-960.jpg "图片样式")
+![style](http://data.kchen.cc/4be39d7cf43e26849216aa2a61709d8c.png-960.jpg "图片样式")
 
 使用图片样式的好处是你可以根据需求插入不同大小的图片，毕竟**Markdown是没有图片编辑和调整功能**的。我设置了如下的样式：
 
-![style](http://7xin49.com1.z0.glb.clouddn.com/dbf2f0ee3a25351f3b2d8490a155eff8.png-960.jpg "图片样式")
+![style](http://data.kchen.cc/dbf2f0ee3a25351f3b2d8490a155eff8.png-960.jpg "图片样式")
 
 这样我可以通过样式分割符合样式`-480.jpg`、`-960.jpg`、`-1920.jpg`调用不同大小的图片插入到文章中了。
 
@@ -95,15 +95,15 @@ Markdown最大的缺陷就是不能方便的在文章中插入本地图片，所
 
 下面我们来配置WorkFlow工作流来让一切变得自动化起来，首先打开Alfred，进入Workflow，并且创建一个空白的工作流：
 
-![](http://7xin49.com1.z0.glb.clouddn.com/b7ca368796817f6641eb530779170cb9.png-960.jpg)
+![](http://data.kchen.cc/b7ca368796817f6641eb530779170cb9.png-960.jpg)
 
 然后添加一个热键，我选择的是`⌘`+`⇧`+`V`，这样和我的Annotate截屏快捷键`⌘`+`⇧`+`A`正好形成一对：
 
-![hotkey](http://7xin49.com1.z0.glb.clouddn.com/78fcbef093b58a4b5d7d559414087555.png-960.jpg "HotKey")
+![hotkey](http://data.kchen.cc/78fcbef093b58a4b5d7d559414087555.png-960.jpg "HotKey")
 
 然后添加一个action，选择`osascript`作为脚本语言
 
-![](http://7xin49.com1.z0.glb.clouddn.com/ce75233c28ac53e40fa1905f6834918d.png-960.jpg)
+![](http://data.kchen.cc/ce75233c28ac53e40fa1905f6834918d.png-960.jpg)
 
 我们添加如下脚本：
 
@@ -127,7 +127,7 @@ if theType is not missing value then
 	set filePath to "/Users/quentin/Documents/Qiniu/Data/" --这里换成你自己放置图片的路径
 	set fileName to do shell script "date \"+%Y%m%d%H%M%S\" | md5" --用当前时间的md5值做文件名
 	if fileName does not end with (second item of theType) then set fileName to (fileName & second item of theType as text)
-	set markdownUrl to "![](http://7xin49.com1.z0.glb.clouddn.com/" & fileName & "-960.jpg)" --这里是你的七牛域名和设置的图片样式
+	set markdownUrl to "![](http://data.kchen.cc/" & fileName & "-960.jpg)" --这里是你的七牛域名和设置的图片样式
 	set filePath to filePath & fileName
 	
 	try
@@ -162,12 +162,12 @@ set filePath to "/Users/quentin/Documents/Qiniu/Data/"
 换成你自己设定的同步目录。
 
 ```applescript
-set markdownUrl to "![](http://7xin49.com1.z0.glb.clouddn.com/" & fileName & "-960.jpg)"
+set markdownUrl to "![](http://data.kchen.cc/" & fileName & "-960.jpg)"
 ```
 
 设定成你的七牛空间域名：
 
-![](http://7xin49.com1.z0.glb.clouddn.com/fbb46f61dcd1b87b7328b939cf79c6ee.png-960.jpg)
+![](http://data.kchen.cc/fbb46f61dcd1b87b7328b939cf79c6ee.png-960.jpg)
 
 注意如果你在设置QRSync时预设了`<KeyPrefix>`前缀，记得在域名后面补上。另外再加上自己设定的图片样式`-960.jpg`，我在样式中自带了一个统一的文件后缀`.jpg`是为了让Markdown编辑器知道这是一个图片链接。
 
@@ -179,11 +179,11 @@ do shell script "/Users/quentin/Documents/Qiniu/CLI/qrsync /Users/quentin/Docume
 
 然后，添加一个通知，让我们得到上传成功的反馈：
 
-![](http://7xin49.com1.z0.glb.clouddn.com/1fd5378d66501b4039dfb49e8027a94b.png-960.jpg)
+![](http://data.kchen.cc/1fd5378d66501b4039dfb49e8027a94b.png-960.jpg)
 
 最后，把Trigger、Action和Notification用线连起来，就大功告成了：
 
-![](http://7xin49.com1.z0.glb.clouddn.com/8134b421b50a8cc1ef3901bc7d560a52.png-960.jpg)
+![](http://data.kchen.cc/8134b421b50a8cc1ef3901bc7d560a52.png-960.jpg)
 
 现在，你只需要
 
@@ -191,7 +191,7 @@ do shell script "/Users/quentin/Documents/Qiniu/CLI/qrsync /Users/quentin/Docume
 
 此外，我再提供一个额外的工作流来负责同步目录到七牛云存储，针对那些直接复制到同步目录下的文件。另建一个Workflow，如图所示：
 
-![](http://7xin49.com1.z0.glb.clouddn.com/53b405507e35f3ad39a96d62c20370d2.png-960.jpg)
+![](http://data.kchen.cc/53b405507e35f3ad39a96d62c20370d2.png-960.jpg)
 
 使用你喜欢的HotKey来启动上传，然后使用bash语言键入以下script：
 

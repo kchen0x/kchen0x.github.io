@@ -384,9 +384,9 @@ DomainModel有一个字段`DateTime Birthday{get;set;}`，ViewModel同样具有`
 
 截图说明Reshaper的提示功能：
 
-![reshaper1](http://7xin49.com1.z0.glb.clouddn.com/imageo_20150926142447.png-960.jpg)
+![reshaper1](http://data.kchen.cc/imageo_20150926142447.png-960.jpg)
 
-![reshaper2](http://7xin49.com1.z0.glb.clouddn.com/imageo_20150926142514.png-960.jpg)
+![reshaper2](http://data.kchen.cc/imageo_20150926142514.png-960.jpg)
 
 光标移动在波浪线处，然后`Alt+Enter`,Resharper 会自动对代码进行优化。
 

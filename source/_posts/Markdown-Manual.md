@@ -59,9 +59,9 @@ Markdown 是一种正在流行起来的「标记语言」，通常为程序员�
 
 它实际上是个非常简单、非常容易学习的语法。这个语法简单到每个人都可以在5分钟以内学会，这样低廉的学习成本可以让你毫无负担地投入它的怀抱。
 
-有了 Markdown 之后，我们编辑文字时就可以专注于文字的内容本身，而不用分心去关注文字的排版，甚至于可以说在它简单到不能再简单的语法下，你根本就没有思考排版的空间，也没必要思考。也正因为 Markdown 的语法格式足够简单，所以开发者非常容易生成漂亮的版式，一切既有的CSS都可以简单修改之后套用，比如这样：![Marxico](http://7xin49.com1.z0.glb.clouddn.com/image-Maxiro.jpg-960.jpg "来自马克飞象")
+有了 Markdown 之后，我们编辑文字时就可以专注于文字的内容本身，而不用分心去关注文字的排版，甚至于可以说在它简单到不能再简单的语法下，你根本就没有思考排版的空间，也没必要思考。也正因为 Markdown 的语法格式足够简单，所以开发者非常容易生成漂亮的版式，一切既有的CSS都可以简单修改之后套用，比如这样：![Marxico](http://data.kchen.cc/image-Maxiro.jpg-960.jpg "来自马克飞象")
 
-再比如这样![CMDMarkdown](http://7xin49.com1.z0.glb.clouddn.com/image-CMDMD.jpg-960.jpg "来自CMD Markdown")
+再比如这样![CMDMarkdown](http://data.kchen.cc/image-CMDMD.jpg-960.jpg "来自CMD Markdown")
 
 ### 所以为什么我们要使用 Markdown
 
@@ -703,7 +703,7 @@ Note right of 韩梅梅: 无语凝噎
 
 [**马克飞象**][4]是一款专为印象笔记（Evernote）打造的 Markdown 编辑器，通过精心的设计与技术实现，配合印象笔记强大的存储和同步功能，带来前所未有的书写体验。
 
-![Marxico](http://7xin49.com1.z0.glb.clouddn.com/image-Maxiro.jpg-960.jpg "来自马克飞象")
+![Marxico](http://data.kchen.cc/image-Maxiro.jpg-960.jpg "来自马克飞象")
 
 虽说马克飞象是专为印象笔记而设计，但是对于平常 Markdown 文档的书写而言，也绝对是编辑器中的佼佼者。它有非常多的优点：
 
@@ -719,7 +719,7 @@ Note right of 韩梅梅: 无语凝噎
 
 [**CDM Markdown**][5]是大神[@ghoster](http://weibo.com/ghosert)和他的团队开发的一款在线 Markdown 编辑器。
 
-![作业部落 - CMDMarkdown](http://7xin49.com1.z0.glb.clouddn.com/image-CMDMD.jpg-960.jpg "来自CMD Markdown")
+![作业部落 - CMDMarkdown](http://data.kchen.cc/image-CMDMD.jpg-960.jpg "来自CMD Markdown")
 
 > #### 欢迎使用 Cmd - 在线 Markdown 编辑阅读器
 > 
@@ -750,7 +750,7 @@ Note right of 韩梅梅: 无语凝噎
 
 [**简书**][6]是一个将写作与阅读整合在一起的网络产品。旨在为写作者打造最优秀的写作软件 ，为阅读者打造最优雅的阅读社区。
 
-![jianshu](http://7xin49.com1.z0.glb.clouddn.com/image-简书.jpg-960.jpg "来自简书")
+![jianshu](http://data.kchen.cc/image-简书.jpg-960.jpg "来自简书")
 
 简书的中文排版效果非常好，与**作业部落**不相伯仲，文本颜色更加丰富。研究表明，在淡黄色的背景下阅读深蓝色或黑色的文字让人的眼睛觉得最舒适，这就是**简书**。
 

@@ -9,7 +9,7 @@ tag:
 
 首先Vim按键速查卡镇楼：
 
-![Key](http://7xin49.com1.z0.glb.clouddn.com/vim_cheat_sheet_for_programmers_print.png-1920.jpg) 
+![Key](http://data.kchen.cc/vim_cheat_sheet_for_programmers_print.png-1920.jpg) 
 
 不喜欢看文字的同学可接通过下面这个游戏直接学习Vim（我还没通关，后面似乎要付费了😂）：
 

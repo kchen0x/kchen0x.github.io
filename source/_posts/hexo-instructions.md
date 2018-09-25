@@ -54,7 +54,7 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
 
 那么恭喜，你的博客已经构建成功了！你可以到输出结果指定的地址去访问你的博客了。
 
-![hexo-init](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/d3fcdb56c385052471d97e8a7b7d3a02.png-960.jpg)
+![hexo-init](http://data.kchen.cc/mac_qrsync/d3fcdb56c385052471d97e8a7b7d3a02.png-960.jpg)
 
 ### 撰写博文
 
@@ -121,7 +121,7 @@ $ hexo new post "My New Post"
 
 然后保存这篇文章，之后访问 http://localhost:4000 你便可以看到这篇文章已经发布到你的博客中了（注意：`hexo server` 需要保持运行才能访问）。是不是非常的简单？
 
-![first-post](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/96632da40c3f060c59e09c37b842bc3f.png-960.jpg)
+![first-post](http://data.kchen.cc/mac_qrsync/96632da40c3f060c59e09c37b842bc3f.png-960.jpg)
 
 更多信息，请查阅 Hexo 的[官方文档]。
 
@@ -205,7 +205,7 @@ timezone:
 
 这一组配置是博客的描述，`title` 和 `subtitle` 分别是博客的站名，和副标题，`description` 对搜索引擎收录博客会有帮助。在多数主题中，一般只有标题和副标题会显示（我的主站只显示标题）：
 
-![title](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/cbb658e56aaa0004500447f9fafc3309.png-960.jpg)
+![title](http://data.kchen.cc/mac_qrsync/cbb658e56aaa0004500447f9fafc3309.png-960.jpg)
 
 `language` 一般可以选配 `en` 或者 `zh-cn`，分别是英文和简体中文。
 
@@ -241,7 +241,7 @@ theme: yelee
 
 保存后，我们再次执行 `hexo server` 命令，预览一下网站的变化。
 
-![yelee](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/469554ef7299916fe76ca677517130c1.png-960.jpg)
+![yelee](http://data.kchen.cc/mac_qrsync/469554ef7299916fe76ca677517130c1.png-960.jpg)
 
 你看，主题是不是发生了巨大的改变，网站左侧现在显示的是 `author` 和 `sutitle` 了，右边的预览页面支持很多动态特效。每一个主题的详细配置参数都在 `/themes/<yourtheme>/_config.yml` 文件下，可以查阅该主题的官方页了解配置的解释。我在这里就不啰嗦了，当你选定了自己喜欢的主题，修改、配置好了之后。便可以使用、撰写、发布自己的博客了。
 
@@ -303,7 +303,7 @@ CDN 的做法是把网站常访问数据缓存到 CDN 服务器，当用户访�
 
 大部分人可能天天都用着 DNS 却不知道它的基本原理，你可能知道我们访问互联网需要查询 DNS 服务器：
 
-![DNS](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/3bddb2d99dab6a63f0b3da0402af2bad.png-960.jpg)
+![DNS](http://data.kchen.cc/mac_qrsync/3bddb2d99dab6a63f0b3da0402af2bad.png-960.jpg)
 
 可是你知道它具体是怎么工作的么？
 
@@ -318,7 +318,7 @@ CDN 的做法是把网站常访问数据缓存到 CDN 服务器，当用户访�
 - 不但拥有主流 DNS 产品的全部功能，而且扩展有自己独有的解析记录类型，在解析速度方面也明显优于国内其他同类产品，它的解析速度比传统 DNS 快两到三倍，DNS 配置生效更快，可做到实时生效。
 - 有非常多的线路选择，不仅可以按照海内、海外分类，甚至海内可以按照移动、联通、电信、铁通等等再划分到省级线路，海外可以详细到不同的地区和国家等上百条不同的解析线路：
 
-![routes](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/17b74c02dcce4490b23b55851181684e.png-960.jpg)
+![routes](http://data.kchen.cc/mac_qrsync/17b74c02dcce4490b23b55851181684e.png-960.jpg)
 
 因为我们的博客始终是个小站，用不了那么多的线路区分，我们主要利用海内海外的线路来分流数据到 Github 和 Coding.net。
 
@@ -333,7 +333,7 @@ lv3ns4.ffdns.net
 
 然后在 CloudXNS 设置你的域名，并添加如下域名解析：
 
-![balance](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/0ac2ac1d019390aeb81baeb35196b482.png-960.jpg)
+![balance](http://data.kchen.cc/mac_qrsync/0ac2ac1d019390aeb81baeb35196b482.png-960.jpg)
 
 这样，默认访问将会被解析到 Coding.net，但是海外访问会被解析到 Github。非常方便。如果你的网站域名已经备案了的话，你还可以使用 CloudXNS 提供的免费 CDN 服务进一步为自己的网站提速。
 
@@ -359,7 +359,7 @@ lv3ns4.ffdns.net
 
 我先把在 Travis 上进行自动构建的思路说一下：
 
-![sequence](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/cbc37bcd05062212564fe2aaaee6631f.png-960.jpg)
+![sequence](http://data.kchen.cc/mac_qrsync/cbc37bcd05062212564fe2aaaee6631f.png-960.jpg)
 
 - 我们在在 Github 的博客仓库里新建一个 `blog-source` 分支，然后把博客的源码托管到这个分支
 - 每当我们在本地写好了博文之后，把修改 `push` 到该分支
@@ -377,7 +377,7 @@ Travis CI 不需要单独注册，直接使用 GitHub 账号登录就可以了�
 
 上[官网]会发现有 Sign in with GitHub（使用GitHUb登录）和 Sign Up（注册），其实这俩做的事情都一样，就是用 GitHub 账号登录。登录后界面会显示你的 GitHub Repository，默认全部全部没有勾选，选择你的博客的 Repository 后完成第一步，如图：
 
-![travis](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/c5c4ae39bc22681ccf481119befbe363.png-960.jpg)
+![travis](http://data.kchen.cc/mac_qrsync/c5c4ae39bc22681ccf481119befbe363.png-960.jpg)
 
 如果你没有看到自己的项目，请点击右上角的 Sync with Github。
 
@@ -510,7 +510,7 @@ after_success:
 
 Travis 提供了加密文件的支持，什么意思呢？我们可以对文件（这里指私钥）在本地进行加密，然后把加密过后的文件放在项目里，那么别人就无法获取里面的真实内容。然后我们在让 Travis 执行脚本的时候，在读取加密文件之前对文件进行解密（使用的解密密码提前在 Travis 上配置好了），这样就可以达到不将文件内容暴露，并且让 Travis 获取到真实内容的目的了，大概的时序图如下：
 
-![enc-key](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/8801dc034d298600bfc9b7124a0f42cd.png-960.jpg)
+![enc-key](http://data.kchen.cc/mac_qrsync/8801dc034d298600bfc9b7124a0f42cd.png-960.jpg)
 
 开始吧，我们首先把自己的在博客的根目录下建立 `.travis` 文件夹来存放相关的资料：
 
@@ -538,7 +538,7 @@ Host *
 
 现在，我们在 Travis 网站，博客项目的设置（项目右上角）里可以看到两个用于解密私钥的环境变量：
 
-![travis-env](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/c180cfd5996f2b3c1d43f9017a11b7c9.png-960.jpg)
+![travis-env](http://data.kchen.cc/mac_qrsync/c180cfd5996f2b3c1d43f9017a11b7c9.png-960.jpg)
 
 把这两个环境变量名复制到上面的 `.travis.yaml` 文件里替换相应部分：
 
@@ -578,7 +578,7 @@ before_install:
 
 我用星号标记的文件和文件夹都是十分重要的，确保 Git 覆盖了这些文件和目录，然后我们把目录 `push` 到 `github/blog-source` 仓库分支。Travis WebHook 立马就会检测到 `push`，然后开始构建了：
 
-![build-success](http://7xin49.com1.z0.glb.clouddn.com/mac_qrsync/e0f11bcfb411c5b73bdcac015ee87b3d.png-960.jpg)
+![build-success](http://data.kchen.cc/mac_qrsync/e0f11bcfb411c5b73bdcac015ee87b3d.png-960.jpg)
 
 上图是一次成功的构建，我们可以点开 `Job log` 看一下构建过程的 Log 文件，特别是构建没有成功的话，我们更要仔细阅读，找准问题，对症下药。
 

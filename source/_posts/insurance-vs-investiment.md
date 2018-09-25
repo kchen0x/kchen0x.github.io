@@ -25,7 +25,7 @@ tag:
 
 ### 收益关系
 
-![gains](http://7xin49.com1.z0.glb.clouddn.com/img-gains.gif-480.jpg)
+![gains](http://data.kchen.cc/img-gains.gif-480.jpg)
 
 图例：
 - 横轴的单位是年龄
@@ -47,7 +47,7 @@ tag:
 
 ### 等效对比
 
-![gains1](http://7xin49.com1.z0.glb.clouddn.com/img-gains1.png-480.jpg)
+![gains1](http://data.kchen.cc/img-gains1.png-480.jpg)
 
 从保守的8%的年化利率来看，投资本金将会在75岁时全部花光。此时，养老保险看起来更好。
 
@@ -57,19 +57,19 @@ tag:
 
 如果保持前三年每年投资3.5万元不变，当投资年化利率达到15%时，投资收益会高于保险收益。如下图所示：
 
-![gains2](http://7xin49.com1.z0.glb.clouddn.com/img-gains2.png-480.jpg)
+![gains2](http://data.kchen.cc/img-gains2.png-480.jpg)
 
 #### 加大投资
 
 如果前三年每年投资5.5万元的话，只要投资年化利率达到12%时，投资收益就会高于保险收益，如下图所示：
 
-![gains3](http://7xin49.com1.z0.glb.clouddn.com/img-gains3.png-480.jpg)
+![gains3](http://data.kchen.cc/img-gains3.png-480.jpg)
 
 #### 延长投资
 
 如果延长投资的年限，投资超过3年，达到5年以上，收益效益将会得到大幅的提高，下图是每年投资3.5万元，投资6年，每年年化利率10%的收益图：
 
-![gains4](http://7xin49.com1.z0.glb.clouddn.com/img-gains4.png-480.jpg)
+![gains4](http://data.kchen.cc/img-gains4.png-480.jpg)
 
 ## 结论
 
