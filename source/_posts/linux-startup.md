@@ -1,4 +1,4 @@
-title: 通过路由表进行VPN国内外分流的办法
+title: Linux 服务器/macOS 环境初始化
 date: 2018/4/2 20:49:00
 tag:
 	- Linux
