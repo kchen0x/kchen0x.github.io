@@ -13,6 +13,8 @@ tag:
 
 如只需要对服务器环境进行配置，不涉及到网络代理；以及本地环境的初始化配置。可直接跳转到 [¶环境配置：切换 Shell](#%E5%88%87%E6%8D%A2+Shell) 部分开始。
 
+<!--more-->
+
 ## 开启 BBR POWERED（可选）
 
 [参考并使用了 xratzh 的魔改 BBR](https://github.com/xratzh/CBBR)。
