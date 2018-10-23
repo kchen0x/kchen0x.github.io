@@ -11,7 +11,7 @@ tag:
 
 其中魔改 BBR 部分视情况开启，如果服务器需要用作高性能网络代理，可以开启提高性能，否则不必开启。**BBR 开启只能在安装其他软件之前进行，若之后开启则会令安装的软件失效。**
 
-如只需要对服务器环境进行配置，不涉及到网络代理；以及本地环境的初始化配置。可直接跳转到 [¶环境配置：切换 Shell](#%E5%88%87%E6%8D%A2+Shell) 部分开始。
+如只需要对服务器环境进行配置，不涉及到网络代理；以及本地环境的初始化配置。可直接跳转到 [¶环境配置：切换 Shell](#%E5%88%87%E6%8D%A2-Shell) 部分开始。
 
 <!--more-->
 
@@ -142,7 +142,6 @@ k-zsh 中配置了部分插件需要单独安装一下才能生效：
 
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
