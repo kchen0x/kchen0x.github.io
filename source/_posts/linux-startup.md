@@ -173,6 +173,33 @@ curl https://raw.githubusercontent.com/kchen0x/k-tmux/master/tmux.conf > ~/.tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
+## 集群监控 ServerStatus（中文版）
+
+### 自动部署
+
+**【服务端】**
+
+```
+wget https://raw.githubusercontent.com/cppla/ServerStatus/master/autodeploy/config.json
+docker run -d --restart=always --name=serverstatus -v {$path}/config.json:/ServerStatus/server/config.json -p {$port}:80 -p {$port}:35601 cppla/serverstatus
+
+eg:
+docker run -d --restart=always --name=serverstatus -v ~/config.json:/ServerStatus/server/config.json -p 80:80 -p 35601:35601 cppla/serverstatus
+```
+
+**【客户端】**
+
+```
+wget --no-check-certificate -qO client-linux.py 'https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py' && nohup python client-linux.py SERVER={$SERVER} USER={$USER} PASSWORD={$PASSWORD} >/dev/null 2>&1 &
+
+eg:
+wget --no-check-certificate -qO client-linux.py 'https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py' && nohup python client-linux.py SERVER=45.79.67.132 USER=s04  >/dev/null 2>&1 &
+```
+
+### 手动部署
+
+查看[官方 Github](https://github.com/BotoX/ServerStatus)
+
 ## 安装网络监控 BitMeter
 
 在 [官网下载](https://codebox.net/pages/bitmeteros/downloads) 预编译的二进制包。
