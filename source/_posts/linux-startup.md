@@ -19,98 +19,6 @@ tag:
 
 [参考并使用了 xratzh 的魔改 BBR](https://github.com/xratzh/CBBR)。
 
-### Debian/Ubuntu（64位）开启魔改 BBR
-
-- 查看操作系统版本：
-
-```
-head -n 1 /etc/issue
-```
-
-- Ubuntu14.04 需要提前：
-
-```
-sudo apt-get install -y software-properties-common
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-sudo apt-get update
-sudo apt-get -y install g++-4.9
-```
-
-- Debian 9 需要提前：
-
-```
-wget http://snapshot.debian.org/archive/debian/\
-20150123T220434Z/pool/main/o/openssl/libssl1.0.0_1.0.2-1_amd64.deb
-dpkg -i libssl1.0.0_1.0.2-1_amd64.deb
-```
-
-**第一步：**
-
-```
-apt-get install -y wget && wget --no-check-certificate -O \
-D1.sh https://raw.githubusercontent.com/xratzh/CBBR/master/D1.sh \
-&& bash D1.sh
-```
-
-之后输入 Y 就会重启
-
-**第二步：**
-
-```
-wget --no-check-certificate -O D2.sh \
-https://raw.githubusercontent.com/xratzh/CBBR/master/D2.sh \
-&& bash D2.sh
-```
-
-### CentOS 7 开启魔改 BBR
-
-**第一步：**
-
-```
-yum install -y wget && wget --no-check-certificate -O C71.sh \
-https://raw.githubusercontent.com/\
-xratzh/CBBR/master/C71.sh && bash C71.sh
-```
-
-之后输入 Y 就会重启
-
-**第二步：**
-
-```
-wget --no-check-certificate -O C72.sh \
-https://raw.githubusercontent.com/\
-xratzh/CBBR/master/C72.sh && bash C72.sh
-```
-
-### CentOS 6 开启魔改 BBR
-
-**第一步：**
-
-```
-yum install -y wget && wget --no-check-certificate -O \
-C61.sh https://raw.githubusercontent.com/xratzh/\
-CBBR/master/C61.sh && bash C61.sh
-```
-
-之后输入 Y 就会重启
-
-**第二步：**
-
-```
-wget --no-check-certificate -O C62.sh \
-https://raw.githubusercontent.com/xratzh/\
-CBBR/master/C62.sh && bash C62.sh
-```
-
-### Tips
-
-- **存在对于其他内核的删除，只保留 4.11.8 内核**
-- 为什么不能一键，因为 Linux 内核在 4.0 后支持不重启更换，但是 CentOS 和 Debian/Ubuntu 很多的内核都是3.X 的版本，Debian 9 和 Ubuntu16.04 则是 4.X 的版本。
-- Xratzh 压力测试，发现 BBR 和魔改 BBR 都开启时会达到最快（个人验证）
-- 脚本里加入了对内核的锁定，之后 update 时不会变动内核。内核统一选择 4.11.8 版本。
-- 由于这个我找到的 CentOS 历史内核的镜像站的网速时快时慢，所以自己下载了上传到 GitHub，这样能保持一个较为稳定的速度。原来的内核地址仍然在脚本里面，只是被添加注释了，如果你不信任我上传的内核，可以自己取消注释使用镜像站的内核下载方式。   
-- 部分内容借鉴了[ Vicer 大佬的脚本](https://moeclub.org/2017/06/24/278/)。
-
 ## 安装 Mosh
 
 用来提高 SSH 连接远程服务器的输入延时和移动设备连接的稳定性（除非手动操作，基本不会断开连接），安装完成后，直接使用 `mosh` 代替 `ssh` 即可。
@@ -218,8 +126,7 @@ oh-my-zsh/master/tools/install.sh)"
 #### 通过 wget
 
 ```shell
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/\
-oh-my-zsh/master/tools/install.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
 
 ### 安装 k-zsh
@@ -228,18 +135,15 @@ k-zsh 是我配置的一套 Oh My Zsh 设置，包含了常用的插件和更清
 
 ```
 mv ~/.zshrc ~/.zshrc_bac
-curl https://raw.githubusercontent.com/kchen0x/\
-k-zsh/master/zshrc > ~/.zshrc
+curl https://raw.githubusercontent.com/kchen0x/k-zsh/master/zshrc > ~/.zshrc
 ``` 
 
 k-zsh 中配置了部分插件需要单独安装一下才能生效：
 
 ```
-git clone https://github.com/zsh-users/zsh-autosuggestions \
-${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
 其中常用的插件是 `z`，快速跳转到相应目录。还有 `x`，快速解压缩文件等。
@@ -250,8 +154,7 @@ k-vim for server 是 wklken 配置的 k-vim 的服务器版本，包含了许多
 
 ```
 mv ~/.vimrc ~/.vimrc_bak
-curl https://raw.githubusercontent.com/wklken/\
-vim-for-server/master/vimrc > ~/.vimrc
+curl https://raw.githubusercontent.com/wklken/vim-for-server/master/vimrc > ~/.vimrc
 ```
 
 如果需要安装完整非便携版的 k-vim，请根据 https://github.com/kchen0x/k-vim 进行操作。
@@ -262,8 +165,7 @@ vim-for-server/master/vimrc > ~/.vimrc
 
 ```bash
 mv ~/.tmux.conf ~/.tmux.conf_bak
-curl https://raw.githubusercontent.com/kchen0x/k-tmux/master/tmux.conf \
-> ~/.tmux.conf
+curl https://raw.githubusercontent.com/kchen0x/k-tmux/master/tmux.conf > ~/.tmux.conf
 ```
 
 安装插件管理
