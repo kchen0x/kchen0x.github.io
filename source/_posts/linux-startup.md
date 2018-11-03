@@ -173,6 +173,8 @@ curl https://raw.githubusercontent.com/kchen0x/k-tmux/master/tmux.conf > ~/.tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
+安装完成后进入 tmux，使用[prefix]加大写`I`重载一次插件即可（[prefix]为`ctrl+a`）。
+
 ## 集群监控 ServerStatus（中文版）
 
 ### 自动部署
