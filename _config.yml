@@ -5,10 +5,10 @@
 # Site
 title: KChen's Blog
 subtitle: 硅基生命研究室的学术渣
-description:
+description: KChen的互联网博客，一个讨论数字生活和计算机技术的地方。
 author: Kun Chen
 language: default
-timezone:
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -87,6 +87,10 @@ baidu_url_submit:
 ## SEO friendly sitemap
 sitemap:
     path: sitemap.xml
+
+# Plugin: Math
+math:
+  engine: 'katex'
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
