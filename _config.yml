@@ -86,7 +86,9 @@ baidu_url_submit:
 
 ## SEO friendly sitemap
 sitemap:
-    path: sitemap.xml
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
 
 # Plugin: Math
 math:
