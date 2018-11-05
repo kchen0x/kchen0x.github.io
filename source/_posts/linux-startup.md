@@ -136,7 +136,7 @@ k-zsh 是我配置的一套 Oh My Zsh 设置，包含了常用的插件和更清
 ```
 mv ~/.zshrc ~/.zshrc_bac
 curl https://raw.githubusercontent.com/kchen0x/k-zsh/master/zshrc > ~/.zshrc
-``` 
+```
 
 k-zsh 中配置了部分插件需要单独安装一下才能生效：
 
