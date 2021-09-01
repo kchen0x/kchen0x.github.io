@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="default">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Maven 学习笔记">
+
+
+
+
+  <meta name="keywords" content="Maven, 笔记, KChen's Blog">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="KChen's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://kchen.cc/2015/11/16/mvn-study/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?940f951acbfe5399f7a2816cdbdae170";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41464607-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41464607-2');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz",
+      appKey: "wVKlG50ntVertqEOw4aQEVwI"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":"E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz","app_key":"wVKlG50ntVertqEOw4aQEVwI"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> Maven 学习笔记 - KChen's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="mobile-header-logo">
+    <a href="/." class="logo">KChen's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">KChen's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Maven 学习笔记
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2015-11-16
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2015/11/16/mvn-study/" data-title="Maven 学习笔记">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven-简介"><span class="toc-text">Maven 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven-的安装和配置"><span class="toc-text">Maven 的安装和配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装目录分析"><span class="toc-text">安装目录分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDE"><span class="toc-text">IDE</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven-使用入门"><span class="toc-text">Maven 使用入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#POM"><span class="toc-text">POM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码的目录结构"><span class="toc-text">代码的目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最常用的四个Maven命令"><span class="toc-text">最常用的四个Maven命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#关于测试"><span class="toc-text">关于测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于打包"><span class="toc-text">关于打包</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目骨架"><span class="toc-text">项目骨架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDE-1"><span class="toc-text">IDE</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven-坐标"><span class="toc-text">Maven 坐标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖"><span class="toc-text">依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖的配置"><span class="toc-text">依赖的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖的范围"><span class="toc-text">依赖的范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖的传递性"><span class="toc-text">依赖的传递性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖调解"><span class="toc-text">依赖调解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可选依赖"><span class="toc-text">可选依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排除依赖"><span class="toc-text">排除依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#归类依赖"><span class="toc-text">归类依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化依赖"><span class="toc-text">优化依赖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#仓库"><span class="toc-text">仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#仓库的分类"><span class="toc-text">仓库的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地仓库"><span class="toc-text">本地仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程仓库"><span class="toc-text">远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#中央仓库"><span class="toc-text">中央仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#私服"><span class="toc-text">私服</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程仓库的配置"><span class="toc-text">远程仓库的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程仓库的认证"><span class="toc-text">远程仓库的认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快照版本"><span class="toc-text">快照版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#镜像"><span class="toc-text">镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仓库搜索服务"><span class="toc-text">仓库搜索服务</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Maven-简介"><a href="#Maven-简介" class="headerlink" title="Maven 简介"></a>Maven 简介</h2><p>Maven 的作用：</p>
+<ul>
+<li>构建工具</li>
+<li>依赖管理</li>
+<li>项目信息</li>
+</ul>
+<p>还可以用来进行极限编程（XP）和敏捷开发、瀑布开发。</p>
+<h2 id="Maven-的安装和配置"><a href="#Maven-的安装和配置" class="headerlink" title="Maven 的安装和配置"></a>Maven 的安装和配置</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>下载Maven 3</li>
+<li>解压安装</li>
+<li>配置环境变量<ul>
+<li><code>%M2_HOME%</code></li>
+<li><code>path = %M2_HOME%/bin</code></li>
+</ul>
+</li>
+</ul>
+<p>在Mac下，可以直接使用BrewHome的<code>brew install</code>来安装。</p>
+<a id="more"></a>
+<h4 id="安装目录分析"><a href="#安装目录分析" class="headerlink" title="安装目录分析"></a>安装目录分析</h4><ul>
+<li>bin</li>
+<li>boot</li>
+<li>conf</li>
+<li>lib</li>
+</ul>
+<p>bin：包含了<code>mvn</code>运行脚本（还有<code>mvnDebug</code>）。</p>
+<p>boot：不必关心。</p>
+<p>conf：非常重要的配置文件<code>settings.xml</code>。最好把该文件复制到<code>~/.m2/settings.xml</code>下来配置，这样利于管理、恢复和升级。</p>
+<p>lib: Maven运行时得所有Java类库，可以说此目录就是真正的Maven。</p>
+<h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><p>//TODO </p>
+<p>通过<code>mvn -v</code>来查看Maven、Java、OS的版本信息等。</p>
+<h2 id="Maven-使用入门"><a href="#Maven-使用入门" class="headerlink" title="Maven 使用入门"></a>Maven 使用入门</h2><h3 id="POM"><a href="#POM" class="headerlink" title="POM"></a>POM</h3><ul>
+<li>XML 头<code>&lt;?xml version = &quot;1.0&quot; encoding = &quot;UTF-8&quot;&gt;</code></li>
+<li>根节点<code>&lt;project&gt;</code><ul>
+<li><code>&lt;modelVersion&gt;</code>只能选择4.0.0</li>
+<li><code>&lt;groupId&gt;</code>项目的地址，例如<code>com.googlecode.myapp</code></li>
+<li><code>&lt;artifactId&gt;</code>项目的名称，例如<code>hello-world</code></li>
+<li><code>&lt;version&gt;</code>版本号，默认起始为<code>1.0-SNAPSHOT</code></li>
+<li><code>&lt;name&gt;</code>项目描述</li>
+</ul>
+</li>
+</ul>
+<h3 id="代码的目录结构"><a href="#代码的目录结构" class="headerlink" title="代码的目录结构"></a>代码的目录结构</h3><ul>
+<li>src<ul>
+<li>main<ul>
+<li>java</li>
+<li>resources</li>
+</ul>
+</li>
+<li>test<ul>
+<li>java</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>target<ul>
+<li>classes</li>
+<li>test-classes</li>
+<li>.jar</li>
+</ul>
+</li>
+<li>pom.xml</li>
+</ul>
+<p>要求<code>src</code>目录必须按照如上的结构生成，其中源代码全部放在<code>src/main/java</code>目录下，测试代码全部放在<code>src/test/java</code>目录下，项目的根目录下必须有<code>pom.xml</code>文件。</p>
+<p><code>target</code>目录是由Maven命令脚本生成的，所有的输出文件都会在该目录下。</p>
+<h3 id="最常用的四个Maven命令"><a href="#最常用的四个Maven命令" class="headerlink" title="最常用的四个Maven命令"></a>最常用的四个Maven命令</h3><ul>
+<li><code>mvn clean compile</code></li>
+<li><code>mvn clean test</code></li>
+<li><code>mvn clean package</code></li>
+<li><code>mvn clean install</code></li>
+</ul>
+<p>这其中，<code>install</code>&gt;<code>package</code>&gt;<code>test</code>&gt;<code>compile</code>会形成包含关系，执行左边的命令之前会先执行右边的命令。</p>
+<p>命令都在项目的根部目录下执行。</p>
+<ul>
+<li><code>compile</code>会编译<code>src/main/java</code>下的所有源代码，输出<code>.class</code>文件到<code>target/classes</code>目录下。</li>
+<li><code>test</code>会编译<code>src/test/java</code>下的所有代码，输出<code>.class</code>文件到<code>target/test-classes</code>目录下。</li>
+<li><code>package</code>会把编译结果打包为<code>artifactId-version.jar</code>输出到<code>target</code>目录下。</li>
+<li><code>install</code>会把打包结果安装到本地仓库，供其他Maven项目使用。</li>
+</ul>
+<h4 id="关于测试"><a href="#关于测试" class="headerlink" title="关于测试"></a>关于测试</h4><p>如果在<code>pom.xml</code>中添加了Junit依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.10<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--junit中声明的scope只对test目录下的文件有效--&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>则可以在测试代码中利用junit来进行代码测试。</p>
+<p>使用<code>@test</code>来标记测试的方法。</p>
+<h4 id="关于打包"><a href="#关于打包" class="headerlink" title="关于打包"></a>关于打包</h4><p>默认的<code>package</code>命令并不包含<code>.jar</code>中的<code>mainClass</code>属性，需要通过<code>maven-shade-plugin</code>插件来指定主类。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-shade-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">phase</span>&gt;</span>package<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">goal</span>&gt;</span>shade<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">transformers</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">transformer</span> <span class="attr">implementation</span> = <span class="string">"org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"</span>&gt;</span></span><br><span class="line">                                    <span class="tag">&lt;<span class="name">mainClass</span>&gt;</span>com.chenkun.mvnstudy.helloworld.HelloWorld<span class="tag">&lt;/<span class="name">mainClass</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;/<span class="name">transformer</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">transformers</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="项目骨架"><a href="#项目骨架" class="headerlink" title="项目骨架"></a>项目骨架</h3><p>可以使用Archetype来生成如之前所述的代码目录结构的项目骨架。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn archetype:generate</span><br></pre></td></tr></table></figure>
+<h3 id="IDE-1"><a href="#IDE-1" class="headerlink" title="IDE"></a>IDE</h3><p>//TODO</p>
+<h2 id="Maven-坐标"><a href="#Maven-坐标" class="headerlink" title="Maven 坐标"></a>Maven 坐标</h2><p>Maven的任何一个构建都需要一个坐标来定位，它们是通过一些元素来定义的：<code>groupId</code>、<code>artifactId</code>、<code>version</code>、<code>packaging</code>、<code>classifier</code>。</p>
+<ul>
+<li><code>&lt;groupId&gt;</code>: 定义当前Maven项目隶属的实际项目，其表示方式与Java包名的表示方式类似，通常与反向域名一一对应，例如<code>org.sonatype.nexus</code>。</li>
+<li><code>&lt;artifactId&gt;</code>: 定义实际项目中的一个Maven项目（模块），推荐做法是将实际项目作为前缀，例如<code>nexus-indexer</code>，这样便于快速检索和区分。</li>
+<li><code>&lt;version&gt;</code>: 使用规范的版本定义，包括对<code>SNAPSHOT</code>的使用。</li>
+<li><code>&lt;packaging&gt;</code>: 定义Maven项目的打包方式，默认为<code>.jar</code>。</li>
+<li><code>&lt;classifier&gt;</code>: 帮助定义构建输出的一些附属构件，例如<code>nexus-indexer-2.0.0-javadoc.jar</code>等，此属性不能直接定义，需由插件生成。</li>
+</ul>
+<blockquote>
+<p>项目构件的文件名是与坐标相对应的，一般的规则是<code>artifactID-version[-classifier].packaging</code>。</p>
+</blockquote>
+<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><h3 id="依赖的配置"><a href="#依赖的配置" class="headerlink" title="依赖的配置"></a>依赖的配置</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">	<span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>...<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>...<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>...<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">type</span>&gt;</span>...<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">scope</span>&gt;</span>...<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">optional</span>&gt;</span>...<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">exclusion</span>&gt;</span>...<span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">				...</span><br><span class="line">			<span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">		...</span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这其中：</p>
+<ul>
+<li><code>&lt;groupId&gt;</code>、<code>&lt;artifactId&gt;</code>和<code>&lt;version&gt;</code>是依赖的基本坐标，<strong>唯一且重要</strong>。</li>
+<li><code>&lt;type&gt;</code>对应的是坐标定义的<code>&lt;packaging&gt;</code>，默认的值是<code>.jar</code>。</li>
+<li><code>&lt;scope&gt;</code>依赖的生效范围。</li>
+<li><code>&lt;optional&gt;</code>标记以来是否可选。</li>
+<li><code>&lt;exclusions&gt;</code>用来排除传递性依赖。</li>
+</ul>
+<h3 id="依赖的范围"><a href="#依赖的范围" class="headerlink" title="依赖的范围"></a>依赖的范围</h3><ul>
+<li><code>compile</code></li>
+<li><code>test</code></li>
+<li><code>provided</code></li>
+<li><code>runtime</code></li>
+<li><code>system</code></li>
+</ul>
+<p>依赖范围与生效的classpath关系如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">依赖范围（Scope）</th>
+<th style="text-align:center">对于编译classpath有效</th>
+<th style="text-align:center">对于测试classpath有效</th>
+<th style="text-align:center">对于运行时classpath有效</th>
+<th style="text-align:center">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">compile</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">spring-core</td>
+</tr>
+<tr>
+<td style="text-align:center">test</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">JUnit</td>
+</tr>
+<tr>
+<td style="text-align:center">provided</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">servlet-api</td>
+</tr>
+<tr>
+<td style="text-align:center">runtime</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">JDBC驱动实现</td>
+</tr>
+<tr>
+<td style="text-align:center">system</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">本地的，Maven之外</td>
+</tr>
+</tbody>
+</table>
+<h3 id="依赖的传递性"><a href="#依赖的传递性" class="headerlink" title="依赖的传递性"></a>依赖的传递性</h3><p>A依赖于B，B依赖于C，称<strong>A对B是第一直接依赖，B对C是第二直接依赖，A对C是传递性依赖</strong>。</p>
+<h3 id="依赖调解"><a href="#依赖调解" class="headerlink" title="依赖调解"></a>依赖调解</h3><p>如果存在这样的依赖关系：</p>
+<ul>
+<li>A-&gt;B-&gt;C-&gt;X(1.0)</li>
+<li>A-&gt;D-&gt;X(2.0)</li>
+</ul>
+<p>X是A的传递性依赖，关于到底选择哪一个依赖有如下两条调解规则：</p>
+<ol>
+<li>路径最近者优先</li>
+<li>第一声明者优先</li>
+</ol>
+<h3 id="可选依赖"><a href="#可选依赖" class="headerlink" title="可选依赖"></a>可选依赖</h3><p>如果存在如下依赖：</p>
+<p>A-&gt;B-&gt;X or Y （optional）</p>
+<p>那么<strong>A将不会依赖X，也不会依赖Y</strong>。由于可选依赖一定程度违反了<strong>单一职责性原则</strong>，所以并不推荐使用。</p>
+<h3 id="排除依赖"><a href="#排除依赖" class="headerlink" title="排除依赖"></a>排除依赖</h3><p>如果存在以下依赖：</p>
+<p>A-&gt;B-&gt;C(version?)</p>
+<p>A可以通过排除依赖C来接触和C的传递依赖关系，然后重新进行直接依赖定义C(version)。</p>
+<h3 id="归类依赖"><a href="#归类依赖" class="headerlink" title="归类依赖"></a>归类依赖</h3><p>多个相关依赖如果使用相同的版本号，可以在<code>&lt;dependencies&gt;</code>之外定于如下的<code>&lt;property&gt;</code>来统一定义：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name.version</span>&gt;</span>x.y.z<span class="tag">&lt;/<span class="name">name.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>后面的依赖在调用版本号时便可直接通过<code>${name.version}</code>来调用<code>x.y.z</code>这个版本了，这样非常利于管理和升级依赖包。</p>
+<h3 id="优化依赖"><a href="#优化依赖" class="headerlink" title="优化依赖"></a>优化依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mvn dependency:list</span><br><span class="line">mvn dependency:tree</span><br></pre></td></tr></table></figure>
+<p>命令可以用来查看当前项目中的<strong>依赖列表</strong>和<strong>依赖树</strong>，同时表明依赖范围等</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn dependency:analyze</span><br></pre></td></tr></table></figure>
+<p>则可以分析依赖中出现的问题：</p>
+<ul>
+<li>Used undeclared dependencies</li>
+<li>Unused declared dependencies</li>
+</ul>
+<p>其中<code>Used undecalred dependencies</code>需要注意仔细分析。</p>
+<h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><h3 id="仓库的分类"><a href="#仓库的分类" class="headerlink" title="仓库的分类"></a>仓库的分类</h3><ul>
+<li>Maven 仓库<ul>
+<li>本地仓库</li>
+<li>远程仓库<ul>
+<li>中央仓库</li>
+<li>私服</li>
+<li>其他公共仓库</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h3><p>本地仓库在<code>~/.m2/repository</code>目录下，任何一个构件，<strong>只有当被下载安装到了本地仓库中才会被其他的Maven项目所使用</strong>。所以，如果要使用本地的构件作为依赖，必须先使用<code>mvn clean install</code>来安装到本地仓库。</p>
+<p>如果因为某些原因想要改变本地仓库的存储目录，修改<code>~/.m2/settings.xml</code>即可（此文件需从Maven的<code>config</code>目录下拷贝过来）。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>new path<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><p>当本地仓库没有我们所需要的构件的时候，Maven就会到远程仓库去下载。</p>
+<blockquote>
+<p>这好比藏书。例如，我想要读『红楼梦』，会先检查自己的书房是否已经收藏了这本书，如果发现没有这本书，于是就跑去书店买一本回来，放到书房里。可能有一天我又想读一本英文版的『程序员修炼之道』，而书房里只有中文版，于是又去书店找，可发现书店没有，好在还有网上书店，于是从Amazon买了一本，几天后我收到了这本书，又放到了自己的书房。</p>
+</blockquote>
+<blockquote>
+<p>本地仓库和远程仓库之间的关系就好比是自己的书房和网上书店的关系、自己想看的书先从书房找、没有的话从网上淘一本放到自己的书房看、自己的书房最需要一个就够了、而网上书店可以有很多、同样本地仓库只有一个、而远程仓库就可以有很多。我们可以在<code>settings.xml</code>中指定远程仓库。</p>
+</blockquote>
+<h4 id="中央仓库"><a href="#中央仓库" class="headerlink" title="中央仓库"></a>中央仓库</h4><p>中央仓库是Maven默认的远程仓库，它的地址是<code>http://repo.maven.org/maven2</code>。中央仓库在超级POM中是这样描述的：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">id</span>&gt;</span>central<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>Central Repository<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">url</span>&gt;</span>https://repo.maven.apache.org/maven2<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">layout</span>&gt;</span>default<span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">snapshots</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">enabled</span>&gt;</span>false<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="私服"><a href="#私服" class="headerlink" title="私服"></a>私服</h4><p>私服是一种特殊的远程仓库，它一般架设在内网中，一方面它可以将别的远程仓库的构件缓存下来，一方面可以提供构件给内部Maven用户下载，同时还支持本地用户上传自己的构件供网内的用户使用，大大提高了访问速度和减轻了中央仓库的压力。常见的架构私服的软件是<strong>Nexus</strong>。</p>
+<h3 id="远程仓库的配置"><a href="#远程仓库的配置" class="headerlink" title="远程仓库的配置"></a>远程仓库的配置</h3><p>在很多情况下，默认的中央仓库可能无法满足项目的需求（例如有些依赖<code>JDBC</code>因为版权许可原因并不能放在中央仓库里），项目可能存在别的公共远程仓库里，那我们就可以在自己的项目中配置仓库。下面以添加一个<code>JBoss</code>仓库为例：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">	<span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">id</span>&gt;</span>jboss<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>JBoss Repository<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">url</span>&gt;</span>https://repository.jboss.com/maven2<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">layout</span>&gt;</span>default<span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">releases</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">enabled</span>&gt;</span>true<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">releases</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">snapshots</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">enabled</span>&gt;</span>false<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：Maven的中央仓库的<code>&lt;id&gt;</code>是<code>central</code>，如果其他仓库的声明使用了这个id，就会覆盖中央仓库。</p>
+</blockquote>
+<p>如果允许<code>&lt;snapshot&gt;</code>快照版本的构件被索引下载，那么有可能使得项目的某些功能变得不太稳定，这个属性需要看需求来开启。</p>
+<h3 id="远程仓库的认证"><a href="#远程仓库的认证" class="headerlink" title="远程仓库的认证"></a>远程仓库的认证</h3><p>大部分的仓库访问都不需要认证，但是出于安全考虑，有些仓库也是需要认证保护，特别内部使用的仓库。访问这样的仓库，需要<strong>提前配置认证信息</strong>。认证信息的配置必须在<code>setting.xml</code>中，这样是更加安全的，下例是给一个<code>id</code>为<code>my-repo</code>的仓库配置的认证信息：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">	<span class="tag">&lt;<span class="name">servers</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">id</span>&gt;</span>my-repo<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">username</span>&gt;</span>repo-user<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">password</span>&gt;</span>repo-pwd<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line">		...</span><br><span class="line">	<span class="tag">&lt;/<span class="name">servers</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="快照版本"><a href="#快照版本" class="headerlink" title="快照版本"></a>快照版本</h3><p>SNAPSHOT 版本的构件在上传至仓库时，会被打上<code>x.y.z-yyyymmdd.hhmmss-times</code>的时间戳例如<code>2.1-20151119.145320-13</code>，代表该构件是2.1版本，2015年11月19日14时53分20秒第13次提交更新。</p>
+<p>这样别人使用快照版的构件是都将得到最新的版本。</p>
+<blockquote>
+<p>快照版本只应在组织内部的项目或模块间依赖使用，因为这时，组织对这些快照版本的依赖具有完全的理解及控制权。项目不应该依赖于任何组织外部的快照版本依赖，由于快照版本的不稳定性，这样的依赖会造成潜在的危险。也就是说，<strong>即使构建项目今天是成功的，由于外部的快照版本依赖实际对应的构件随时可能变化，项目的构建就有可能由于这些外部的不可控因素而失败</strong>。</p>
+</blockquote>
+<h3 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h3><p>如果仓库X中能提供所有Y仓库能提供的构件，那么就称X是Y的一个镜像。举个例子，<code>http://maven.net.cn/content/groups/public</code>是中央仓库<code>http://repo.maven.org/maven2</code>在中国的一个镜像，国内的访问速度普遍会快上很多。因此，可以配置<code>setting.xml</code>文件使用该镜像来替代中央仓库：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">	<span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">     	<span class="tag">&lt;<span class="name">id</span>&gt;</span>maven.oschina.net<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">     	<span class="tag">&lt;<span class="name">name</span>&gt;</span>one of the central mirrors in China<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">     	<span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.oschina.net/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">     	<span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>关于镜像的常见用法是配合私服，也就是使得私服是所有远程仓库的镜像，只需<code>&lt;mirrorOf&gt;</code>的值为<code>*</code>即可。<strong>这样对于任何远程仓库的请求都会映射到私服对应的<code>&lt;url&gt;</code>上去</strong>。</p>
+<p>为了满足一些复杂的需求，Maven还支持更高级的镜像配置：</p>
+<ul>
+<li><code>*</code>：匹配所有的远程仓库</li>
+<li><code>external：*</code>：匹配所有远程仓库，使用<code>localhost</code>的除外</li>
+<li><code>repo1, repo2</code>：使用逗号隔开多个远程仓库</li>
+<li><code>*, !repo1</code>：匹配除<code>repo1</code>以外所有的远程仓库</li>
+</ul>
+<h3 id="仓库搜索服务"><a href="#仓库搜索服务" class="headerlink" title="仓库搜索服务"></a>仓库搜索服务</h3><ul>
+<li><a href="http://repository.sonatype.org/" target="_blank" rel="noopener">http://repository.sonatype.org/</a></li>
+<li><a href="http://www.jarvana.com/jarvana/" target="_blank" rel="noopener">http://www.jarvana.com/jarvana/</a></li>
+<li><a href="http://www.mvnbrower.com/" target="_blank" rel="noopener">http://www.mvnbrower.com/</a></li>
+<li><a href="http://mvnrepository.com/" target="_blank" rel="noopener">http://mvnrepository.com/</a></li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://kchen.cc">Kun Chen</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://kchen.cc/2015/11/16/mvn-study/">http://kchen.cc/2015/11/16/mvn-study/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Maven/">Maven</a>
+            
+              <a href="/tags/笔记/">笔记</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2015/12/02/vpn-shunt/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">通过路由表进行VPN国内外分流的办法</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2015/11/09/insurance-vs-investiment/">
+        <span class="next-text nav-default">养老保险和投资收益对比</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:kchen2991@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.facebook.com/quentin.chenkun" class="iconfont icon-facebook" title="facebook"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/kchen0x" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/chen-kun-92-07/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kun Chen</span>
+    <span class="division">|</span>
+    <span> <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备17053524号</a></span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://kchen.cc/2015/11/16/mvn-study/';
+        this.page.identifier = '2015/11/16/mvn-study/';
+        this.page.title = 'Maven 学习笔记';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//kchen.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  </body>
+</html>

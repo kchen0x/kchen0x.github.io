@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="default">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Linux 常用功能性命令">
+
+
+
+
+  <meta name="keywords" content="Tips, Linux, KChen's Blog">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="KChen's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://kchen.cc/2018/06/13/linux-misc/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?940f951acbfe5399f7a2816cdbdae170";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41464607-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41464607-2');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz",
+      appKey: "wVKlG50ntVertqEOw4aQEVwI"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":"E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz","app_key":"wVKlG50ntVertqEOw4aQEVwI"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> Linux 常用功能性命令 - KChen's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="mobile-header-logo">
+    <a href="/." class="logo">KChen's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">KChen's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Linux 常用功能性命令
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-06-13
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/06/13/linux-misc/" data-title="Linux 常用功能性命令">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#统计当前目录下特定格式文件的数目"><span class="toc-text">统计当前目录下特定格式文件的数目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#统计当前文件夹下的文件个数、目录个数"><span class="toc-text">统计当前文件夹下的文件个数、目录个数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检测本机的端口是否被占用"><span class="toc-text">检测本机的端口是否被占用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检测目标机器-tcp-端口是否开放"><span class="toc-text">检测目标机器 tcp 端口是否开放</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-firewall-cmd-管理防火墙"><span class="toc-text">使用 firewall-cmd 管理防火墙</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GPU-使用情况查询"><span class="toc-text">GPU 使用情况查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bash-脚本中的循环控制"><span class="toc-text">Bash 脚本中的循环控制</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文章用于检索在 Linux 系统下如何解决某一个问题，每个问题通常使用一个命令的不同参数或者多个命令的组合方式来实现，命令下方给出了简单的解释。可以通过每一个小标题来寻找自己的需求。</p>
+<a id="more"></a>
+<h2 id="统计当前目录下特定格式文件的数目"><a href="#统计当前目录下特定格式文件的数目" class="headerlink" title="统计当前目录下特定格式文件的数目"></a>统计当前目录下特定格式文件的数目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">"*.wav"</span> -<span class="built_in">print</span> | wc -l</span><br></pre></td></tr></table></figure>
+<p>解析：<code>find .</code> 命令可以循环查找当前目录和子目录的文件，<code>-name</code> 参数用于指定文件 pattern，<code>wc -l</code> 按行统计结果。</p>
+<h2 id="统计当前文件夹下的文件个数、目录个数"><a href="#统计当前文件夹下的文件个数、目录个数" class="headerlink" title="统计当前文件夹下的文件个数、目录个数"></a>统计当前文件夹下的文件个数、目录个数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls -l |grep <span class="string">"^-"</span>|wc -l      <span class="comment">##统计当前文件夹下文件的个数</span></span><br><span class="line">ls -l |grep <span class="string">"^d"</span>|wc -l      <span class="comment">##统计当前文件夹下目录的个数</span></span><br><span class="line">ls -lR|grep <span class="string">"^-"</span>|wc -l      <span class="comment">##统计当前文件夹及子文件夹下文件的个数</span></span><br><span class="line">ls -lR|grep <span class="string">"^d"</span>|wc -l      <span class="comment">##统计文件夹及子文件夹下目录的个数</span></span><br></pre></td></tr></table></figure>
+<p>解析：使用 <code>ls -l</code> 命令用长列表模式查看当前目录的文件（包括目录、设备文件等）<code>R</code> 参数递归子目录，<code>grep</code> 命令过滤内容，<code>^d</code> 是文件夹（目录），<code>^-</code> 是普通文件。</p>
+<h2 id="检测本机的端口是否被占用"><a href="#检测本机的端口是否被占用" class="headerlink" title="检测本机的端口是否被占用"></a>检测本机的端口是否被占用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看已开放的 tcp 端口</span></span><br><span class="line">netstat -anp tcp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定端口是否被占用</span></span><br><span class="line">netstat –apn | grep 8080</span><br></pre></td></tr></table></figure>
+<h2 id="检测目标机器-tcp-端口是否开放"><a href="#检测目标机器-tcp-端口是否开放" class="headerlink" title="检测目标机器 tcp 端口是否开放"></a>检测目标机器 tcp 端口是否开放</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet www.google.com 80</span><br></pre></td></tr></table></figure>
+<h2 id="使用-firewall-cmd-管理防火墙"><a href="#使用-firewall-cmd-管理防火墙" class="headerlink" title="使用 firewall-cmd 管理防火墙"></a>使用 firewall-cmd 管理防火墙</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state                           <span class="comment">##查看防火墙状态，是否是running</span></span><br><span class="line">firewall-cmd --reload                          <span class="comment">##重新载入配置</span></span><br><span class="line">firewall-cmd --get-zones                       <span class="comment">##列出支持的zone</span></span><br><span class="line">firewall-cmd --get-services                    <span class="comment">##列出支持的服务，在列表中的服务是放行的</span></span><br><span class="line">firewall-cmd --query-service ftp               <span class="comment">##查看ftp服务是否支持，返回yes或者no</span></span><br><span class="line">firewall-cmd --add-service=ftp                 <span class="comment">##临时开放ftp服务</span></span><br><span class="line">firewall-cmd --add-service=ftp --permanent     <span class="comment">##永久开放ftp服务</span></span><br><span class="line">firewall-cmd --remove-service=ftp --permanent  <span class="comment">##永久移除ftp服务</span></span><br><span class="line">firewall-cmd --add-port=80/tcp --permanent     <span class="comment">##永久添加80端口 </span></span><br><span class="line">iptables -L -n                                 <span class="comment">##查看规则，这个命令是和iptables的相同的</span></span><br><span class="line">man firewall-cmd                               <span class="comment">##查看帮助</span></span><br></pre></td></tr></table></figure>
+<h2 id="GPU-使用情况查询"><a href="#GPU-使用情况查询" class="headerlink" title="GPU 使用情况查询"></a>GPU 使用情况查询</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvidia-smi      <span class="comment">##查看 GPU 此时的使用情况</span></span><br><span class="line">gpustat         <span class="comment">##更加精简的结果（pip install gpustat）</span></span><br></pre></td></tr></table></figure>
+<h2 id="Bash-脚本中的循环控制"><a href="#Bash-脚本中的循环控制" class="headerlink" title="Bash 脚本中的循环控制"></a>Bash 脚本中的循环控制</h2><p><strong>1.基本格式</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> 变量 <span class="keyword">in</span> 取值列表</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    各种操作</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>还有<strong>罕见</strong>的写法就是都写作一行里：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> 变量 <span class="keyword">in</span> 取值列表 ; <span class="keyword">do</span> 各种操作 ;<span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p><strong>2.普通枚举</strong></p>
+<p>取值列表为空格或回车符分割的字符串</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">'apple'</span> <span class="string">'meat'</span> <span class="string">'sleep'</span> <span class="string">'woman'</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> I like <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p><strong>3.花括号迭代</strong></p>
+<ul>
+<li>数字迭代，比如<code>{1..100}</code></li>
+<li>字母迭代，比如<code>{a..z},{A..Z},{Z..A}</code></li>
+<li>ASCII字符迭代，比如<code>{a..A}</code></li>
+</ul>
+<p>计算1加到100的和</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">ans=0</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> &#123;1..100&#125;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">let</span> ans+=<span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ans</span></span><br></pre></td></tr></table></figure>
+<p>花括号的迭代还可以指定指定增量，格式如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;首..尾..增量&#125;</span><br></pre></td></tr></table></figure>
+<p>计算一下1到100以内的所有奇数的和：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> &#123;1..100..2&#125;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p><strong>4.C 风格 for 循环</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">ans=0</span><br><span class="line"><span class="keyword">for</span> ((i=1;i&lt;=100;i++))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">let</span> ans+=<span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ans</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意!!!这里的for循环要有两层括号</strong></p>
+</blockquote>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://kchen.cc">Kun Chen</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://kchen.cc/2018/06/13/linux-misc/">http://kchen.cc/2018/06/13/linux-misc/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Tips/">Tips</a>
+            
+              <a href="/tags/Linux/">Linux</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/11/06/single-circle-linkedlist-entry-point/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">如何求单链表的环入口点 - 龟兔赛跑法 - 动画解释</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/04/02/linux-startup/">
+        <span class="next-text nav-default">Linux 服务器/macOS 环境初始化</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:kchen2991@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.facebook.com/quentin.chenkun" class="iconfont icon-facebook" title="facebook"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/kchen0x" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/chen-kun-92-07/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kun Chen</span>
+    <span class="division">|</span>
+    <span> <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备17053524号</a></span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://kchen.cc/2018/06/13/linux-misc/';
+        this.page.identifier = '2018/06/13/linux-misc/';
+        this.page.title = 'Linux 常用功能性命令';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//kchen.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  </body>
+</html>

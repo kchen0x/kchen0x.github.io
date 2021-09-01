@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="default">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Linux 使用教程">
+
+
+
+
+  <meta name="keywords" content="Linux, KChen's Blog">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="KChen's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://kchen.cc/2016/04/16/linux-tutorial/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?940f951acbfe5399f7a2816cdbdae170";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41464607-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41464607-2');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz",
+      appKey: "wVKlG50ntVertqEOw4aQEVwI"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":"E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz","app_key":"wVKlG50ntVertqEOw4aQEVwI"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> Linux 使用教程 - KChen's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="mobile-header-logo">
+    <a href="/." class="logo">KChen's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">KChen's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Linux 使用教程
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-04-16
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2016/04/16/linux-tutorial/" data-title="Linux 使用教程">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Linux学习路线"><span class="toc-text">一、Linux学习路线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、基本概念及操作"><span class="toc-text">二、基本概念及操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、用户及文件权限管理"><span class="toc-text">三、用户及文件权限管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、目录结构及文件基本操作"><span class="toc-text">四、目录结构及文件基本操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、环境变量与文件查找"><span class="toc-text">五、环境变量与文件查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、文件打包与压缩"><span class="toc-text">六、文件打包与压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用zip打包文件夹："><span class="toc-text">使用zip打包文件夹：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用unzip命令解压缩zip文件"><span class="toc-text">使用unzip命令解压缩zip文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、命令执行顺序控制与管道"><span class="toc-text">七、命令执行顺序控制与管道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令控制顺序"><span class="toc-text">命令控制顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管道"><span class="toc-text">管道</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、数据流重定向"><span class="toc-text">八、数据流重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九、正则表达式基础"><span class="toc-text">九、正则表达式基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#正则式和通配符的简单例子"><span class="toc-text">正则式和通配符的简单例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本语法："><span class="toc-text">基本语法：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#选择"><span class="toc-text">选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数量限定"><span class="toc-text">数量限定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#范围和优先级"><span class="toc-text">范围和优先级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#语法（部分）"><span class="toc-text">语法（部分）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grep模式匹配命令"><span class="toc-text">grep模式匹配命令</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>笔记来源于<a href="http://www.shiyanlou.com" target="_blank" rel="noopener">实验楼</a>的Linux基础教程。</p>
+</blockquote>
+<h2 id="一、Linux学习路线"><a href="#一、Linux学习路线" class="headerlink" title="一、Linux学习路线"></a>一、Linux学习路线</h2><p><img src="https://dn-anything-about-doc.qbox.me/linux_base/1-8.png" alt="LinuxRoute"></p>
+<a id="more"></a>
+<p>Unix族谱：</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/linux_base/1-9.svg" alt="UnixFamily"></p>
+<h2 id="二、基本概念及操作"><a href="#二、基本概念及操作" class="headerlink" title="二、基本概念及操作"></a>二、基本概念及操作</h2><p>几个大家熟知也最流行的实现了客户端功能的桌面环境KDE，GNOME，XFCE，LXDE，其中就有你看到的，实验楼目前使用的 XFCE 桌面环境，部分老用户可能可以回想起，实验楼之前使用的环境是 LXDE。这也意味着在 Linux 上你可以自己选择安装不同的桌面环境，甚至可以定制自己的专属桌面。</p>
+<p>几个比较常见的终端模拟器，例如 gnome-terminal，kconsole，xterm，rxvt，kvt，nxterm 和 eterm。</p>
+<p>终端本质上是对应着 Linux 上的 /dev/tty 设备，Linux 的多用户登陆就是通过不同的 /dev/tty 设备完成的，Linux 默认提供了 6 个纯命令行界面的 “terminal”（准确的说这里应该是 6 个 virtual consoles）来让用户登录，在物理机系统上你可以通过使用[Ctrl]+[Alt]+[F1]～[F6]进行切换，不过在我们的在线实验环境中可能无法切换，因为特殊功能按键会被你主机系统劫持。当你切换到其中一个终端后想要切换回图形界面，你可以按下[Ctrl]+[Alt]+[F7]来完成。</p>
+<p>在 UNIX/Linux 中比较流行的常见的 Shell 有 bash，zsh，ksh，csh 等等，Ubuntu 终端默认使用的是 bash，默认的桌面环境是 GNOME 或者 Unity（基于 GNOME）</p>
+<p>通配符是一种特殊语句，主要有星号（<code>*</code>）和问号（<code>?</code>），用来对对字符串进行模糊匹配（比如文件名，参数名）。当查找文件夹时，可以使用它来代替一个或多个真正字符；当不知道真正字符或者懒得输入完整名字时，常常使用通配符代替一个或多个真正的字符。</p>
+<p>在创建文件的时候，如果需要一次性创建多个文件，比如：“love_1_linux.txt，love_2_linux.txt，… love_10_linux.txt”。在 Linux 中十分方便：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch love_&#123;1..10&#125;_linux.txt</span><br></pre></td></tr></table></figure>
+<p>Shell 常用通配符：</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*</code></td>
+<td>匹配 0 或多个字符</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>匹配任意一个字符</td>
+</tr>
+<tr>
+<td><code>[list]</code></td>
+<td>匹配 list 中的任意单一字符</td>
+</tr>
+<tr>
+<td><code>[!list]</code></td>
+<td>匹配 除list 中的任意单一字符以外的字符</td>
+</tr>
+<tr>
+<td><code>[c1-c2]</code></td>
+<td>匹配 c1-c2 中的任意单一字符 如：<code>[0-9]</code> <code>[a-z]</code></td>
+</tr>
+<tr>
+<td><code>{string1,string2,...}</code></td>
+<td>匹配 sring1 或 string2 (或更多)其一字符串</td>
+</tr>
+<tr>
+<td><code>{c2..c2}</code></td>
+<td>匹配 c1-c2 中全部字符 如<code>{1..10}</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="三、用户及文件权限管理"><a href="#三、用户及文件权限管理" class="headerlink" title="三、用户及文件权限管理"></a>三、用户及文件权限管理</h2><p>请打开终端，输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ who am i</span><br><span class="line">或者</span><br><span class="line">$ who mom likes</span><br></pre></td></tr></table></figure>
+<p>输入的第一列表示打开当前伪终端的用户的用户名（要查看当前登录用户的用户名，去掉空格直接使用 <code>whoami</code> 即可），第二列的 <code>pts/0</code> 中 <code>pts</code> 表示伪终端，所谓伪是相对于 <code>/dev/tty</code> 设备而言的，还记得上一节讲终端时的那七个使用 <code>[Ctrl]+[Alt]+[F1]～[F7]</code> 进行切换的 <code>/dev/tty</code> 设备么,这是“真终端”，伪终端就是当你在图形用户界面使用 <code>/dev/tty7</code> 时每打开一个终端就会产生一个伪终端， <code>pts/0</code> 后面那个数字就表示打开的伪终端序号，你可以尝试再打开一个终端，然后在里面输入 <code>who am i</code> ，看第二列是不是就变成 <code>pts/1</code> 了，第三列则表示当前伪终端的启动时间。</p>
+<p><code>su &lt;user&gt;</code>可以切换到用户user，执行时需要输入目标用户的密码，<code>sudo &lt;cmd&gt;</code>可以以特权级别运行cmd命令，需要当前用户属于sudo组，且需要输入当前用户密码。<code>su - &lt;user&gt;</code>命令也是切换用户，同时环境变量也会跟着改变成目标用户的环境变量。</p>
+<p>使用 usermod 命令可以为用户添加用户组，同样使用该命令你必需有 root 权限，你可以直接使用 root 用户为其它用户添加用户组，或者用其它已经在 sudo 用户组的用户使用 sudo 命令获取权限来执行该命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ su shiyanlou</span><br><span class="line">$ groups lilei</span><br><span class="line">$ sudo usermod -G sudo lilei</span><br><span class="line">$ groups lilei</span><br></pre></td></tr></table></figure>
+<p>文件权限</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/linux_base/3-9.png" alt="详情"></p>
+<p><img src="https://dn-anything-about-doc.qbox.me/linux_base/3-10.png" alt="权限"></p>
+<h2 id="四、目录结构及文件基本操作"><a href="#四、目录结构及文件基本操作" class="headerlink" title="四、目录结构及文件基本操作"></a>四、目录结构及文件基本操作</h2><p><img src="https://dn-anything-about-doc.qbox.me/linux_base/4-1.png" alt="Linux目录结构"></p>
+<p>FHS（英文：Filesystem Hierarchy Standard 中文：文件系统层次结构标准），多数 Linux 版本采用这种文件组织形式，FHS 定义了系统中每个区域的用途、所需要的最小构成的文件和目录同时还给出了例外处理与矛盾处理。</p>
+<p>FHS 定义了两层规范，第一层是， / 下面的各个目录应该要放什么文件数据，例如 /etc 应该要放置设置文件，/bin 与 /sbin 则应该要放置可执行文件等等。</p>
+<p>第二层则是针对 /usr 及 /var 这两个目录的子目录来定义。例如 /var/log 放置系统登录文件、/usr/share 放置共享数据等等。</p>
+<p>使用 -p 参数，同时创建父目录（如果不存在该父目录），如下我们同时创建一个多级目录（这在有时候安装软件，配置安装路径时非常有用）：</p>
+<p><code>$ mkdir -p father/son/grandson</code></p>
+<p>可以加上-n参数显示行号：</p>
+<p><code>$ cat -n passwd</code></p>
+<p>如果说上面的 cat 是用来快速查看一个文件内容的，那么这个more和less就是天生用来”阅读”一个文件的内容的，比如说”man”手册内部就是使用的 less 来显示内容。其中more命令比较简单，只能向一个方向滚动，而”less”为基于”more”和”vi”开发，功能更强大。less 的使用基本和 more 一致。</p>
+<p>只看一行， 加上-n参数，后面紧跟行数：</p>
+<p><code>$ tail -n 1 /etc/passwd</code></p>
+<p>关于<code>tail</code>命令，不得不提的还有它一个很牛的参数<code>-f</code>，这个参数可以实现不停地读取某个文件的内容并显示。这可让我们动态查看日志起到实时监视的作用。</p>
+<p>如果你想更加快速的入门，你可以直接使用 Linux 内部的 vim 学习教程，输入如下命令即可开始：</p>
+<p><code>$ vimtutor</code></p>
+<h2 id="五、环境变量与文件查找"><a href="#五、环境变量与文件查找" class="headerlink" title="五、环境变量与文件查找"></a>五、环境变量与文件查找</h2><p>通常我们会涉及到的环境变量有三种：</p>
+<ul>
+<li>当前 Shell 进程私有用户自定义变量，如上面我们创建的 temp 变量，只在当前 Shell 中有效。</li>
+<li>Shell 本身内建的变量。</li>
+<li>从自定义变量导出的环境变量。</li>
+</ul>
+<p>也有三个与上述三种环境变量相关的命令，<code>set</code>，<code>env</code>，<code>export</code>。这三个命令很相似，都可以用于打印相关环境变量,区别在于涉及的是不同范围的环境变量，详见下表：</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/linux_base/5-3.png" alt="环境变量作用域大小"></p>
+<p>在每个用户的 home 目录中有一个 Shell 每次启动时会默认执行一个配置脚本，以初始化环境，包括添加一些用户自定义环境变量等等。zsh 的配置文件是.zshrc，相应 Bash 的配置文件为.bashrc。它们在etc下还都有一个或多个全局的配置文件，不过我们一般只修改用户目录下的配置文件。</p>
+<p>我们可以简单的使用下面命令直接添加内容到.zshrc中：</p>
+<p><code>$ echo &quot;PATH=$PATH:/home/shiyanlou/mybin&quot; &gt;&gt; .zshrc</code></p>
+<blockquote>
+<p>上述命令中<code>&gt;&gt;</code>表示将标准输出以追加的方式重定向到一个文件中，注意前面用到的<code>&gt;</code>是以覆盖的方式重定向到一个文件中，使用的时候一定要注意分辨。在指定文件不存在的情况下都会创建新的文件。</p>
+</blockquote>
+<p>在上面我们在 Shell 中修改了一个配置脚本文件之后（比如 zsh 的配置文件 home 目录下的.zshrc），每次都要退出终端重新打开甚至重启主机之后其才能生效，很是麻烦，我们可以使用<code>source</code>命令来让其立即生效，如：</p>
+<p><code>$ source .zshrc</code></p>
+<p><code>source</code>命令还有一个别名就是<code>.</code>，注意与表示当前路径的那个点区分开，虽然形式一样，但作用和使用方式一样，上面的命令如果替换成<code>.</code>的方式就该是</p>
+<p><code>$ . ./.zshrc</code></p>
+<p>注意第一个点后面有一个空格，而且后面的文件必须指定完整的绝对或相对路径名，<code>source</code>则不需要。</p>
+<p>与搜索相关的命令常用的有如下几个<code>whereis</code>,<code>which</code>,<code>find</code>,<code>locate</code>。</p>
+<ul>
+<li>whereis简单快速</li>
+<li>locate快而全</li>
+<li>which小而精</li>
+<li>find精而细</li>
+</ul>
+<h2 id="六、文件打包与压缩"><a href="#六、文件打包与压缩" class="headerlink" title="六、文件打包与压缩"></a>六、文件打包与压缩</h2><h3 id="使用zip打包文件夹："><a href="#使用zip打包文件夹：" class="headerlink" title="使用zip打包文件夹："></a>使用zip打包文件夹：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ zip -r -q -o shiyanlou.zip /home/shiyanlou</span><br><span class="line">$ du -h shiyanlou.zip</span><br><span class="line">$ file shiyanlou.zip</span><br></pre></td></tr></table></figure>
+<p>第一行命令中，<code>-r</code>参数表示递归打包包含子目录的全部内容，<code>-q</code>参数表示为安静模式，即不向屏幕输出信息，<code>-o</code>表示输出文件，需在其后紧跟打包输出文件名。后面使用<code>du</code>命令查看打包后文件的大小。</p>
+<h3 id="使用unzip命令解压缩zip文件"><a href="#使用unzip命令解压缩zip文件" class="headerlink" title="使用unzip命令解压缩zip文件"></a>使用unzip命令解压缩zip文件</h3><p>将shiyanlou.zip解压到当前目录：</p>
+<p><code>$ unzip shiyanlou.zip</code></p>
+<p>使用安静模式，将文件解压到指定目录：</p>
+<p><code>$ unzip -q shiyanlou.zip -d ziptest</code></p>
+<h2 id="七、命令执行顺序控制与管道"><a href="#七、命令执行顺序控制与管道" class="headerlink" title="七、命令执行顺序控制与管道"></a>七、命令执行顺序控制与管道</h2><h3 id="命令控制顺序"><a href="#命令控制顺序" class="headerlink" title="命令控制顺序"></a>命令控制顺序</h3><p>简单的顺序执行你可以使用<code>;</code>来完成：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update;sudo apt-get install some-tool;some-tool</span><br><span class="line"><span class="comment"># 让它自己运行</span></span><br></pre></td></tr></table></figure>
+<p>有选择性的来执行命令，比如上一条命令执行成功才继续下一条，或者不成功又该做出其它什么处理,比如我们使用<code>which</code>来查找是否安装某个命令，如果找到就执行该命令，否则什么也不做（虽然这个操作没有什么实际意义，但可帮你更好的理解一些概念）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">which</span> cowsay&gt;/dev/null &amp;&amp; cowsay -f head-in ohch~</span><br></pre></td></tr></table></figure>
+<p>你如果没有安装<code>cowsay</code>，你可以先执行一次上述命令，你会发现什么也没发生，你再安装好之后你再执行一次上述命令，你也会发现一些惊喜。</p>
+<p>上面的<code>&amp;&amp;</code>就是用来实现选择性执行的，它表示如果前面的命令执行结果（不是表示终端输出的内容，而是表示命令执行状态的结果）返回<code>0</code>则执行后面的，否则不执行，你可以从<code>$?</code>环境变量获取上一次命令的返回结果。</p>
+<p>Shell 也有一个<code>||</code>，它们的区别就在于，shell中的这两个符号除了也可用于表示逻辑与和或之外，就是可以实现这里的命令执行顺序的简单控制。<code>||</code>在这里就是与<code>&amp;&amp;</code>相反的控制效果，当上一条命令执行结果为<code>≠0($?≠0)</code>时则执行它后面的命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">which</span> cowsay&gt;/dev/null || <span class="built_in">echo</span> <span class="string">"cowsay has not been install, please run 'sudo apt-get install cowsay' to install"</span></span><br></pre></td></tr></table></figure>
+<p>除了上述基本的使用之外，我们还可以结合这<code>&amp;&amp;</code>和<code>||</code>来实现一些操作，比如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">which</span> cowsay&gt;/dev/null &amp;&amp; <span class="built_in">echo</span> <span class="string">"exist"</span> || <span class="built_in">echo</span> <span class="string">"not exist"</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://dn-anything-about-doc.qbox.me/linux_base/8-3.png" alt="逻辑流程"></p>
+<h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p>管道是什么,<strong>管道是一种通信机制，通常用于进程间的通信（也可通过socket进行网络通信），它表现出来的形式就是将前面每一个进程的输出(stdout)直接作为下一个进程的输入(stdin)</strong>。</p>
+<p>管道又分为匿名管道和具名管道（这里将不会讨论在源程序中使用系统调用创建并使用管道的情况，它与命令行的管道在内核中实际都是采用相同的机制）。我们在使用一些过滤程序时经常会用到的就是匿名管道，在命令行中由<code>|</code>分隔符表示，<code>|</code>在前面的内容中我们已经多次使用到了。具名管道简单的说就是有名字的管道，通常只会在源程序中用到具名管道。下面我们就将通过一些常用的可以使用管道的”过滤程序”来帮助你熟练管道的使用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls -al /etc | less</span><br></pre></td></tr></table></figure>
+<p>通过管道将前一个命令(<code>ls</code>)的输出作为下一个命令(<code>less</code>)的输入，然后就可以一行一行地看。</p>
+<p><code>cut</code>命令，打印每一行的某一字段</p>
+<p>打印/etc/passwd文件中以<code>:</code>为分隔符的第1个字段和第6个字段分别表示用户名和其家目录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cut -d <span class="string">':'</span> -f 1,6 /etc/passwd</span><br></pre></td></tr></table></figure>
+<p>打印/etc/passwd文件中每一行的前N个字符：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前五个（包含第五个）</span></span><br><span class="line">$ cut /etc/passwd -c -5</span><br><span class="line"><span class="comment"># 前五个之后的（包含第五个）</span></span><br><span class="line">$ cut /etc/passwd -c 5-</span><br><span class="line"><span class="comment"># 第五个</span></span><br><span class="line">$ cut /etc/passwd -c 5</span><br><span class="line"><span class="comment"># 2到5之间的（包含第五个）</span></span><br><span class="line">$ cut /etc/passwd -c 2-5</span><br></pre></td></tr></table></figure>
+<p><code>grep</code>命令是很强大的，也是相当常用的一个命令，它结合正则表达式可以实现很复杂却很高效的匹配和查找。</p>
+<p><code>grep</code>命令的一般形式为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep [命令选项]... 用于匹配的表达式 [文件]...</span><br></pre></td></tr></table></figure>
+<p><code>wc</code> 命令用于统计并输出一个文件中行、单词和字节的数目，比如输出/etc/passwd文件的统计信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wc /etc/passwd</span><br></pre></td></tr></table></figure>
+<p>分别只输出行数、单词数、字节数、字符数和输入文本中最长一行的字节数：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 行数</span></span><br><span class="line">$ wc -l /etc/passwd</span><br><span class="line"><span class="comment"># 单词数</span></span><br><span class="line">$ wc -w /etc/passwd</span><br><span class="line"><span class="comment"># 字节数</span></span><br><span class="line">$ wc -c /etc/passwd</span><br><span class="line"><span class="comment"># 字符数</span></span><br><span class="line">$ wc -m /etc/passwd</span><br><span class="line"><span class="comment"># 最长行字节数</span></span><br><span class="line">$ wc -L /etc/passwd</span><br></pre></td></tr></table></figure>
+<p><code>sort</code> 命令功能很简单就是将输入按照一定方式排序，然后再输出,它支持的排序有按字典排序,数字排序，按月份排序，随机排序，反转排序，指定特定字段进行排序等等。</p>
+<p>默认为字典排序：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/passswd | sort</span><br></pre></td></tr></table></figure>
+<p>反转排序：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/passwd | sort -r</span><br></pre></td></tr></table></figure>
+<p>按特定字段排序：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/passwd | sort -t<span class="string">':'</span> -k 3</span><br></pre></td></tr></table></figure>
+<p>上面的<code>-t</code>参数用于指定字段的分隔符，这里是以”:”作为分隔符；<code>-k</code> 字段号用于指定对哪一个字段进行排序。这里/etc/passwd文件的第三个字段为数字，默认情况下是一字典序排序的，如果要按照数字排序就要加上<code>-n</code>参数：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/passwd | sort -t<span class="string">':'</span> -k 3 -n</span><br></pre></td></tr></table></figure>
+<h2 id="八、数据流重定向"><a href="#八、数据流重定向" class="headerlink" title="八、数据流重定向"></a>八、数据流重定向</h2><p>默认使用终端的标准输入作为命令的输入和标准输出作为命令的输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cat </span><br><span class="line">（按Ctrl+C退出）</span><br></pre></td></tr></table></figure>
+<p>将<code>cat</code>的连续输出（heredoc方式）重定向到一个文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir Documents</span><br><span class="line">$ cat &gt; Documents/test.c &lt;&lt;EOF</span><br><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello world\n"</span>);</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<p>将一个文件作为命令的输入，标准输出作为命令的输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat Documents/test.c</span><br></pre></td></tr></table></figure>
+<p>将<code>echo</code>命令通过管道传过来的数据作为<code>cat</code>命令的输入，将标准输出作为命令的输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">'hi'</span> | cat</span><br></pre></td></tr></table></figure>
+<p>将<code>echo</code>命令的输出从默认的标准输出重定向到一个普通文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">'hello shiyanlou'</span> &gt; redirect</span><br><span class="line">$ cat redirect</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>管道默认是连接前一个命令的输出到下一个命令的输入，而重定向通常是需要一个文件来建立两个命令的连接</p>
+</blockquote>
+<h2 id="九、正则表达式基础"><a href="#九、正则表达式基础" class="headerlink" title="九、正则表达式基础"></a>九、正则表达式基础</h2><blockquote>
+<p><strong>正则表达式</strong>，又称正规表示式、正规表示法、正规表达式、规则表达式、常规表示法（英语：Regular Expression，在代码中常简写为 regex、regexp 或 RE），计算机科学的一个概念。正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些符合某个模式的文本。</p>
+</blockquote>
+<blockquote>
+<p>许多程序设计语言都支持利用正则表达式进行字符串操作。例如，在 Perl 中就内建了一个功能强大的正则表达式引擎。正则表达式这个概念最初是由 UNIX 中的工具软件（例如<code>sed</code>和<code>grep</code>）普及开的。正则表达式通常缩写成“regex”，单数有 regexp、regex，复数有 regexps、regexes、regexen。</p>
+</blockquote>
+<blockquote>
+<p>简单的说形式和功能上正则表达式和<strong>通配符</strong>很像，不过它们之间又有很大差别，特别在于一些特殊的匹配字符的含义上。</p>
+</blockquote>
+<h3 id="正则式和通配符的简单例子"><a href="#正则式和通配符的简单例子" class="headerlink" title="正则式和通配符的简单例子"></a>正则式和通配符的简单例子</h3><p>假设我们有这样一个文本文件，包含”shiyanlou”，和”shilouyan”这两个字符串，同样一个表达式：</p>
+<p><code>shi*</code></p>
+<p>如果这作为一个正则表达式，它将只能匹配 shi，而如果不是作为正则表达式<code>*</code>作为一个通配符，则将同时匹配这两个字符串。这是为什么呢？因为在正则表达式中<code>*</code>表示匹配前面的子表达式（这里就是它前面一个字符）零次或多次，比如它可以匹配”sh”,”shii”,”shish”,”shiishi”等等，而作为通配符表示匹配通配符后面任意多个任意字符，所以它可以匹配”shiyanlou”，和”shilouyan”两个字符。</p>
+<h3 id="基本语法："><a href="#基本语法：" class="headerlink" title="基本语法："></a>基本语法：</h3><p>一个正则表达式通常被称为一个<strong>模式（pattern）</strong>，为用来描述或者匹配一系列符合某个句法规则的字符串。</p>
+<h4 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h4><p><code>|</code>竖直分隔符表示选择，例如”<code>boy|girl</code>“可以匹配”boy”或者”girl”</p>
+<h4 id="数量限定"><a href="#数量限定" class="headerlink" title="数量限定"></a>数量限定</h4><p>数量限定除了我们举例用的<code>*</code>,还有<code>+</code>加号,<code>?</code>问号,<code>.</code>点号，如果在一个模式中不加数量限定符则表示出现一次且仅出现一次：</p>
+<ul>
+<li><code>+</code>表示前面的字符必须出现至少一次(1次或多次)，例如，”<code>goo+gle</code>“,可以匹配”gooogle”,”goooogle”等；</li>
+<li><code>?</code>表示前面的字符最多出现一次(0次或1次)，例如，”<code>colou?r</code>“,可以匹配”color”或者”colour”;</li>
+<li><code>*</code>星号代表前面的字符可以不出现，也可以出现一次或者多次（0次、或1次、或多次），例如，“<code>0*42</code>”可以匹配42、042、0042、00042等。</li>
+</ul>
+<h4 id="范围和优先级"><a href="#范围和优先级" class="headerlink" title="范围和优先级"></a>范围和优先级</h4><p><code>()</code>圆括号可以用来定义模式字符串的范围和优先级，这可以简单的理解为是否将括号内的模式串作为一个整体。例如，”<code>gr(a|e)y</code>“等价于”<code>gray|grey</code>“，（这里体现了优先级，竖直分隔符用于选择a或者e而不是gra和ey），”<code>(grand)?father</code>“匹配father和grandfather（这里体验了范围，<code>?</code>将<strong>圆括号内容作为一个整体匹配</strong>）。</p>
+<h4 id="语法（部分）"><a href="#语法（部分）" class="headerlink" title="语法（部分）"></a>语法（部分）</h4><p>正则表达式有多种不同的风格，下面列举一些常用的作为 PCRE 子集的适用于<code>perl</code>和<code>python</code>编程语言及<code>grep</code>或<code>egrep</code>的正则表达式匹配规则：(由于markdown表格解析的问题，下面的竖直分隔符用全角字符代替，实际使用时请换回半角字符)</p>
+<blockquote>
+<p>PCRE（Perl Compatible Regular Expressions中文含义：perl语言兼容正则表达式）是一个用 C 语言编写的正则表达式函数库，由菲利普.海泽(Philip Hazel)编写。PCRE是一个轻量级的函数库，比Boost 之类的正则表达式库小得多。PCRE 十分易用，同时功能也很强大，性能超过了 POSIX 正则表达式库和一些经典的正则表达式库。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\</code></td>
+<td><strong>将下一个字符标记为一个特殊字符、或一个原义字符</strong>。例如，“<code>n</code>”匹配字符“n”。“<code>\n</code>”匹配一个换行符。序列“<code>\\</code>”匹配“\”而“<code>\(</code>”则匹配“(”。</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td><strong>匹配输入字符串的开始位置</strong>。</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td><strong>匹配输入字符串的结束位置</strong>。</td>
+</tr>
+<tr>
+<td><code>{n}</code></td>
+<td>n是一个非负整数。<strong>匹配确定的n次</strong>。例如，“<code>o{2}</code>”不能匹配“Bob”中的“o”，但是能匹配“food”中的两个o。</td>
+</tr>
+<tr>
+<td><code>{n,}</code></td>
+<td>n是一个非负整数。<strong>至少匹配n次</strong>。例如，“<code>o{2,}</code>”不能匹配“Bob”中的“o”，但能匹配“foooood”中的所有o。“<code>o{1,}</code>”等价于“<code>o+</code>”。“<code>o{0,}</code>”则等价于“<code>o*</code>”。</td>
+</tr>
+<tr>
+<td><code>{n,m}</code></td>
+<td>m和n均为非负整数，其中n&lt;=m。<strong>最少匹配n次且最多匹配m次</strong>。例如，“<code>o{1,3}</code>”将匹配“fooooood”中的前三个o。“<code>o{0,1}</code>”等价于“o?”。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td><strong>匹配前面的子表达式零次或多次</strong>。例如，<code>zo*</code>能匹配“z”、“zo”以及“zoo”。<code>*</code>等价于<code>{0,}</code>。</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td><strong>匹配前面的子表达式一次或多次</strong>。例如，“<code>zo+</code>”能匹配“zo”以及“zoo”，但不能匹配“z”。<code>+</code>等价于<code>{1,}</code>。</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td><strong>匹配前面的子表达式零次或一次</strong>。例如，“<code>do(es)?</code>”可以匹配“do”或“does”中的“do”。<code>?</code>等价于<code>{0,1}</code>。</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td><strong>当该字符紧跟在任何一个其他限制符（*,+,?，{n}，{n,}，{n,m}）后面时，匹配模式是非贪婪的</strong>。<strong>非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串</strong>。例如，对于字符串“oooo”，“<code>o+?</code>”将匹配单个“o”，而“<code>o+</code>”将匹配所有“o”。</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td><strong>匹配除“<code>\n</code>”之外的任何单个字符</strong>。要匹配包括“<code>\n</code>”在内的任何字符，请使用像“<code>(.｜\n)</code>”的模式。</td>
+</tr>
+<tr>
+<td><code>(pattern)</code></td>
+<td><strong>匹配pattern并获取这一匹配的子字符串</strong>。该子字符串用于向后引用。要匹配圆括号字符，请使用“<code>\(</code>”或“<code>\)</code>”。</td>
+</tr>
+<tr>
+<td><code>x｜y</code></td>
+<td><strong>匹配x或y</strong>。例如，“<code>z｜food</code>”能匹配“z”或“food”。“<code>(z｜f)ood</code>”则匹配“zood”或“food”。</td>
+</tr>
+<tr>
+<td><code>[xyz]</code></td>
+<td>字符集合（character class）。<strong>匹配所包含的任意一个字符</strong>。例如，“<code>[abc]</code>”可以匹配“plain”中的“a”。其中特殊字符仅有反斜线<code>\</code>保持特殊含义，用于转义字符。其它特殊字符如星号、加号、各种括号等均作为普通字符。脱字符^如果出现在首位则表示负值字符集合；如果出现在字符串中间就仅作为普通字符。连字符 - 如果出现在字符串中间表示字符范围描述；如果如果出现在首位则仅作为普通字符。</td>
+</tr>
+<tr>
+<td><code>[^xyz]</code></td>
+<td>排除型（negate）字符集合。<strong>匹配未列出的任意字符</strong>。例如，“<code>[^abc]</code>”可以匹配“plain”中的“plin”。</td>
+</tr>
+<tr>
+<td><code>[a-z]</code></td>
+<td>字符范围。<strong>匹配指定范围内的任意字符</strong>。例如，“<code>[a-z]</code>”可以匹配“a”到“z”范围内的任意小写字母字符。</td>
+</tr>
+<tr>
+<td><code>[^a-z]</code></td>
+<td>排除型的字符范围。<strong>匹配任何不在指定范围内的任意字符</strong>。例如，“<code>[^a-z]</code>”可以匹配任何不在“a”到“z”范围内的任意字符。</td>
+</tr>
+</tbody>
+</table>
+<p>正则式的思维导图：</p>
+<p><img src="https://dn-anything-about-doc.qbox.me/linux_base/RegularExpression.png" alt="regexMindmap"></p>
+<h3 id="grep模式匹配命令"><a href="#grep模式匹配命令" class="headerlink" title="grep模式匹配命令"></a>grep模式匹配命令</h3><p><code>grep</code>命令用于打印输出文本中匹配的模式串，它使用正则表达式作为模式匹配的条件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将匹配以'z'开头以'o'结尾的所有字符串</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'zero\nzo\nzoo'</span> | grep <span class="string">'z.*o'</span></span><br><span class="line"><span class="comment"># 将匹配以'z'开头以'o'结尾，中间包含一个任意字符的字符串</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'zero\nzo\nzoo'</span> | grep <span class="string">'z.o'</span></span><br><span class="line"><span class="comment"># 将匹配以'z'开头,以任意多个'o'结尾的字符串</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'zero\nzo\nzoo'</span> | grep <span class="string">'zo*'</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：其中<code>\n</code>为换行符</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># grep默认是区分大小写的，这里将匹配所有的小写字母</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'1234\nabcd'</span> | grep <span class="string">'[a-z]'</span></span><br><span class="line"><span class="comment"># 将匹配所有的数字</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'1234\nabcd'</span> | grep <span class="string">'[0-9]'</span></span><br><span class="line"><span class="comment"># 将匹配所有的数字</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'1234\nabcd'</span> | grep <span class="string">'[[:digit:]]'</span></span><br><span class="line"><span class="comment"># 将匹配所有的小写字母</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'1234\nabcd'</span> | grep <span class="string">'[[:lower:]]'</span></span><br><span class="line"><span class="comment"># 将匹配所有的大写字母</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'1234\nabcd'</span> | grep <span class="string">'[[:upper:]]'</span></span><br><span class="line"><span class="comment"># 将匹配所有的字母和数字，包括0-9,a-z,A-Z</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'1234\nabcd'</span> | grep <span class="string">'[[:alnum:]]'</span></span><br><span class="line"><span class="comment"># 将匹配所有的字母</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'1234\nabcd'</span> | grep <span class="string">'[[:alpha:]]'</span></span><br></pre></td></tr></table></figure>
+<p>要通过<code>grep</code>使用<strong>扩展正则表达式</strong>需要加上<code>-E</code>参数，或使用<code>egrep</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 只匹配"zo"</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'zero\nzo\nzoo'</span> | grep -E <span class="string">'zo&#123;1&#125;'</span></span><br><span class="line"><span class="comment"># 匹配以"zo"开头的所有单词</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'zero\nzo\nzoo'</span> | grep -E <span class="string">'zo&#123;1,&#125;'</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：推荐掌握<code>{n,m}</code>即可，<code>+,?,*</code>，这几个不太直观，且容易弄混淆。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配"www.shiyanlou.com"和"www.google.com"</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'www.shiyanlou.com\nwww.baidu.com\nwww.google.com'</span> | grep -E <span class="string">'www\.(shiyanlou|google)\.com'</span></span><br><span class="line"><span class="comment"># 或者匹配不包含"baidu"的内容</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'www.shiyanlou.com\nwww.baidu.com\nwww.google.com'</span> | grep -Ev <span class="string">'www\.baidu\.com'</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：因为<code>.</code>号有特殊含义，所以需要转义。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://kchen.cc">Kun Chen</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://kchen.cc/2016/04/16/linux-tutorial/">http://kchen.cc/2016/04/16/linux-tutorial/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Linux/">Linux</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/04/17/vim-tutorial/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Vim编辑器实用基础</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/04/09/sublime-text-3-settings-sync/">
+        <span class="next-text nav-default">Sublime Text 3 配置同步</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:kchen2991@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.facebook.com/quentin.chenkun" class="iconfont icon-facebook" title="facebook"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/kchen0x" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/chen-kun-92-07/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kun Chen</span>
+    <span class="division">|</span>
+    <span> <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备17053524号</a></span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://kchen.cc/2016/04/16/linux-tutorial/';
+        this.page.identifier = '2016/04/16/linux-tutorial/';
+        this.page.title = 'Linux 使用教程';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//kchen.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  </body>
+</html>

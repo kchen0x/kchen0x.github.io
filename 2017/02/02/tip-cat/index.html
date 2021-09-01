@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="default">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Linux - Cat 命令的实用技巧">
+
+
+
+
+  <meta name="keywords" content="Tips, Linux, KChen's Blog">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="KChen's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://kchen.cc/2017/02/02/tip-cat/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?940f951acbfe5399f7a2816cdbdae170";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41464607-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41464607-2');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz",
+      appKey: "wVKlG50ntVertqEOw4aQEVwI"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":"E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz","app_key":"wVKlG50ntVertqEOw4aQEVwI"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> Linux - Cat 命令的实用技巧 - KChen's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="mobile-header-logo">
+    <a href="/." class="logo">KChen's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">KChen's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Linux - Cat 命令的实用技巧
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-02-02
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2017/02/02/tip-cat/" data-title="Linux - Cat 命令的实用技巧">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-cat-合并多个文件"><span class="toc-text">使用 cat 合并多个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-sed-与-cat-除去空白行"><span class="toc-text">使用 sed 与 cat 除去空白行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-cat-对行进行编号"><span class="toc-text">使用 cat 对行进行编号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-cat-显示非打印字符"><span class="toc-text">使用 cat 显示非打印字符</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>GNU 文本程序实用技巧系列之——<code>cat</code>。<code>cat</code> 这个命令是 UNIX 爱好者所热爱的，也是厌恶 UNIX 的人所憎恶的。</p>
+<blockquote>
+<p>The <code>cat</code> utility reads files sequentially, writing them to the standard output.</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="使用-cat-合并多个文件"><a href="#使用-cat-合并多个文件" class="headerlink" title="使用 cat 合并多个文件"></a>使用 cat 合并多个文件</h2><p>有时候，我们常常需要将几个文件处理成一个文件，并将处理的结果保存到一个单独的输出文件中。<code>cat</code> （「concatenate」的缩写）命令可以在其输入上接受一个或多个文件并将它们打印到一个单独的文件中。例如， <code>cat chapter01 chapter02 chapter03 &gt; book</code> 将三个 <code>chapterXX</code> 文件保存在一个单独的 <code>book</code> 文件中。</p>
+<p>输入文件按照它们在 <code>cat</code> 命令后的排列顺序被打印，因此，要调换输出文件中内容的顺序，就必须先调换输入文件的顺序。此外，当需要处理的文件数目过大而无法手工输入这些文件的名称时，可以使用通配符来匹配文件名，例如， <code>cat chapter* &gt; book</code> 可以将当前目录下所有以 <code>chapter</code> 开头的文件全部合并输出到 <code>book</code> 文件中，记住，<strong>文件名将会按升序排列</strong>。这就意味着你会发现 <code>chapter13</code> 被发送到输出中时会在 <code>chapter2</code> 之前，<code>chapter02</code> 之后。有时候，这会引起一些很有意思的问题。</p>
+<p>当 <code>cat</code> 的输出没有被重定向到一个文件或另一个命令的标准输入时，<code>cat</code> 表现出来的行为与多数命令行工具一样，即将其输出发送到控制台。 这意味着你可以使用 <code>cat</code> 来显示文件（也就是 <code>cat</code> 命令最常见的实用方法）；例如，你可以使用 <code>cat /etc/passwd</code> 来显示系统密码文件的内容。为方便起见，你应该用 <code>less</code> 或者 <code>more</code> 来查看大文件，如 <code>less /etc/passwd</code>。（你可以通过输入 <code>man less</code> 学习更多关于 <code>less</code> 的知识）。</p>
+<p>尽管 <code>cat</code> 主要用于合并文件，我们还可以将它用于输入的简单自动处理。例如，你可以使用 一个单独的空白行来除去多行空白行（使用 <code>-s</code> 选项），这是一个在你将源代码公诸于世前进行代码整理工作的好办法。遗憾的是，<code>cat</code> 并没有用于一次清除所有空白行的选项。但这并不是什么大问题，因为你可以方便地使用 <code>sed</code> 命令将这些空白行除去：</p>
+<h2 id="使用-sed-与-cat-除去空白行"><a href="#使用-sed-与-cat-除去空白行" class="headerlink" title="使用 sed 与 cat 除去空白行"></a>使用 sed 与 cat 除去空白行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ cat -s /etc/X11/XF86Config | sed <span class="string">'/^[[:space:]]*$/d'</span></span><br><span class="line">...</span><br><span class="line"><span class="comment"># Multiple FontPath entries are allowed (they are concatenated together)</span></span><br><span class="line"><span class="comment"># By default, Red Hat 6.0 and later now use a font server independent of</span></span><br><span class="line"><span class="comment"># the X server to render fonts.</span></span><br><span class="line">    FontPath   <span class="string">"/usr/X11R6/lib/X11/fonts/TrueType"</span></span><br><span class="line">    FontPath   <span class="string">"unix/:7100"</span></span><br><span class="line">EndSection</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>对于读取配置文件和 HTML 页面的源文件，特别是那些由脚本生成的插入了不必要新行的源文件，以及那些包含大型条件结构（其各个项之间已经用空行分开）的源文件来说，空白行紧缩是一个非常实用的技巧。</p>
+<p><code>cat</code> 的另外一个重要的功能是它可以对行进行编号。这种功能对于程序文档的编制以及法律和科学文档的编制很方便。打印在左边的行号使得参考文档的某一部分变得容易。这在编程、科学研究、业务报告或甚至是立法工作中都是非常重要的。 对行进行编号功能有两个选项： <code>-b</code> 选项（只能对非空白行进行编号）和 <code>-n</code> 选项（可以对所有行进行编号）：</p>
+<h2 id="使用-cat-对行进行编号"><a href="#使用-cat-对行进行编号" class="headerlink" title="使用 cat 对行进行编号"></a>使用 cat 对行进行编号</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ cat -b /etc/X11/XF86Config</span><br><span class="line">...</span><br><span class="line">    14  <span class="comment"># Multiple FontPath entries are allowed (they are concatenated together)</span></span><br><span class="line">    15  <span class="comment"># By default, Red Hat 6.0 and later now use a font server independent of</span></span><br><span class="line">    16  <span class="comment"># the X server to render fonts.</span></span><br><span class="line">    17      FontPath   <span class="string">"/usr/X11R6/lib/X11/fonts/TrueType"</span></span><br><span class="line">    18      FontPath   <span class="string">"unix/:7100"</span></span><br><span class="line">    19  EndSection</span><br><span class="line">...</span><br><span class="line">$ cat -n /etc/X11/XF86Config</span><br><span class="line">...</span><br><span class="line">    20  <span class="comment"># Multiple FontPath entries are allowed (they are concatenated together)</span></span><br><span class="line">    21  <span class="comment"># By default, Red Hat 6.0 and later now use a font server independent of</span></span><br><span class="line">    22  <span class="comment"># the X server to render fonts.</span></span><br><span class="line">    23  </span><br><span class="line">    24      FontPath   <span class="string">"/usr/X11R6/lib/X11/fonts/TrueType"</span></span><br><span class="line">    25      FontPath   <span class="string">"unix/:7100"</span></span><br><span class="line">    26  </span><br><span class="line">    27  EndSection</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><code>cat</code> 还可以在你查看包含如<em>制表符</em>这样的<strong>非打印字符</strong>的文件时起帮助作用。你可以用以下选项来显示<em>制表符</em>：</p>
+<ul>
+<li><code>-T</code> 将<em>制表符</em>显示为 <code>^I</code></li>
+<li><code>-v</code> 显示非打印字符，除了<em>换行符</em>和<em>制表符</em>，它们使用各自效果相当的「控制序列」。 例如，当你处理一个在 Windows 系统中生成的文件时，这个文件将使用 <code>Control-M</code>（ <code>^M</code> ）来标记行的结束。对于代码大于 127 的字符，它们的前面将会被加上 <code>M-</code> （表示「meta」），这与其它系统中在字符前面加上 <code>Alt-</code> 相当。</li>
+<li><code>-E</code> 在每一行的结束处添加<em>美元符</em>（ <code>$</code> ）。</li>
+</ul>
+<h2 id="使用-cat-显示非打印字符"><a href="#使用-cat-显示非打印字符" class="headerlink" title="使用 cat 显示非打印字符"></a>使用 cat 显示非打印字符</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">$ cat -t /etc/X11/XF86Config</span><br><span class="line">...</span><br><span class="line"><span class="comment"># Multiple FontPath entries are allowed (they are concatenated together)</span></span><br><span class="line"><span class="comment"># By default, Red Hat 6.0 and later now use a font server independent of</span></span><br><span class="line"><span class="comment"># the X server to render fonts.</span></span><br><span class="line">^IFontPath^I<span class="string">"/usr/X11R6/lib/X11/fonts/TrueType"</span></span><br><span class="line">^IFontPath^I<span class="string">"unix/:7100"</span></span><br><span class="line">EndSection</span><br><span class="line">...</span><br><span class="line">$ cat -E /etc/X11/XF86Config</span><br><span class="line">...</span><br><span class="line"><span class="comment"># Multiple FontPath entries are allowed (they are concatenated together)$</span></span><br><span class="line"><span class="comment"># By default, Red Hat 6.0 and later now use a font server independent of$</span></span><br><span class="line"><span class="comment"># the X server to render fonts.$</span></span><br><span class="line">$</span><br><span class="line">    FontPath   <span class="string">"/usr/X11R6/lib/X11/fonts/TrueType"</span>$</span><br><span class="line">    FontPath   <span class="string">"unix/:7100"</span>$</span><br><span class="line">$</span><br><span class="line">EndSection$</span><br><span class="line">...</span><br><span class="line">$ cat -v /etc/X11/XF86Config</span><br><span class="line">...</span><br><span class="line">^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@M-|M-8^X^@^@^@</span><br><span class="line">P^@^O<span class="string">"M-X^O M-@^M^@^@^@M-^@^O"</span>M-@M-k^@M-8*^@</span><br><span class="line">@M-^H<span class="variable">$M</span>-@M-9|A(M-@)M-yM-|M-sM-*M-hW^A^@^@j^@</span><br><span class="line">M-|M-sM-%1M-@M-9^@^B^@^@M-sM-+fM-^A= ^@ ^@</span><br><span class="line">F^@^@   ^@M-9^@^H^@^@M-sM-<span class="variable">$M</span>-G^E(l!M-@M-^?</span><br><span class="line">^IM-A5^@^@^D^@PM-^]M-^\X1M-H%^@^@^D^@tyM-G</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://kchen.cc">Kun Chen</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://kchen.cc/2017/02/02/tip-cat/">http://kchen.cc/2017/02/02/tip-cat/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Tips/">Tips</a>
+            
+              <a href="/tags/Linux/">Linux</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/02/19/java-tips-updating-interface/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Java - 通过 Default 更新接口类方法</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/12/12/github-cheats/">
+        <span class="next-text nav-default">Github 小技巧</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:kchen2991@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.facebook.com/quentin.chenkun" class="iconfont icon-facebook" title="facebook"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/kchen0x" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/chen-kun-92-07/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kun Chen</span>
+    <span class="division">|</span>
+    <span> <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备17053524号</a></span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://kchen.cc/2017/02/02/tip-cat/';
+        this.page.identifier = '2017/02/02/tip-cat/';
+        this.page.title = 'Linux - Cat 命令的实用技巧';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//kchen.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  </body>
+</html>

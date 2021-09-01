@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="default">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Linux 服务器/macOS 环境初始化">
+
+
+
+
+  <meta name="keywords" content="Linux, Mac, Server, KChen's Blog">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="KChen's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://kchen.cc/2018/04/02/linux-startup/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?940f951acbfe5399f7a2816cdbdae170";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41464607-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41464607-2');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz",
+      appKey: "wVKlG50ntVertqEOw4aQEVwI"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":"E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz","app_key":"wVKlG50ntVertqEOw4aQEVwI"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> Linux 服务器/macOS 环境初始化 - KChen's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="mobile-header-logo">
+    <a href="/." class="logo">KChen's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">KChen's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Linux 服务器/macOS 环境初始化
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-04-02
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2018/04/02/linux-startup/" data-title="Linux 服务器/macOS 环境初始化">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开启-BBR-POWERED（可选）"><span class="toc-text">开启 BBR POWERED（可选）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-Mosh"><span class="toc-text">安装 Mosh</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Debian-Ubuntu-安装-mosh"><span class="toc-text">Debian/Ubuntu 安装 mosh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CentOS7-安装-mosh"><span class="toc-text">CentOS7 安装 mosh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tips"><span class="toc-text">Tips</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换-Shell"><span class="toc-text">切换 Shell</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是-Zsh-和它的框架-Oh-My-Zsh"><span class="toc-text">什么是 Zsh 和它的框架 Oh-My-Zsh?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装并设置-Zsh-为默认-shell-语言"><span class="toc-text">安装并设置 Zsh 为默认 shell 语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Oh-My-Zsh-安装"><span class="toc-text">Oh My Zsh 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#通过-curl"><span class="toc-text">通过 curl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过-wget"><span class="toc-text">通过 wget</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-k-zsh"><span class="toc-text">安装 k-zsh</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-k-vim-服务器简化版"><span class="toc-text">安装 k-vim 服务器简化版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-k-tmux"><span class="toc-text">安装 k-tmux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#集群监控-ServerStatus（中文版）"><span class="toc-text">集群监控 ServerStatus（中文版）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自动部署"><span class="toc-text">自动部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手动部署"><span class="toc-text">手动部署</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装网络监控-BitMeter"><span class="toc-text">安装网络监控 BitMeter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NetHogs-软件"><span class="toc-text">NetHogs 软件</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本手册适用于新创建的 Linux 服务器基本环境初始化，包括连接性能优化、Shell 脚本语言和 Vim 环境优化配置。</p>
+<p>其中魔改 BBR 部分视情况开启，如果服务器需要用作高性能网络代理，可以开启提高性能，否则不必开启。<strong>BBR 开启只能在安装其他软件之前进行，若之后开启则会令安装的软件失效。</strong></p>
+<p>如只需要对服务器环境进行配置，不涉及到网络代理；以及本地环境的初始化配置。可直接跳转到 <a href="#%E5%88%87%E6%8D%A2-Shell">¶环境配置：切换 Shell</a> 部分开始。</p>
+<a id="more"></a>
+<h2 id="开启-BBR-POWERED（可选）"><a href="#开启-BBR-POWERED（可选）" class="headerlink" title="开启 BBR POWERED（可选）"></a>开启 BBR POWERED（可选）</h2><p><a href="https://github.com/xratzh/CBBR" target="_blank" rel="noopener">参考并使用了 xratzh 的魔改 BBR</a>。</p>
+<h2 id="安装-Mosh"><a href="#安装-Mosh" class="headerlink" title="安装 Mosh"></a>安装 Mosh</h2><p>用来提高 SSH 连接远程服务器的输入延时和移动设备连接的稳定性（除非手动操作，基本不会断开连接），安装完成后，直接使用 <code>mosh</code> 代替 <code>ssh</code> 即可。</p>
+<h3 id="Debian-Ubuntu-安装-mosh"><a href="#Debian-Ubuntu-安装-mosh" class="headerlink" title="Debian/Ubuntu 安装 mosh"></a>Debian/Ubuntu 安装 mosh</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:keithw/mosh-dev</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install mosh</span><br></pre></td></tr></table></figure>
+<h3 id="CentOS7-安装-mosh"><a href="#CentOS7-安装-mosh" class="headerlink" title="CentOS7 安装 mosh"></a>CentOS7 安装 mosh</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install epel-release</span><br><span class="line">yum makecache</span><br><span class="line">yum -y install mosh</span><br></pre></td></tr></table></figure>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><p>如果在内网无法直接访问yum仓库，可以下面的目录查找mosh及依赖的rpm包</p>
+<p><a href="http://dl.fedoraproject.org/pub/epel/7/x86_64/" target="_blank" rel="noopener">http://dl.fedoraproject.org/pub/epel/7/x86_64/</a></p>
+<p>rpm包是安装首字母分类到各个目录的，例如mosh的rpm包在</p>
+<p><a href="http://dl.fedoraproject.org/pub/epel/7/x86_64/m/" target="_blank" rel="noopener">http://dl.fedoraproject.org/pub/epel/7/x86_64/m/</a></p>
+<p>安装完成后，可能需要打开防火墙的 60000-61000 UDP 端口供 mosh 使用：</p>
+<p>Firewall-cmd：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=60000-61000/udp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<p>iptables：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo iptables -I INPUT 1 -p udp --dport 60000:61000 -j ACCEPT</span><br><span class="line">sudo service iptables save</span><br></pre></td></tr></table></figure>
+<p>如果出现语言问题，添加到 <code>bashrc</code> 或者 <code>zshrc</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export LC_ALL=&quot;en_US.UTF-8&quot;</span><br></pre></td></tr></table></figure>
+<p>或者更妥善的解决方法是将本地（Mac）的 Shell 环境改为英文：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LC_ALL=en_US.UTF-8  </span><br><span class="line">export LANG=en_US.UTF-8</span><br></pre></td></tr></table></figure>
+<h2 id="切换-Shell"><a href="#切换-Shell" class="headerlink" title="切换 Shell"></a>切换 Shell</h2><p>把默认的 bash 切换为 zsh，使用 oh-my-zsh 框架，并使用 k-zsh 配置。</p>
+<h3 id="什么是-Zsh-和它的框架-Oh-My-Zsh"><a href="#什么是-Zsh-和它的框架-Oh-My-Zsh" class="headerlink" title="什么是 Zsh 和它的框架 Oh-My-Zsh?"></a>什么是 Zsh 和它的框架 Oh-My-Zsh?</h3><p>Oh-My-Zsh is a framework for <a href="http://www.zsh.org/" target="_blank" rel="noopener">Zsh</a>, the Z shell.</p>
+<ul>
+<li>为了使用 Oh-My-Zsh 框架，必须先安装 Zsh。<ul>
+<li>运行 <code>zsh --version</code> 来确认。</li>
+<li>如果结果是 <code>zsh 4.3.9</code> 或更高的版本则可以。</li>
+</ul>
+</li>
+<li>然后，需要把 Zsh 更改为默认的 shell 语言：<ul>
+<li>在新的 Terminal 中运行 <code>echo $SHELL</code> 来确认。</li>
+<li>如果结果是 <code>/bin/zsh</code> 或其他 zsh 路径均可。</li>
+</ul>
+</li>
+</ul>
+<h3 id="安装并设置-Zsh-为默认-shell-语言"><a href="#安装并设置-Zsh-为默认-shell-语言" class="headerlink" title="安装并设置 Zsh 为默认 shell 语言"></a>安装并设置 Zsh 为默认 shell 语言</h3><p>如果需要的话，依照以下步骤来安装 Zsh：</p>
+<ol>
+<li>安装 Zsh 有两种主流的办法<ul>
+<li>直接利用包管理工具， <em>e.g.</em> Debian/Ubuntu 下的 <code>sudo apt-get install zsh</code> 或者 CentOS 下的 <code>sudo yum update &amp;&amp; sudo yum -y install zsh</code>。</li>
+<li>从 <a href="http://zsh.sourceforge.net/Arc/source.html" target="_blank" rel="noopener">source 源</a>安装， 依照 <a href="http://zsh.sourceforge.net/FAQ/zshfaq01.html#l7" target="_blank" rel="noopener">instructions from the Zsh FAQ</a> 进行即可。</li>
+</ul>
+</li>
+<li>通过运行 <code>zsh --version</code> 来验证安装。 如果结果是 <code>zsh 4.3.9</code> 或更高的版本则可以。</li>
+<li>更改为默认 shell： <code>chsh -s $(which zsh)</code><ul>
+<li>注意，如果 Zsh 不在你的授权 shells 列表里面 (<code>/etc/shells</code>) 或者你没有权限使用 <code>chsh</code>，上述命令不会成功。 如果是这种情况的话， <a href="https://www.google.com/search?q=zsh+default+without+chsh" target="_blank" rel="noopener">你可以依照这个方案执行</a>。<ul>
+<li>Create <code>.bash_profile</code> in your home directory and add these lines: <ul>
+<li><code>export SHELL=/bin/zsh</code></li>
+<li><code>exec /bin/zsh -l</code></li>
+</ul>
+</li>
+<li>Update: <code>.profile</code> may work as a general solution when default shell is not bash. I’m not sure if <code>.profile</code> may be called by Zsh as well that it could go redundant but we can do it safely with a simple check:<ul>
+<li><code>export SHELL=/bin/zsh</code></li>
+<li><code>[ -z &quot;$ZSH_VERSION&quot; ] &amp;&amp; exec /bin/zsh -l</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>登出并重新登入来使用新的默认 shell。</li>
+<li>通过运行 <code>echo $SHELL</code> 来确认， 如果结果是 <code>/bin/zsh</code> 或其他 zsh 路径则安装并切换成功。</li>
+</ol>
+<h3 id="Oh-My-Zsh-安装"><a href="#Oh-My-Zsh-安装" class="headerlink" title="Oh My Zsh 安装"></a>Oh My Zsh 安装</h3><p>你可以在终端中通过以下任意一条命令来安装 Oh My Zsh。你可以使用 <code>curl</code> 或者 <code>wget</code>。</p>
+<h4 id="通过-curl"><a href="#通过-curl" class="headerlink" title="通过 curl"></a>通过 curl</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/\</span><br><span class="line">oh-my-zsh/master/tools/install.sh)"</span><br></pre></td></tr></table></figure>
+<h4 id="通过-wget"><a href="#通过-wget" class="headerlink" title="通过 wget"></a>通过 wget</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"</span><br></pre></td></tr></table></figure>
+<h3 id="安装-k-zsh"><a href="#安装-k-zsh" class="headerlink" title="安装 k-zsh"></a>安装 k-zsh</h3><p>k-zsh 是我配置的一套 Oh My Zsh 设置，包含了常用的插件和更清晰的主题效果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv ~/.zshrc ~/.zshrc_bac</span><br><span class="line">curl https://raw.githubusercontent.com/kchen0x/k-zsh/master/zshrc &gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
+<p>k-zsh 中配置了部分插件需要单独安装一下才能生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/zsh-users/zsh-autosuggestions $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-autosuggestions</span><br><span class="line">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure>
+<p>其中常用的插件是 <code>z</code>，快速跳转到相应目录。还有 <code>x</code>，快速解压缩文件等。</p>
+<h2 id="安装-k-vim-服务器简化版"><a href="#安装-k-vim-服务器简化版" class="headerlink" title="安装 k-vim 服务器简化版"></a>安装 k-vim 服务器简化版</h2><p>k-vim for server 是 wklken 配置的 k-vim 的服务器版本，包含了许多简单有用的设置，处于便捷考虑 <code>perfix</code> 按键已经被修改为 <code>,</code> 键。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv ~/.vimrc ~/.vimrc_bak</span><br><span class="line">curl https://raw.githubusercontent.com/wklken/vim-for-server/master/vimrc &gt; ~/.vimrc</span><br></pre></td></tr></table></figure>
+<p>如果需要安装完整非便携版的 k-vim，请根据 <a href="https://github.com/kchen0x/k-vim" target="_blank" rel="noopener">https://github.com/kchen0x/k-vim</a> 进行操作。</p>
+<h2 id="安装-k-tmux"><a href="#安装-k-tmux" class="headerlink" title="安装 k-tmux"></a>安装 k-tmux</h2><p>确保使用 2.3 以上版本的 tmux： <code>tmux -V</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv ~/.tmux.conf ~/.tmux.conf_bak</span><br><span class="line">curl https://raw.githubusercontent.com/kchen0x/k-tmux/master/tmux.conf &gt; ~/.tmux.conf</span><br></pre></td></tr></table></figure>
+<p>安装插件管理</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm</span><br></pre></td></tr></table></figure>
+<p>安装完成后进入 tmux，使用[prefix]加大写<code>I</code>重载一次插件即可（[prefix]为<code>ctrl+a</code>）。</p>
+<h2 id="集群监控-ServerStatus（中文版）"><a href="#集群监控-ServerStatus（中文版）" class="headerlink" title="集群监控 ServerStatus（中文版）"></a>集群监控 ServerStatus（中文版）</h2><h3 id="自动部署"><a href="#自动部署" class="headerlink" title="自动部署"></a>自动部署</h3><p><strong>【服务端】</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https://raw.githubusercontent.com/cppla/ServerStatus/master/autodeploy/config.json</span><br><span class="line">docker run -d --restart=always --name=serverstatus -v &#123;$path&#125;/config.json:/ServerStatus/server/config.json -p &#123;$port&#125;:80 -p &#123;$port&#125;:35601 cppla/serverstatus</span><br><span class="line"></span><br><span class="line">eg:</span><br><span class="line">docker run -d --restart=always --name=serverstatus -v ~/config.json:/ServerStatus/server/config.json -p 80:80 -p 35601:35601 cppla/serverstatus</span><br></pre></td></tr></table></figure>
+<p><strong>【客户端】</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -qO client-linux.py &apos;https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py&apos; &amp;&amp; nohup python client-linux.py SERVER=&#123;$SERVER&#125; USER=&#123;$USER&#125; PASSWORD=&#123;$PASSWORD&#125; &gt;/dev/null 2&gt;&amp;1 &amp;</span><br><span class="line"></span><br><span class="line">eg:</span><br><span class="line">wget --no-check-certificate -qO client-linux.py &apos;https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py&apos; &amp;&amp; nohup python client-linux.py SERVER=45.79.67.132 USER=s04  &gt;/dev/null 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+<h3 id="手动部署"><a href="#手动部署" class="headerlink" title="手动部署"></a>手动部署</h3><p>查看<a href="https://github.com/BotoX/ServerStatus" target="_blank" rel="noopener">官方 Github</a></p>
+<h2 id="安装网络监控-BitMeter"><a href="#安装网络监控-BitMeter" class="headerlink" title="安装网络监控 BitMeter"></a>安装网络监控 BitMeter</h2><p>在 <a href="https://codebox.net/pages/bitmeteros/downloads" target="_blank" rel="noopener">官网下载</a> 预编译的二进制包。</p>
+<p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i &lt;target.deb&gt;</span><br></pre></td></tr></table></figure>
+<p>启动监控服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo bmdb webremote</span><br><span class="line">sudo bmdb webstop</span><br><span class="line">sudo bmdb webstart</span><br></pre></td></tr></table></figure>
+<p>然后默认可以在 <code>localhost:2605/index.html</code> 访问到数据。</p>
+<p>BitMeterOS 提供了3个工具可以使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bmclient -h</span><br><span class="line">bmdb <span class="built_in">help</span></span><br><span class="line">bmsync -h</span><br></pre></td></tr></table></figure>
+<h3 id="NetHogs-软件"><a href="#NetHogs-软件" class="headerlink" title="NetHogs 软件"></a>NetHogs 软件</h3><p>同时，可以安装 NetHogs 来观察每个进程的实时网速：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nethogs</span><br><span class="line"></span><br><span class="line">sudo nethogs</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://kchen.cc">Kun Chen</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://kchen.cc/2018/04/02/linux-startup/">http://kchen.cc/2018/04/02/linux-startup/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Linux/">Linux</a>
+            
+              <a href="/tags/Mac/">Mac</a>
+            
+              <a href="/tags/Server/">Server</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/06/13/linux-misc/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Linux 常用功能性命令</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/03/03/linux-ls-info/">
+        <span class="next-text nav-default">Linux - 查看系统信息</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:kchen2991@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.facebook.com/quentin.chenkun" class="iconfont icon-facebook" title="facebook"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/kchen0x" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/chen-kun-92-07/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kun Chen</span>
+    <span class="division">|</span>
+    <span> <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备17053524号</a></span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://kchen.cc/2018/04/02/linux-startup/';
+        this.page.identifier = '2018/04/02/linux-startup/';
+        this.page.title = 'Linux 服务器/macOS 环境初始化';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//kchen.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  </body>
+</html>

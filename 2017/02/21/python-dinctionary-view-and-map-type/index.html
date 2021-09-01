@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="default">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Python - 字典的视图对象和映射类型">
+
+
+
+
+  <meta name="keywords" content="Tips, Python, KChen's Blog">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="KChen's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://kchen.cc/2017/02/21/python-dinctionary-view-and-map-type/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?940f951acbfe5399f7a2816cdbdae170";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41464607-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41464607-2');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz",
+      appKey: "wVKlG50ntVertqEOw4aQEVwI"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":"E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz","app_key":"wVKlG50ntVertqEOw4aQEVwI"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> Python - 字典的视图对象和映射类型 - KChen's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="mobile-header-logo">
+    <a href="/." class="logo">KChen's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">KChen's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Python - 字典的视图对象和映射类型
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-02-21
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2017/02/21/python-dinctionary-view-and-map-type/" data-title="Python - 字典的视图对象和映射类型">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#字典的视图对象"><span class="toc-text">字典的视图对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字典的标准映射类型"><span class="toc-text">字典的标准映射类型</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><strong>字典</strong>是 Python 中非常常用的一种<strong>集合</strong>类型，今天我们来看一下关于字典的<strong>视图对象</strong>和<strong>映射类型</strong>。</p>
+<a id="more"></a>
+<h2 id="字典的视图对象"><a href="#字典的视图对象" class="headerlink" title="字典的视图对象"></a>字典的视图对象</h2><p>Python 的字典提供以下三种方法来获取<strong>视图对象</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dict.keys() </span><br><span class="line"><span class="comment"># returns a new view of dictionary's keys</span></span><br><span class="line">dict.values()</span><br><span class="line"><span class="comment"># returns a new view of dictionary's values</span></span><br><span class="line">dict.items()</span><br><span class="line"><span class="comment"># returns a new view of dictionary's items</span></span><br><span class="line"><span class="comment"># items are (key, value) pairs</span></span><br></pre></td></tr></table></figure>
+<p><strong>视图对象</strong>将会动态地与字典的<strong>条目</strong>绑定，也就是说，当字典发生变化的时候，他的视图对象也会相应地发生变化。</p>
+<p>我们可以通过 <code>len(dictview)</code> 方法来获取字典中条目的数量：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = &#123;<span class="string">'one'</span>:<span class="number">1</span>, <span class="string">'two'</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>keys = a.keys()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>len(keys)</span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>字典的 <code>iter()</code> 方法对字典的视图也行之有效，其会返回基于<strong>键</strong>、<strong>值</strong>或者<strong>键值对</strong>的<strong>迭代器</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iter(keys)</span><br><span class="line"><span class="comment"># iterator over keys is returned</span></span><br></pre></td></tr></table></figure>
+<p>同样的，使用 <code>in</code> 关键词来判定集合的成员也可以同时用在字典或者字典的视图上：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'one'</span> <span class="keyword">in</span> keys</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'three'</span> <span class="keyword">in</span> keys</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>更多关于字典的视图对象，请参阅<a href="https://docs.python.org/3.5/library/stdtypes.html#dictionary-view-objects" target="_blank" rel="noopener">官方文档</a>。</p>
+</blockquote>
+<h2 id="字典的标准映射类型"><a href="#字典的标准映射类型" class="headerlink" title="字典的标准映射类型"></a>字典的标准映射类型</h2><p><strong>字典</strong>（<code>dict</code>）是 Python 的主要<strong>映射类型</strong>，它将<strong>可哈希化</strong>（hashable）的值映射为任意的对象。Python 中的字典和 Perl 语言、Ruby 语言中的哈希，C 语言中的哈希表是相似的。</p>
+<p>我们可以使用 <code>{key: value}</code> 语法，<code>dict</code> 构造器或者会返回<strong>元组</strong>的 <code>zip</code> 方法来生成一个<strong>字典</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">d1 =&#123;<span class="string">'first'</span>:<span class="number">1</span>, <span class="string">'second'</span>:<span class="number">2</span>&#125;</span><br><span class="line">d2 = dict(first=<span class="number">1</span>, second=<span class="number">2</span>)</span><br><span class="line">d3 = dict(zip([<span class="string">'first'</span>,<span class="string">'second'</span>], [<span class="number">1</span>,<span class="number">2</span>]))</span><br><span class="line">d4 = dict(&#123;<span class="string">'second'</span>:<span class="number">2</span>, <span class="string">'first'</span>:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+<p>在<strong>字典</strong>上获取和使用一个<strong>键</strong>的<strong>迭代器</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>it = iter(d1)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(it)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">dict_keyiterator</span>' <span class="title">at</span></span></span><br><span class="line"><span class="class">0<span class="title">x000000005801A420</span>&gt;</span></span><br><span class="line"><span class="class">&gt;&gt;&gt; <span class="title">for</span> <span class="title">k</span> <span class="title">in</span> <span class="title">it</span>:</span> print(k)</span><br><span class="line">...</span><br><span class="line">first</span><br><span class="line">second</span><br></pre></td></tr></table></figure>
+<p>用字典来更新另一个字典：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>prefs = &#123;<span class="string">"fruit"</span>: <span class="string">"apple"</span>, <span class="string">"car"</span>: <span class="string">"Ford"</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>prefs</span><br><span class="line">&#123;<span class="string">'car'</span>: <span class="string">'Ford'</span>, <span class="string">'fruit'</span>: <span class="string">'apple'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>prefs2 = &#123;<span class="string">"fruit"</span>: <span class="string">"orange"</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>prefs.update(prefs2)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>prefs</span><br><span class="line">&#123;<span class="string">'car'</span>: <span class="string">'Ford'</span>, <span class="string">'fruit'</span>: <span class="string">'orange'</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>还可以用一个旧的字典（<code>seq</code>）来构造一个新的字典，让新的字典和 <code>seq</code> 有相同的键：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">seq = (<span class="string">'one'</span>, <span class="string">'two'</span>)</span><br><span class="line">dict = dict.fromkeys(seq)</span><br><span class="line"><span class="comment"># dict is &#123;'one': None, 'two': None &#125;</span></span><br><span class="line">dict = dict.fromkeys(seq,<span class="number">10</span>)</span><br><span class="line"><span class="comment"># dict is  &#123;'one: 10, 'two': 10 &#125;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>更多关于字典的标准映射类型，请参阅<a href="https://docs.python.org/3.5/library/stdtypes.html#mapping-types-dict" target="_blank" rel="noopener">官方文档</a>。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://kchen.cc">Kun Chen</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://kchen.cc/2017/02/21/python-dinctionary-view-and-map-type/">http://kchen.cc/2017/02/21/python-dinctionary-view-and-map-type/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Tips/">Tips</a>
+            
+              <a href="/tags/Python/">Python</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/02/21/linux-users-and-permissions/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Linux - 用户与权限</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/02/20/linux-iptables/">
+        <span class="next-text nav-default">Linux - Iptable 的使用</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:kchen2991@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.facebook.com/quentin.chenkun" class="iconfont icon-facebook" title="facebook"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/kchen0x" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/chen-kun-92-07/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kun Chen</span>
+    <span class="division">|</span>
+    <span> <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备17053524号</a></span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://kchen.cc/2017/02/21/python-dinctionary-view-and-map-type/';
+        this.page.identifier = '2017/02/21/python-dinctionary-view-and-map-type/';
+        this.page.title = 'Python - 字典的视图对象和映射类型';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//kchen.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  </body>
+</html>

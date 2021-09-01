@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="default">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="KChen的互联网博客，一个讨论数字生活和计算机技术的地方。">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="KChen's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://kchen.cc/page/2/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?940f951acbfe5399f7a2816cdbdae170";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41464607-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41464607-2');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz",
+      appKey: "wVKlG50ntVertqEOw4aQEVwI"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":"E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz","app_key":"wVKlG50ntVertqEOw4aQEVwI"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> KChen's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="mobile-header-logo">
+    <a href="/." class="logo">KChen's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">KChen's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <section id="posts" class="posts">
+    
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/02/21/linux-users-and-permissions/">Linux - 用户与权限</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-02-21
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2017/02/21/linux-users-and-permissions/" data-title="Linux - 用户与权限">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>使用 Linux 系统，不免会和<strong>用户</strong>和<strong>权限</strong>打交道，本文介绍了<strong>根权限</strong>和文件的<strong>权限属性</strong>等概念和应用。</p>
+          <div class="read-more">
+            <a href="/2017/02/21/linux-users-and-permissions/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/02/21/python-dinctionary-view-and-map-type/">Python - 字典的视图对象和映射类型</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-02-21
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2017/02/21/python-dinctionary-view-and-map-type/" data-title="Python - 字典的视图对象和映射类型">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p><strong>字典</strong>是 Python 中非常常用的一种<strong>集合</strong>类型，今天我们来看一下关于字典的<strong>视图对象</strong>和<strong>映射类型</strong>。</p>
+          <div class="read-more">
+            <a href="/2017/02/21/python-dinctionary-view-and-map-type/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/02/20/linux-iptables/">Linux - Iptable 的使用</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-02-20
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2017/02/20/linux-iptables/" data-title="Linux - Iptable 的使用">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p><code>ipatable</code> 是 Linux 内核自带的防火墙解决方案。它通过对经由网络的每一个包进行一系列的规则验证来决定该如何处理。</p>
+<p>我们可以匹配<strong>协议类型</strong>、<strong>源地址</strong>和<strong>目的地址</strong>或者<strong>端口</strong>、接口以及它们和之前的包的关系等等。这些规则会被进一步的结构化成为<strong>规则链</strong>，网络包将会顺序地被规则链中的规则一一检查。它们可以被按需生成，但是有3种默认的规则：</p>
+<ul>
+<li><code>INPUT</code>：处理流入服务器的流量。</li>
+<li><code>OUTPUT</code>：处理流出服务的流量。</li>
+<li><code>FORWARD</code>：处理流经服务器的流量而不停止它们。</li>
+</ul>
+          <div class="read-more">
+            <a href="/2017/02/20/linux-iptables/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/02/19/java-tips-using-bounded-type-parameters-in-generic-method/">Java - 在泛型中使用受限类型参数</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-02-19
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2017/02/19/java-tips-using-bounded-type-parameters-in-generic-method/" data-title="Java - 在泛型中使用受限类型参数">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>许多时候在 Java 中使用<strong>泛型</strong>是非常方便且必要的，但是我们不可能接受所有类型的参数来确保泛型的每一个功能都能得到维护。</p>
+<p>为了解决这个问题，我们可以使用<strong>受限类型参数</strong>来限制泛型只能接受特定类型的实参。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> &lt;T extends Shape&gt; </span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">drawAll</span><span class="params">(List&lt;T&gt; shapes)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (Shape s: shapes) &#123;</span><br><span class="line">        s.draw(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面这个方法是用来绘制一组形状（<code>Shape</code>）的，如果我们使用<strong>不受限类型参数</strong>的泛型来实现这个方法的话，有可能导致的问题是其他类型可能并不能并不具备 <code>draw()</code> 方法。</p>
+<p>通过指定 <code>&lt;T extends Shape&gt;</code> 我们可以确保只有 <code>Shape</code> 的子类可以被传递到这个方法中来。</p>
+<blockquote>
+<p>关于这一部分的更多内容，详见<a href="https://docs.oracle.com/javase/tutorial/java/generics/bounded.html" target="_blank" rel="noopener">官方文档</a>。</p>
+</blockquote>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/02/19/java-tips-updating-interface/">Java - 通过 Default 更新接口类方法</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-02-19
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2017/02/19/java-tips-updating-interface/" data-title="Java - 通过 Default 更新接口类方法">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>假设有下列接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Cooking</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fry</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">boil</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">chop</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了添加新的功能，直接向 <code>Cooking</code> 接口类中增加 <code>microwave()</code> 方法将会造成不少的麻烦。任何实现了 <code>Cooking</code> 接口的类现在都必须要同步更新实现这个方法，以确保整个类重新生效、正常工作。</p>
+<p>为了避免这种情况，我们可以给 <code>microwave()</code> 方法一个默认 <code>default</code> 实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Cooking</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fry</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">boil</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">chop</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">microwave</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//some code implementing microwave</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为 <code>microwave()</code> 方法已经在 <code>Cooking</code> 接口类中有了默认实现的定义，所有实现了该接口的类都不需要额外实现 <code>microwave()</code> 方法来确保其正常工作了。</p>
+<p>这个方法在我们不破坏现有代码的情况下，想要增加一些新的功能时，十分的好用。</p>
+<blockquote>
+<p>Note：该方法需要 Java 8 以上的支持。详见<a href="https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html" target="_blank" rel="noopener">官方文档</a>。</p>
+</blockquote>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/02/02/tip-cat/">Linux - Cat 命令的实用技巧</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-02-02
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2017/02/02/tip-cat/" data-title="Linux - Cat 命令的实用技巧">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>GNU 文本程序实用技巧系列之——<code>cat</code>。<code>cat</code> 这个命令是 UNIX 爱好者所热爱的，也是厌恶 UNIX 的人所憎恶的。</p>
+<blockquote>
+<p>The <code>cat</code> utility reads files sequentially, writing them to the standard output.</p>
+</blockquote>
+          <div class="read-more">
+            <a href="/2017/02/02/tip-cat/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/12/12/github-cheats/">Github 小技巧</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-12-12
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2016/12/12/github-cheats/" data-title="Github 小技巧">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>Github 中有许多小技巧，今天给大家介绍两个常用的：如何在网页端新建文件夹和隐藏的快捷键操作。同时，介绍一款很实用的项目收藏查看软件给大家。</p>
+          <div class="read-more">
+            <a href="/2016/12/12/github-cheats/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/12/02/aws-php-mysql/">AWS EC 主机无法通过 PHP 连接 RDS MySQL</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-12-02
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2016/12/02/aws-php-mysql/" data-title="AWS EC 主机无法通过 PHP 连接 RDS MySQL">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><blockquote>
+<p>当我们选择 AWS EC 作为服务器主机，而 AWS RDS 作为 MySQL 服务器时，如果通过 PHP 访问 MySQL 可能会出现 「Error establishing a database connection」错误，这是使用 WordPress 建站时常见的数据库连接错误。</p>
+</blockquote>
+          <div class="read-more">
+            <a href="/2016/12/02/aws-php-mysql/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/11/18/custom-multiplexer-k-tmux/">为你量身定制的终端复用器 K-Tmux</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-11-18
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2016/11/18/custom-multiplexer-k-tmux/" data-title="为你量身定制的终端复用器 K-Tmux">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>本文是项目 k-tmux 的说明文档，介绍了一套 tmux 的配置。本配置受到 @wlken 的启发。</p>
+<p>ChangeLog: 2018-10-19 更新了弃用的配置命令，完善对鼠标的支持，修改了关闭窗口的键位绑定，安装并使用插件，增加对 prefix 状态和 buffer 复制状态的显示。</p>
+          <div class="read-more">
+            <a href="/2016/11/18/custom-multiplexer-k-tmux/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/11/17/iterm2-and-tmux-integration/">iTerm2 与 Tmux 的集成</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-11-17
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2016/11/17/iterm2-and-tmux-integration/" data-title="iTerm2 与 Tmux 的集成">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p><img src="https://camo.githubusercontent.com/9a07003e528862ebff782aac2220ef226d28db57/68747470733a2f2f7261772e6769746875622e636f6d2f636872697368756e742f636f6c6f722d736368656d65732f6d61737465722f7468617965722f73637265656e73686f742e706e67" alt="tmux"></p>
+<p>iTerm2 最新的特性已经集成了 tmux，这意味着什么？</p>
+<p>通常情况下，当你使用 tmux 的时候，会在一个「物理」窗口（Window）中创建多个虚拟的窗口。你可以通过在 tmux 中使用各种命令来操作它的环境，但这样也会随之带来一些问题：</p>
+<ul>
+<li>你需要敲下前缀修饰键来进入 tmux 的命令模式（默认情况下是<code>control + b</code>，这和 emacs 中的左移光标是冲突的，而且这也会让与 shell 的交互变得更加困难）。</li>
+<li>你需要不止一次的使用 ssh 来连接到远程服务器（remote host）以获得不止一个的 tmux 会话（session）窗口。</li>
+<li>你需要学习 tmux 的命令。</li>
+<li>你需要开启鼠标报告（mouse reporting）来调整分割窗格（pane）的大小，尽管你并不想启用它。</li>
+<li>当你使用 tmux 的时候，一些终端模拟器内置的功能不能很好工作，比如说：你并不能像在普通的终端窗口中那般快捷的使用回滚查看历史，同时，tmux 的查找功能也完全跟 iTerm2 的不能比拟。</li>
+</ul>
+<p>对于大多数的用户而言，在终端中使用复用器（Multiplexer）是十分好用的工作方式，但是他们并不想接受以上的种种缺陷。</p>
+          <div class="read-more">
+            <a href="/2016/11/17/iterm2-and-tmux-integration/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+      
+  <nav class="pagination">
+    
+      <a class="prev" href="/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">上一页</span>
+      </a>
+    
+    
+      <a class="next" href="/page/3/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+    
+  </section>
+
+          </div>
+          
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:kchen2991@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.facebook.com/quentin.chenkun" class="iconfont icon-facebook" title="facebook"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/kchen0x" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/chen-kun-92-07/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kun Chen</span>
+    <span class="division">|</span>
+    <span> <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备17053524号</a></span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  </body>
+</html>

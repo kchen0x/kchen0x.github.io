@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="default">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="写让别人能读懂的代码">
+
+
+
+
+  <meta name="keywords" content="Coding, KChen's Blog">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="KChen's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://kchen.cc/2015/10/05/How-to-write-a-reading-friendly-code/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?940f951acbfe5399f7a2816cdbdae170";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41464607-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41464607-2');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz",
+      appKey: "wVKlG50ntVertqEOw4aQEVwI"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":"E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz","app_key":"wVKlG50ntVertqEOw4aQEVwI"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 写让别人能读懂的代码 - KChen's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="mobile-header-logo">
+    <a href="/." class="logo">KChen's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">KChen's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          写让别人能读懂的代码
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2015-10-05
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2015/10/05/How-to-write-a-reading-friendly-code/" data-title="写让别人能读懂的代码">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#举例说明"><span class="toc-text">举例说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-拒绝注释，用代码来阐述注释"><span class="toc-text">1.拒绝注释，用代码来阐述注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-为布尔变量赋值"><span class="toc-text">2.为布尔变量赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-双重否定的条件判断"><span class="toc-text">3.双重否定的条件判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-拒绝HardCode-拒绝挖坑"><span class="toc-text">4.拒绝HardCode,拒绝挖坑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-拒绝魔数，拒绝挖坑"><span class="toc-text">5.拒绝魔数，拒绝挖坑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-复杂的条件判断"><span class="toc-text">6.复杂的条件判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-嵌套判断"><span class="toc-text">7.嵌套判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-使用前置条件"><span class="toc-text">8.使用前置条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-参数过多，超过3个"><span class="toc-text">9.参数过多，超过3个</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-方法签名中含有布尔参数"><span class="toc-text">10.方法签名中含有布尔参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-写具有表达力的代码"><span class="toc-text">11.写具有表达力的代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于DRY"><span class="toc-text">关于DRY</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用先进的生产工具"><span class="toc-text">利用先进的生产工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>原文来自<a href="http://www.cnblogs.com/richieyang/p/4840614.html" target="_blank" rel="noopener">richieyang</a>的博客，根据自己的理解对原文有所更改。</p>
+</blockquote>
+<p>随着软件行业的不断发展，历史遗留的程序越来越多，代码的维护成本越来越大，甚至大于开发成本。而新功能的开发又常常依赖于旧代码，阅读旧代码所花费的时间几乎要大于写新功能的代码。</p>
+<p>我前几天看了一本书，书中有这么一句话：</p>
+<blockquote>
+<p>“复杂的代码往往都是新手所写，只有经验老道的高手才能写出简单，富有表现力的代码”</p>
+</blockquote>
+<p>此话虽然说的有点夸张，可是也说明了经验的重要性。</p>
+<p>我们所写的代码除了让机器执行外，还需要别人来阅读。所以我们要写：</p>
+<ol>
+<li>让别人能读懂的代码</li>
+<li>可扩展的代码</li>
+<li>可测试的代码(代码应该具备可测试性，对没有可测试性的代码写测试，是浪费生命的表现)</li>
+</ol>
+<p>其中2，3点更多强调的是面向对象的设计原则。而本文则更多关注于局部的代码问题，本文通过举例的方式，总结平时常犯的错误和优化方式。</p>
+<a id="more"></a>
+<p>本文的例子基于两个指导原则：</p>
+<blockquote>
+<p>一.DRY(Don’t repeat yourself)</p>
+</blockquote>
+<p>此原则如此重要，简单来说是因为：</p>
+<ul>
+<li>代码越少，Bug也越少</li>
+<li>没有重复逻辑的代码更易于维护，当你修复了一个bug，如果相同的逻辑还出现在另外一个地方，而你没意识到，你有没有觉得自己很冤？</li>
+</ul>
+<blockquote>
+<p>二.TED原则</p>
+</blockquote>
+<ul>
+<li>简洁(Terse)</li>
+<li>具有表达力(Expressive)</li>
+<li>只做一件事(Do one thing)</li>
+</ul>
+<h2 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h2><h3 id="1-拒绝注释，用代码来阐述注释"><a href="#1-拒绝注释，用代码来阐述注释" class="headerlink" title="1.拒绝注释，用代码来阐述注释"></a>1.拒绝注释，用代码来阐述注释</h3><blockquote>
+<p>反例：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// &lt;summary&gt;</span></span><br><span class="line"><span class="comment">/// !@#$%^&amp;^&amp;*((!@#$%^&amp;^&amp;*((!@#$%^&amp;^&amp;*((!@#$%^&amp;^&amp;*((</span></span><br><span class="line"><span class="comment">/// &lt;/summary&gt;</span></span><br><span class="line"><span class="comment">/// &lt;returns&gt;&lt;/returns&gt;</span></span><br><span class="line"> <span class="keyword">public</span> decimal GetCash()</span><br><span class="line"> &#123;</span><br><span class="line">     <span class="comment">//!@#$%^&amp;^&amp;*((!@#$%^&amp;^&amp;*((</span></span><br><span class="line">     <span class="keyword">var</span> a = <span class="keyword">new</span> <span class="keyword">List</span>&lt;decimal&gt;() &#123; <span class="number">2</span>m, <span class="number">3</span>m, <span class="number">10</span>m &#125;;</span><br><span class="line">     <span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">     <span class="keyword">var</span> c = <span class="number">0</span>m;</span><br><span class="line">     <span class="comment">//!@#$%^&amp;^&amp;*((!@#$%^&amp;^&amp;*((!@#$%^&amp;^&amp;*((</span></span><br><span class="line">     <span class="keyword">foreach</span> (<span class="keyword">var</span> p in a)</span><br><span class="line">     &#123;</span><br><span class="line">         c += p*b;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> c;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重构后：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> decimal CalculateTotalCash()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> prices=<span class="keyword">new</span> <span class="keyword">List</span>&lt;decimal&gt;()&#123;<span class="number">2</span>m,<span class="number">3</span>m,<span class="number">10</span>m&#125;;</span><br><span class="line">    <span class="keyword">var</span> itemCount = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> prices.Sum(p =&gt; p*itemCount);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>良好的代码命名完全可以替代注释的作用，如果你正在试图写一段注释，从某种角度来看，你正在试图写一段别人无法理解的代码。</p>
+<p>当你无法为你的方法起一个准确的名称时，很可能你的方法不止做了一件事，违反了(Do one thing)。特别是你想在方法名中加入：And，Or，If等词时。</p>
+<blockquote>
+<p>注释：方法带Or/And，这个BCL就有不少，IsNullOrEmpty，FirstOrDefault之类，重点不应该是纠结一个方法干了几件事，而是这几件事适不适合放一起干，本来适合放一起的，为了所谓单一原则，非要拆开，就是教条了~</p>
+</blockquote>
+<h3 id="2-为布尔变量赋值"><a href="#2-为布尔变量赋值" class="headerlink" title="2.为布尔变量赋值"></a>2.为布尔变量赋值</h3><blockquote>
+<p>反例：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> bool IsAdult(int age)</span><br><span class="line">&#123;</span><br><span class="line">    bool isAdult;</span><br><span class="line">    <span class="keyword">if</span> (age &gt; <span class="number">18</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        isAdult = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        isAdult = <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> isAdult;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重构后：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> bool IsAdult(int age)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> age &gt; <span class="number">18</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-双重否定的条件判断"><a href="#3-双重否定的条件判断" class="headerlink" title="3.双重否定的条件判断"></a>3.双重否定的条件判断</h3><blockquote>
+<p>反例：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!isNotRemeberMe)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重构后：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (isRemeberMe)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不管你有没有见过这样的条件，反正我见过。见到这样的条件判断，我顿时就晕了。</p>
+<h3 id="4-拒绝HardCode-拒绝挖坑"><a href="#4-拒绝HardCode-拒绝挖坑" class="headerlink" title="4.拒绝HardCode,拒绝挖坑"></a>4.拒绝HardCode,拒绝挖坑</h3><blockquote>
+<p>反例：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (carName == <span class="string">"Nissan"</span>)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重构后：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (car == Car.Nissan)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>既然咱们玩的是强类型语言，咱就用上编译器的功能，让错误发生在编译阶段。</p>
+<h3 id="5-拒绝魔数，拒绝挖坑"><a href="#5-拒绝魔数，拒绝挖坑" class="headerlink" title="5.拒绝魔数，拒绝挖坑"></a>5.拒绝魔数，拒绝挖坑</h3><blockquote>
+<p>反例：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (age &gt; <span class="number">18</span>)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重构后：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> int adultAge = <span class="number">18</span>;</span><br><span class="line"> <span class="keyword">if</span> (age &gt; adultAge)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所谓魔数(Magic number)就是一个魔法数字，读者完全弄不明白你这个数字是什么，这样的代码平时见的多了。</p>
+<h3 id="6-复杂的条件判断"><a href="#6-复杂的条件判断" class="headerlink" title="6.复杂的条件判断"></a>6.复杂的条件判断</h3><blockquote>
+<p>反例：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (job.JobState == JobState.<span class="keyword">New</span></span><br><span class="line">    || job.JobState == JobState.Submitted</span><br><span class="line">    || job.JobState == JobState.Expired</span><br><span class="line">    || job.JobTitle.IsNullOrWhiteSpace())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//....</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重构后：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">if</span> (CanBeDeleted(job))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> bool CanBeDeleted(Job job)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> invalidJobState = job.JobState == JobState.<span class="keyword">New</span></span><br><span class="line">                          || job.JobState == JobState.Submitted</span><br><span class="line">                          || job.JobState == JobState.Expired;</span><br><span class="line">    <span class="keyword">var</span> invalidJob = string.IsNullOrEmpty(job.JobTitle);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> invalidJobState || invalidJob;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有没有豁然开朗的感觉？</p>
+<h3 id="7-嵌套判断"><a href="#7-嵌套判断" class="headerlink" title="7.嵌套判断"></a>7.嵌套判断</h3><blockquote>
+<p>反例：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isValid = <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">if</span> (!string.IsNullOrEmpty(user.UserName))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (!string.IsNullOrEmpty(user.Password))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!string.IsNullOrEmpty(user.Email))</span><br><span class="line">        &#123;</span><br><span class="line">            isValid = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> isValid;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重构后：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (string.IsNullOrEmpty(user.UserName)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">if</span> (string.IsNullOrEmpty(user.Password)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">if</span> (string.IsNullOrEmpty(user.Email)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">true</span>;</span><br></pre></td></tr></table></figure>
+<p>第一种代码是受到早期的某些思想：使用一个变量来存储返回结果。事实证明，你一旦知道了结果就应该尽早返回。</p>
+<h3 id="8-使用前置条件"><a href="#8-使用前置条件" class="headerlink" title="8.使用前置条件"></a>8.使用前置条件</h3><blockquote>
+<p>反例：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!string.IsNullOrEmpty(userName))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (!string.IsNullOrEmpty(password))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//register</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> ArgumentException(<span class="string">"user password can not be empty"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> ArgumentException(<span class="string">"user name can not be empty"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重构后：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (string.IsNullOrEmpty(userName)) <span class="keyword">throw</span> <span class="keyword">new</span> ArgumentException(<span class="string">"user name can not be empty"</span>);</span><br><span class="line"><span class="keyword">if</span> (string.IsNullOrEmpty(password)) <span class="keyword">throw</span> <span class="keyword">new</span> ArgumentException(<span class="string">"user password can not be empty"</span>);</span><br><span class="line"><span class="comment">//register</span></span><br></pre></td></tr></table></figure>
+<p>重构后的风格更接近契约编程，首先要满足前置条件，否则免谈。</p>
+<h3 id="9-参数过多，超过3个"><a href="#9-参数过多，超过3个" class="headerlink" title="9.参数过多，超过3个"></a>9.参数过多，超过3个</h3><blockquote>
+<p>反例：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> void RegisterUser(string userName, string password, string email, string phone)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重构后：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> void RegisterUser(User user)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>过多的参数让读者难以抓住代码的意图，同时过多的参数将会影响方法的稳定性。另外也预示着参数应该聚合为一个Model。</p>
+<h3 id="10-方法签名中含有布尔参数"><a href="#10-方法签名中含有布尔参数" class="headerlink" title="10.方法签名中含有布尔参数"></a>10.方法签名中含有布尔参数</h3><blockquote>
+<p>反例：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> void RegisterUser(User user, bool sendEmail)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重构后：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> void RegisterUser(User user)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> void SendEmail(User user)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>布尔参数在告诉方法不止做一件事，违反了Do one thing。</p>
+<h3 id="11-写具有表达力的代码"><a href="#11-写具有表达力的代码" class="headerlink" title="11.写具有表达力的代码"></a>11.写具有表达力的代码</h3><blockquote>
+<p>反例：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> string CombineTechnicalBookNameOfAuthor(<span class="keyword">List</span>&lt;Book&gt; books, string author)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> filterBooks = <span class="keyword">new</span> <span class="keyword">List</span>&lt;Book&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">var</span> book in books)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (book.Category == BookCategory.Technical &amp;&amp; book.Author == author)</span><br><span class="line">        &#123;</span><br><span class="line">            filterBooks.Add(book);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">var</span> book in filterBooks)</span><br><span class="line">    &#123;</span><br><span class="line">        name += book.Name + <span class="string">"|"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重构后：</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> string CombineTechnicalBookNameOfAuthor(<span class="keyword">List</span>&lt;Book&gt; books, string author)</span><br><span class="line"> &#123;</span><br><span class="line">     <span class="keyword">var</span> combinedName = books.Where(b =&gt; b.Category == BookCategory.Technical)</span><br><span class="line">         .Where(b =&gt; b.Author == author)</span><br><span class="line">         .Select(b =&gt; b.Name)</span><br><span class="line">         .Aggregate((a, b) =&gt; a + <span class="string">"|"</span> + b);</span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> combinedName;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>相对于命令式代码，声明性代码更加具有表达力，也更简洁。这也是函数式编程为什么越来越火的原因之一。</p>
+<h2 id="关于DRY"><a href="#关于DRY" class="headerlink" title="关于DRY"></a>关于DRY</h2><p>平时大家重构代码，一个重要的思想就是DRY。我要分享一个DRY的反例：</p>
+<p>项目在架构过程中会有各种各样的MODEL层，例如：DomainModel，ViewModel，DTO。很多时候这几个Model里的字段大部分是相同的，于是有人就会想到DRY原则，干脆直接用一种类型，省得粘贴复制，来回转换。</p>
+<p>这个反例失败的根本原因在于：这几种Model职责各不相同，虽然大部分情况下内容会有重复，但是他们担当着各种不同的角色。</p>
+<p>考虑这种场景：</p>
+<p>DomainModel有一个字段<code>DateTime Birthday{get;set;}</code>，ViewModel同样具有<code>DateTime Birthday{get;set;}</code>。需求升级:要求界面不再显示生日，只需要显示是否成年。我们只需要在ViewModel中添加一个<code>Bool IsAdult{get{return ....}}</code>即可，DomainModel完全不用变化。</p>
+<h2 id="利用先进的生产工具"><a href="#利用先进的生产工具" class="headerlink" title="利用先进的生产工具"></a>利用先进的生产工具</h2><p>以vs插件中的Reshaper为例，本文列举的大部分反例，Reshaprer均能给予不同程度的提示。经过一段时间的练习，当Reshaper对你的代码给予不了任何提示的时候，你的代码会有一个明显的提高。</p>
+<p>截图说明Reshaper的提示功能：</p>
+<p><img src="http://data.kchen.cc/imageo_20150926142447.png-960.jpg" alt="reshaper1"></p>
+<p><img src="http://data.kchen.cc/imageo_20150926142514.png-960.jpg" alt="reshaper2"></p>
+<p>光标移动在波浪线处，然后<code>Alt+Enter</code>,Resharper 会自动对代码进行优化。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>如果你能够避免本文总结的反例，你的代码就已经具备了优秀代码应有的基因。当然高质量的代码还需要良好的设计和遵循面向对象编程的原则。 如果想了解更多相关内容，请阅读《代码大全》，《代码整洁之道》，《重构 改善既有代码的设计》，《敏捷软件开发 原则、模式与实践》。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://kchen.cc">Kun Chen</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://kchen.cc/2015/10/05/How-to-write-a-reading-friendly-code/">http://kchen.cc/2015/10/05/How-to-write-a-reading-friendly-code/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Coding/">Coding</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2015/11/03/go-to-sa-city/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">你们去卅城</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2015/10/05/Markdown-Manual/">
+        <span class="next-text nav-default">Markdown 入门-最轻量的文字编辑语言</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:kchen2991@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.facebook.com/quentin.chenkun" class="iconfont icon-facebook" title="facebook"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/kchen0x" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/chen-kun-92-07/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kun Chen</span>
+    <span class="division">|</span>
+    <span> <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备17053524号</a></span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://kchen.cc/2015/10/05/How-to-write-a-reading-friendly-code/';
+        this.page.identifier = '2015/10/05/How-to-write-a-reading-friendly-code/';
+        this.page.title = '写让别人能读懂的代码';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//kchen.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  </body>
+</html>

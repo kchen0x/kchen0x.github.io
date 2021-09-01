@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="default">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="利用Alfred Workflow快速上传粘贴板图片至七牛图床并在Markdown中引用">
+
+
+
+
+  <meta name="keywords" content="Alfred, 七牛, 图床, Markdown, KChen's Blog">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="KChen's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://kchen.cc/2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?940f951acbfe5399f7a2816cdbdae170";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41464607-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41464607-2');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz",
+      appKey: "wVKlG50ntVertqEOw4aQEVwI"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":"E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz","app_key":"wVKlG50ntVertqEOw4aQEVwI"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 利用Alfred Workflow快速上传粘贴板图片至七牛图床并在Markdown中引用 - KChen's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="mobile-header-logo">
+    <a href="/." class="logo">KChen's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">KChen's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          利用Alfred Workflow快速上传粘贴板图片至七牛图床并在Markdown中引用
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-03-19
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/" data-title="利用Alfred Workflow快速上传粘贴板图片至七牛图床并在Markdown中引用">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#教程"><span class="toc-text">教程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七牛云存储的设置"><span class="toc-text">七牛云存储的设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置七牛云存储文件同步"><span class="toc-text">配置七牛云存储文件同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置WorkFlow"><span class="toc-text">配置WorkFlow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#额外的同步工作流"><span class="toc-text">额外的同步工作流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直接下载"><span class="toc-text">直接下载</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>Markdown最大的缺陷就是不能方便的在文章中插入本地图片，所以通常情况下我们需要一个好的图床来帮助我们，国内现在使用体验最佳的图床就是七牛云存储，但是为了插入一张图片我们通常需要做的事情是：</p>
+<ul>
+<li>截个图存在桌面</li>
+<li>打开七牛云存储的网站，上传图片</li>
+<li>复制图片地址</li>
+<li>在Markdown中使用<code>![]()</code>语法调用图片插入</li>
+<li>填写图片地址</li>
+<li>如果你使用原图保护功能，还需要自己添加样式符</li>
+</ul>
+<p>为了一张插入图片，真是心力交瘁。如果插入量巨大，真是不堪重负。所以我们需要使用一个工作流来一键帮我们完成这些复杂的机械化的工作。本教程<strong>实现的目标</strong>是：</p>
+<ul>
+<li>截图到粘贴板</li>
+<li>快捷键插入到Markdown文本</li>
+</ul>
+<p>中途甚至不需要任何与编辑文本无关的工作，让你专心写作！</p>
+<a id="more"></a>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>因为本方法用到了<a href="https://www.alfredapp.com" target="_blank" rel="noopener">Alfred</a>的PowerPackage扩展功能，所以你需要首先内（po）购（jie）其高级功能。</p>
+<p>然后另一个准备工作就是七牛云存储了，到七牛云存储的<a href="https://portal.qiniu.com/signup?code=3lj4rde88jpzm" target="_blank" rel="noopener">官网</a>注册一个账号，开始使用。关于七牛云存储的一些设置，在这里我想说一下：</p>
+<h3 id="七牛云存储的设置"><a href="#七牛云存储的设置" class="headerlink" title="七牛云存储的设置"></a>七牛云存储的设置</h3><p>在你的空间的<strong>数据处理</strong>中应该配置好「图片样式」：新建图片样式。</p>
+<p><img src="http://data.kchen.cc/4be39d7cf43e26849216aa2a61709d8c.png-960.jpg" alt="style" title="图片样式"></p>
+<p>使用图片样式的好处是你可以根据需求插入不同大小的图片，毕竟<strong>Markdown是没有图片编辑和调整功能</strong>的。我设置了如下的样式：</p>
+<p><img src="http://data.kchen.cc/dbf2f0ee3a25351f3b2d8490a155eff8.png-960.jpg" alt="style" title="图片样式"></p>
+<p>这样我可以通过样式分割符合样式<code>-480.jpg</code>、<code>-960.jpg</code>、<code>-1920.jpg</code>调用不同大小的图片插入到文章中了。</p>
+<h3 id="配置七牛云存储文件同步"><a href="#配置七牛云存储文件同步" class="headerlink" title="配置七牛云存储文件同步"></a>配置七牛云存储文件同步</h3><blockquote>
+<p><strong>QRSync</strong>是七牛云存储提供的同步上传客户端工具，可以用于Linux、Mac OS X、Windows等操作系统。使用QRSync，可将用户本地某个目录的所有文件同步上传到七牛云存储中，同时支持增量上传，可以只将目录中新增的文件上传至七牛云存储。 </p>
+</blockquote>
+<p>首先，下载QRSBox</p>
+<ul>
+<li>Mac OS X: <a href="http://devtools.qiniu.com/qiniu-devtools-darwin_amd64-current.tar.gz" target="_blank" rel="noopener">qrsynccli darwin_amd64</a></li>
+<li>Linux 64bits: <a href="http://devtools.qiniu.com/qiniu-devtools-linux_amd64-current.tar.gz" target="_blank" rel="noopener">qrsyncli linux_amd64</a></li>
+<li>Linux 32bits: <a href="http://devtools.qiniu.com/qiniu-devtools-linux_386-current.tar.gz" target="_blank" rel="noopener">qrsyncli linux_386</a></li>
+</ul>
+<p>然后在你希望同步的文件夹下创建以下两个目录</p>
+<ul>
+<li><code>CLI</code> ： 用于存放QRSync命令脚本</li>
+<li><code>Data</code> ： 用于存放需要同步的图片、文件等</li>
+</ul>
+<p>把下载好的QRSync解压后所有文件放到<code>CLI</code>目录下，在<code>CLI</code>目录下新建<code>conf.json</code>文件包含以下内容：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"src"</span>: <span class="string">"/home/your/sync_dir/Data"</span>,</span><br><span class="line">    <span class="attr">"dest"</span>: <span class="string">"qiniu:access_key=&lt;AccessKey&gt;&amp;secret_key=&lt;SecretKey&gt;&amp;bucket=&lt;Bucket&gt;&amp;key_prefix=&lt;KeyPrefix&gt;"</span>,</span><br><span class="line">    <span class="attr">"debug_level"</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中：</p>
+<ul>
+<li><code>src</code>是本地的同步目录<code>Data</code>，该目录下的文件会随时同步上传至七牛云存储。</li>
+<li><code>AccessKey</code> 和 <code>SecretKey</code> 需要在七牛云存储平台上申请<ol>
+<li>开通<a href="https://portal.qiniu.com/signup" target="_blank" rel="noopener">七牛开发者帐号</a></li>
+<li>登录七牛开发者平台，<a href="https://portal.qiniu.com/user/key" target="_blank" rel="noopener">查看 Access Key 和 Secret Key</a></li>
+</ol>
+</li>
+<li><p><code>&lt;Bucket&gt;</code> 是保存同步文件的资源空间名。</p>
+</li>
+<li><p><code>&lt;KeyPrefix&gt;</code> 是文件前缀，可选。如果设置了该参数，那么上传的文件名前都会加上前缀。这个前缀主要用于在空间中区分不同上传来源的文件。</p>
+</li>
+</ul>
+<p>配置完成后，在<code>CLI</code>目录下就可以随时使用如下命令来同步文件夹了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./qrsync conf.json</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>另一个可以使用的工具是<strong>QRSBox</strong>，其支持后台实时监控目录，当有新文件加入到同步目录的时候，就会自动上传到相应的空间。但截止到我测试时（2016年3月19日）QRSBox仍有一些Bug导致工作流无法工作，所以我选择了更加可靠的QRSync。</p>
+</blockquote>
+<h3 id="配置WorkFlow"><a href="#配置WorkFlow" class="headerlink" title="配置WorkFlow"></a>配置WorkFlow</h3><p>下面我们来配置WorkFlow工作流来让一切变得自动化起来，首先打开Alfred，进入Workflow，并且创建一个空白的工作流：</p>
+<p><img src="http://data.kchen.cc/b7ca368796817f6641eb530779170cb9.png-960.jpg" alt></p>
+<p>然后添加一个热键，我选择的是<code>⌘</code>+<code>⇧</code>+<code>V</code>，这样和我的Annotate截屏快捷键<code>⌘</code>+<code>⇧</code>+<code>A</code>正好形成一对：</p>
+<p><img src="http://data.kchen.cc/78fcbef093b58a4b5d7d559414087555.png-960.jpg" alt="hotkey" title="HotKey"></p>
+<p>然后添加一个action，选择<code>osascript</code>作为脚本语言</p>
+<p><img src="http://data.kchen.cc/ce75233c28ac53e40fa1905f6834918d.png-960.jpg" alt></p>
+<p>我们添加如下脚本：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">property</span> fileTypes : &#123;¬</span><br><span class="line">	&#123;«<span class="built_in">class</span> PNGf», <span class="string">".png"</span>&#125;, ¬</span><br><span class="line">	&#123;JPEG picture, <span class="string">".jpg"</span>&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">on</span> getType()</span><br><span class="line">	<span class="keyword">repeat</span> <span class="keyword">with</span> aType <span class="keyword">in</span> fileTypes</span><br><span class="line">		<span class="keyword">repeat</span> <span class="keyword">with</span> theInfo <span class="keyword">in</span> (<span class="built_in">clipboard info</span>)</span><br><span class="line">			<span class="keyword">if</span> (<span class="keyword">first</span> <span class="built_in">item</span> <span class="keyword">of</span> theInfo) <span class="keyword">is</span> <span class="keyword">equal</span> <span class="keyword">to</span> (<span class="keyword">first</span> <span class="built_in">item</span> <span class="keyword">of</span> aType) <span class="keyword">then</span> <span class="literal">return</span> aType</span><br><span class="line">		<span class="keyword">end</span> <span class="keyword">repeat</span></span><br><span class="line">	<span class="keyword">end</span> <span class="keyword">repeat</span></span><br><span class="line"><span class="built_in">	return</span> <span class="literal">missing value</span></span><br><span class="line"><span class="keyword">end</span> getType</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> theType <span class="keyword">to</span> getType()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> theType <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">missing value</span> <span class="keyword">then</span></span><br><span class="line">	<span class="keyword">set</span> filePath <span class="keyword">to</span> <span class="string">"/Users/quentin/Documents/Qiniu/Data/"</span> <span class="comment">--这里换成你自己放置图片的路径</span></span><br><span class="line">	<span class="keyword">set</span> fileName <span class="keyword">to</span> <span class="built_in">do shell script</span> <span class="string">"date \"+%Y%m%d%H%M%S\" | md5"</span> <span class="comment">--用当前时间的md5值做文件名</span></span><br><span class="line">	<span class="keyword">if</span> fileName <span class="keyword">does</span> <span class="keyword">not</span> <span class="keyword">end</span> <span class="keyword">with</span> (<span class="keyword">second</span> <span class="built_in">item</span> <span class="keyword">of</span> theType) <span class="keyword">then</span> <span class="keyword">set</span> fileName <span class="keyword">to</span> (fileName &amp; <span class="keyword">second</span> <span class="built_in">item</span> <span class="keyword">of</span> theType <span class="keyword">as</span> <span class="built_in">text</span>)</span><br><span class="line">	<span class="keyword">set</span> markdownUrl <span class="keyword">to</span> <span class="string">"![](http://data.kchen.cc/"</span> &amp; fileName &amp; <span class="string">"-960.jpg)"</span> <span class="comment">--这里是你的七牛域名和设置的图片样式</span></span><br><span class="line">	<span class="keyword">set</span> filePath <span class="keyword">to</span> filePath &amp; fileName</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">try</span></span><br><span class="line">		<span class="keyword">set</span> imageFile <span class="keyword">to</span> (<span class="built_in">open for access</span> filePath <span class="keyword">with</span> <span class="built_in">write</span> permission)</span><br><span class="line">		<span class="built_in">set eof</span> imageFile <span class="keyword">to</span> <span class="number">0</span></span><br><span class="line">		<span class="built_in">write</span> (<span class="built_in">the clipboard</span> <span class="keyword">as</span> (<span class="keyword">first</span> <span class="built_in">item</span> <span class="keyword">of</span> theType)) <span class="keyword">to</span> imageFile</span><br><span class="line">		<span class="built_in">close access</span> imageFile</span><br><span class="line">		<span class="keyword">set</span> <span class="built_in">the clipboard</span> <span class="keyword">to</span> markdownUrl</span><br><span class="line">		<span class="keyword">try</span></span><br><span class="line">			<span class="keyword">tell</span> <span class="built_in">application</span> <span class="string">"System Events"</span></span><br><span class="line">				keystroke <span class="string">"v"</span> using command down</span><br><span class="line">			<span class="keyword">end</span> <span class="keyword">tell</span></span><br><span class="line">		<span class="keyword">end</span> <span class="keyword">try</span></span><br><span class="line">		<span class="built_in">do shell script</span> <span class="string">"/Users/quentin/Documents/Qiniu/CLI/qrsync /Users/quentin/Documents/Qiniu/CLI/conf.json"</span> <span class="comment">--此处是你的QRSync脚本目录和命令</span></span><br><span class="line">	<span class="keyword">on</span> <span class="keyword">error</span></span><br><span class="line">		<span class="keyword">try</span></span><br><span class="line">			<span class="built_in">close access</span> imageFile</span><br><span class="line">		<span class="keyword">end</span> <span class="keyword">try</span></span><br><span class="line"><span class="built_in">		return</span> <span class="string">""</span></span><br><span class="line">	<span class="keyword">end</span> <span class="keyword">try</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">	return</span> <span class="string">""</span></span><br><span class="line"><span class="keyword">end</span> <span class="keyword">if</span></span><br></pre></td></tr></table></figure>
+<p>代码中有<strong>4处需要替换修改地方</strong>：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> filePath <span class="keyword">to</span> <span class="string">"/Users/quentin/Documents/Qiniu/Data/"</span></span><br></pre></td></tr></table></figure>
+<p>换成你自己设定的同步目录。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> markdownUrl <span class="keyword">to</span> <span class="string">"![](http://data.kchen.cc/"</span> &amp; fileName &amp; <span class="string">"-960.jpg)"</span></span><br></pre></td></tr></table></figure>
+<p>设定成你的七牛空间域名：</p>
+<p><img src="http://data.kchen.cc/fbb46f61dcd1b87b7328b939cf79c6ee.png-960.jpg" alt></p>
+<p>注意如果你在设置QRSync时预设了<code>&lt;KeyPrefix&gt;</code>前缀，记得在域名后面补上。另外再加上自己设定的图片样式<code>-960.jpg</code>，我在样式中自带了一个统一的文件后缀<code>.jpg</code>是为了让Markdown编辑器知道这是一个图片链接。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">do shell script</span> <span class="string">"/Users/quentin/Documents/Qiniu/CLI/qrsync /Users/quentin/Documents/Qiniu/CLI/conf.json"</span></span><br></pre></td></tr></table></figure>
+<p>换成你的QRSync的命令脚本目录即可。</p>
+<p>然后，添加一个通知，让我们得到上传成功的反馈：</p>
+<p><img src="http://data.kchen.cc/1fd5378d66501b4039dfb49e8027a94b.png-960.jpg" alt></p>
+<p>最后，把Trigger、Action和Notification用线连起来，就大功告成了：</p>
+<p><img src="http://data.kchen.cc/8134b421b50a8cc1ef3901bc7d560a52.png-960.jpg" alt></p>
+<p>现在，你只需要</p>
+<h3 id="额外的同步工作流"><a href="#额外的同步工作流" class="headerlink" title="额外的同步工作流"></a>额外的同步工作流</h3><p>此外，我再提供一个额外的工作流来负责同步目录到七牛云存储，针对那些直接复制到同步目录下的文件。另建一个Workflow，如图所示：</p>
+<p><img src="http://data.kchen.cc/53b405507e35f3ad39a96d62c20370d2.png-960.jpg" alt></p>
+<p>使用你喜欢的HotKey来启动上传，然后使用bash语言键入以下script：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/quentin/Documents/Qiniu/CLI/qrsync /Users/quentin/Documents/Qiniu/CLI/conf.json</span><br></pre></td></tr></table></figure>
+<p>同样，把相应目录改成你自己的QRSync命令脚本目录就可以了。</p>
+<p><strong>注意</strong>：当上一个工作流没有成功上传时，可以使用这个工作流再次上传。</p>
+<h3 id="直接下载"><a href="#直接下载" class="headerlink" title="直接下载"></a>直接下载</h3><p>我把自己写好的WorkFlow上传到百度云了，你也可以自己下载，然后修改参数直接使用，传送门：</p>
+<p><a href="http://pan.baidu.com/s/1mhv4qTE" target="_blank" rel="noopener">百度网盘下载</a>  密码：q3cd</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://kchen.cc">Kun Chen</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://kchen.cc/2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/">http://kchen.cc/2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Alfred/">Alfred</a>
+            
+              <a href="/tags/七牛/">七牛</a>
+            
+              <a href="/tags/图床/">图床</a>
+            
+              <a href="/tags/Markdown/">Markdown</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/04/09/sublime-text-3-settings-sync/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Sublime Text 3 配置同步</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/01/28/data-structures-and-algorithm-analysis-1/">
+        <span class="next-text nav-default">数据结构与算法分析（一）：基础算法分析</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:kchen2991@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.facebook.com/quentin.chenkun" class="iconfont icon-facebook" title="facebook"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/kchen0x" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/chen-kun-92-07/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kun Chen</span>
+    <span class="division">|</span>
+    <span> <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备17053524号</a></span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://kchen.cc/2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/';
+        this.page.identifier = '2016/03/19/alfred-workflow-for-markdown-image-on-qiniu/';
+        this.page.title = '利用Alfred Workflow快速上传粘贴板图片至七牛图床并在Markdown中引用';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//kchen.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  </body>
+</html>

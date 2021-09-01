@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="default">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="基于 Hexo 的全自动博客构建部署系统">
+
+
+
+
+  <meta name="keywords" content="Hexo, Travis, KChen's Blog">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="KChen's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://kchen.cc/2016/11/12/hexo-instructions/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?940f951acbfe5399f7a2816cdbdae170";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41464607-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41464607-2');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz",
+      appKey: "wVKlG50ntVertqEOw4aQEVwI"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":"E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz","app_key":"wVKlG50ntVertqEOw4aQEVwI"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 基于 Hexo 的全自动博客构建部署系统 - KChen's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="mobile-header-logo">
+    <a href="/." class="logo">KChen's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">KChen's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          基于 Hexo 的全自动博客构建部署系统
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-11-12
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2016/11/12/hexo-instructions/" data-title="基于 Hexo 的全自动博客构建部署系统">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-Hexo"><span class="toc-text">什么是 Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-Hexo"><span class="toc-text">安装 Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#撰写博文"><span class="toc-text">撰写博文</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客部署"><span class="toc-text">博客部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建托管仓库"><span class="toc-text">创建托管仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-部署配置"><span class="toc-text">Hexo 部署配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客配置"><span class="toc-text">博客配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#域名和-DNS-负载均衡"><span class="toc-text">域名和 DNS 负载均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#绑定自定义域名"><span class="toc-text">绑定自定义域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS-负载均衡"><span class="toc-text">DNS 负载均衡</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Travis-CI-持续集成"><span class="toc-text">Travis CI 持续集成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是持续集成"><span class="toc-text">什么是持续集成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是-Travis-CI"><span class="toc-text">什么是 Travis CI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Travis-和-Hexo"><span class="toc-text">Travis 和 Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-Travis"><span class="toc-text">配置 Travis</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注册-Travis"><span class="toc-text">注册 Travis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Travis-CML"><span class="toc-text">安装 Travis CML</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置-Travis-1"><span class="toc-text">配置 Travis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生成私钥加密文件"><span class="toc-text">生成私钥加密文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完成工作流"><span class="toc-text">完成工作流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>在互联网渗透到个人，自媒体信息爆炸的今天，大家都希望有一个归自己所有、掌控的<strong>个人博客</strong>。因为无论是记录生活，还是分享技术，自定义博客都可以按照自己的要求，为自己提供熨帖的服务，而不必受到条条框框的限制。但是普通用户又囿于没有高超的编程技术和前端本领，而在自定义博客面前望而却步了。本文的目标就是通过介绍 Hexo+Github/Coding.net+Travis+CloudXNS 形成一套完整的个人博客自动构建、部署、国内国外双线路负载均衡的系统。真正做到<strong>随时随地写文章，一键部署到网站</strong>的全自动化流水线。</p>
+</blockquote>
+<h2 id="什么是-Hexo"><a href="#什么是-Hexo" class="headerlink" title="什么是 Hexo"></a>什么是 Hexo</h2><blockquote>
+<p>Hexo is a fast, simple &amp; powerful blog framework.</p>
+</blockquote>
+<p><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 是一个极速、简单且强大的静态博客架构。它使用 Node.js 作为构建引擎，上百个文件在几秒钟内便可构建完成；而且拥有着丰富的插件库，因开源而显得生机勃勃，可扩展性很好；最重要的，它支持 <a href="http://kchen.cc/2015/10/05/Markdown-Manual/#Markdown-简明语法">Markdown</a> 作为书写语言，极大地方便了博客的撰写。</p>
+<a id="more"></a>
+<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>Hexo 的安装和使用都非常便捷。但是，你的计算机环境中必须有这两个东西：</p>
+<ul>
+<li><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js</a></li>
+<li><a href="https://git-scm.com" target="_blank" rel="noopener">Git</a></li>
+</ul>
+<p>其中 Node.js 是 Hexo 的构建引擎，Git 是版本控制工具，关于二者的介绍和安装我就不在这里赘述了。Mac 用户推荐使用 <a href="http://brew.sh" target="_blank" rel="noopener">Homebrew</a> 进行安装。安装完成后，我们在终端中键入以下命令确认安装结果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<p>如果你的环境没有问题的话，那么我们就可以安装 Hexo 了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>安装完成后，进入一个目录作为存放博客资源的目录，然后：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>不出意外的话，终端中输出这样的结果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>那么恭喜，你的博客已经构建成功了！你可以到输出结果指定的地址去访问你的博客了。</p>
+<p><img src="http://data.kchen.cc/mac_qrsync/d3fcdb56c385052471d97e8a7b7d3a02.png-960.jpg" alt="hexo-init"></p>
+<h3 id="撰写博文"><a href="#撰写博文" class="headerlink" title="撰写博文"></a>撰写博文</h3><p>撰写博文也非常简单，在你的博客目录 <code>blog</code> 下键入命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<p>就可以新建一篇博文了，如果你想写一篇草稿，而不发布的话，那么你可以键入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<p>首先我们来创建一篇名为 <code>hello</code> 的博文吧。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post hello</span><br></pre></td></tr></table></figure>
+<p>生成的源文件路径是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Created: &lt;blog-dir&gt;/<span class="built_in">source</span>/_posts/hello.md</span><br></pre></td></tr></table></figure>
+<p>我们可以用任何的编辑器打开这个文件。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">hello</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2016</span><span class="number">-11</span><span class="number">-12</span> <span class="number">12</span><span class="string">:39:20</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>这是 <code>post</code> 模板自动帮我生成的 <code>yaml</code> 文件头。其中 <code>title</code> 是博文的标题，我们可以改成「你好！」；<code>tags</code> 是博文的标签，我们可以加上「demo」、「hello」两个标签，从第 7 行开始我们就可以撰写博客的正文了。假设我写好的博客如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 你好</span><br><span class="line">date: 2016-11-12 12:39:20</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">    - </span>demo</span><br><span class="line"><span class="bullet">    - </span>hello</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">欢迎来到 [<span class="string">Hexo</span>](<span class="link">https://hexo.io/</span>)！这是你的第一篇博文。</span><br><span class="line"></span><br><span class="line"><span class="section">## 快速开始</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 创建一篇新博文</span></span><br><span class="line"></span><br><span class="line">$ hexo new post "My New Post"</span><br><span class="line"></span><br><span class="line">更多信息……</span><br><span class="line"></span><br><span class="line"><span class="section">## 结语</span></span><br><span class="line"></span><br><span class="line">谢谢你使用 Hexo。</span><br></pre></td></tr></table></figure>
+<p>然后保存这篇文章，之后访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 你便可以看到这篇文章已经发布到你的博客中了（注意：<code>hexo server</code> 需要保持运行才能访问）。是不是非常的简单？</p>
+<p><img src="http://data.kchen.cc/mac_qrsync/96632da40c3f060c59e09c37b842bc3f.png-960.jpg" alt="first-post"></p>
+<p>更多信息，请查阅 Hexo 的<a href="https://hexo.io/docs/" target="_blank" rel="noopener">官方文档</a>。</p>
+<h2 id="博客部署"><a href="#博客部署" class="headerlink" title="博客部署"></a>博客部署</h2><p>上文提到的博客，其实是通过 <code>hexo server</code> 搭建在本地的一个临时服务器，只有自己通过 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 才能访问到，如果你想要把自己的博客发布的互联网上，你需要利用一个服务器来部署你的博客。</p>
+<p>Hexo 是基于静态页面的博客系统，意味着对服务器的要求可以非常的低。低到什么程度呢？<a href="https://github.com" target="_blank" rel="noopener">Github</a> 和 <a href="https://coding.net" target="_blank" rel="noopener">Coding.net</a> 就提供了免费的静态页面的托管服务，我们也就正好可以利用这个特性把我们的博客部署到这两个网站上面（为互联网的免费精神干杯🍻）。</p>
+<blockquote>
+<p>我比较推荐把博客部署到 Github 上面，但是由于我国高墙的缘故，国内访问 Github 的速度有限，好在国内也有非常优秀的 Git 托管网站 Coding.net。所以国内用户可以非常方便的使用他家的免费服务来托管自己的博客，另外，我在后文还会介绍同时部署自己的博客到两个网站，然后利用 DNS 负载均衡技术来让国内国外访问分走不同线路实现全网加速，这是进阶教程了，我们先按下不表。</p>
+</blockquote>
+<h3 id="创建托管仓库"><a href="#创建托管仓库" class="headerlink" title="创建托管仓库"></a>创建托管仓库</h3><p>为了普适性和走国际化线路，本文以 Github 作为例子来介绍部署托管的流程。</p>
+<p>我们用来托管博客的服务叫做 <a href="https://pages.github.com" target="_blank" rel="noopener">Github Pages</a>，它是 Github 用来提供给个人/组织或者项目的网页服务，只需要部署到你的 Github Repository，推送代码，便可以实时呈现。</p>
+<p>首先，你需要有一个 Github 的账号。然后创建一个名称为 <code>&lt;username&gt;.github.io</code> 的仓库来托管网页即可。</p>
+<p>以我的 Github 为例，我的用户名是 <code>quentin-chen</code>，所以创建一个名为 <code>quentin-chen.github.io</code> 的仓库，创建的仓库地址便是：<a href="https://github.com/quentin-chen/quentin-chen.github.io.git" target="_blank" rel="noopener">https://github.com/quentin-chen/quentin-chen.github.io.git</a> 创建完后，我们可以暂时不用管它，不需要往仓库里面 <code>push</code> 任何的东西。</p>
+<h3 id="Hexo-部署配置"><a href="#Hexo-部署配置" class="headerlink" title="Hexo 部署配置"></a>Hexo 部署配置</h3><p>接着，我们来配置一下本地的 Hexo。</p>
+<p>在博客的根目录下有一个名为 <code>_config.yml</code> 的文件，这是博客的主配置文件。前面的其他部分我们先不理会，后文再谈，我们先看最后的 <code>Deployment</code> 配置项：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span></span><br></pre></td></tr></table></figure>
+<p>根据官方的文档显示，现在 Hexo 支持 Git、Heroku、Rsync、OpenShift、FTPSync 等部署方式，我们选择 Git 来部署的话，需要首先安装 hexo-deployer-git 插件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>然后编辑上面的配置文件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">[branch]</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">[message]</span></span><br></pre></td></tr></table></figure>
+<p>我们需要把刚才创建的仓库地址添加进来，<code>branch</code> 和 <code>message</code> 项可以不填，默认情况下推送到 <code>master</code> 分支，这里我建议使用 SSH 加密的仓库地址（参看 <a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="noopener">Github 官方文档</a>配置 SSH 免密操作）。</p>
+<p>保存配置文件之后，我们在博客的跟目录键入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>上述命令可以简化成</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<p>便可以把博客部署到 Github 了。现在，所有人都可以通过 <code>http://&lt;username&gt;.github.io</code> 来访问自己的博客。</p>
+<h2 id="博客配置"><a href="#博客配置" class="headerlink" title="博客配置"></a>博客配置</h2><p>前两章我们已经了解了 Hexo 的安装使用和如何部署自己的博客到 Github，现在我们来自定义一下我们博客。首先，主要的配置都在博客根目录的 <code>_config.yml</code> 文件里：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span></span><br><span class="line"><span class="attr">subtitle:</span></span><br><span class="line"><span class="attr">description:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span></span><br><span class="line"><span class="attr">language:</span></span><br><span class="line"><span class="attr">timezone:</span></span><br></pre></td></tr></table></figure>
+<p>这一组配置是博客的描述，<code>title</code> 和 <code>subtitle</code> 分别是博客的站名，和副标题，<code>description</code> 对搜索引擎收录博客会有帮助。在多数主题中，一般只有标题和副标题会显示（我的主站只显示标题）：</p>
+<p><img src="http://data.kchen.cc/mac_qrsync/cbb658e56aaa0004500447f9fafc3309.png-960.jpg" alt="title"></p>
+<p><code>language</code> 一般可以选配 <code>en</code> 或者 <code>zh-cn</code>，分别是英文和简体中文。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://yoursite.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br></pre></td></tr></table></figure>
+<p>这个部分需要修改的只有 <code>url</code> 选项，改成博客地址行了。后面的链接生成规则，保持不变即可。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span></span><br></pre></td></tr></table></figure>
+<p>这一组配置是用来定义主题和配置插件的，可以看到，官方默认的主题叫做 <code>landscape</code>，就是上面的那个那个天际地平线的主题了。Hexo 的社区非常非常的活跃，<a href="https://hexo.io/themes/" target="_blank" rel="noopener">官方列表</a>已经收录了 84 个制作精美的主题（字母升序排列，热度不分先后），每个主题都有很大的差别和不一样的特性，大家可以自行去列表中浏览、预览、选择自己喜欢的主题，总有一款适合你的胃口（没有就自己改😄）。例如，我现在选择 <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="noopener">yelee</a> 主题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/MOxFIVE/hexo-theme-yelee.git themes/yelee</span><br></pre></td></tr></table></figure>
+<p>把从官方列表中查到的主题仓库地址 <code>git clone</code> 下来，放到 <code>themes/</code> 下相应的目录中，然后我们修改博客根目录下的 <code>_config.yml</code> 文件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">yelee</span></span><br></pre></td></tr></table></figure>
+<p>保存后，我们再次执行 <code>hexo server</code> 命令，预览一下网站的变化。</p>
+<p><img src="http://data.kchen.cc/mac_qrsync/469554ef7299916fe76ca677517130c1.png-960.jpg" alt="yelee"></p>
+<p>你看，主题是不是发生了巨大的改变，网站左侧现在显示的是 <code>author</code> 和 <code>sutitle</code> 了，右边的预览页面支持很多动态特效。每一个主题的详细配置参数都在 <code>/themes/&lt;yourtheme&gt;/_config.yml</code> 文件下，可以查阅该主题的官方页了解配置的解释。我在这里就不啰嗦了，当你选定了自己喜欢的主题，修改、配置好了之后。便可以使用、撰写、发布自己的博客了。</p>
+<p>祝大家使用愉快，下面介绍 Hexo 的高阶教程。</p>
+<hr>
+<h2 id="域名和-DNS-负载均衡"><a href="#域名和-DNS-负载均衡" class="headerlink" title="域名和 DNS 负载均衡"></a>域名和 DNS 负载均衡</h2><h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p>在前面的教程中，我们已经可以无碍的使用 Hexo 来写博客，可是有一个地方不太优雅，那就是域名。因为我们使用的是 Github 提供的二级域名 <code>github.io</code>，一来太长，二来也不太够自定义、个性化。关键是，你没有域名控制的自主权，DNS 和 CDN 都没法做，一切得看 Github 的网络环境。</p>
+<p>所以，我们可以买一个域名，然后解析到 Github 去。关于选域名的问题，大家可以去看看<a href="http://kchen.cc/2016/11/04/new-beginning/">博客搬迁记 - K.Chen</a>，像我现在选购的 <code>.cc</code> 的顶级域名，每年才 19 元。一口气买 5 年不过才一顿饭的花费。还有不不少顶级域名如 <code>.tech</code> 才每年 5 元，这价格跟白开水一样。实在不济，还有 <code>.tk</code>，<code>.ml</code>，<code>.cf</code>，<code>.ga</code> 四个<strong>免费域名</strong>提供开放注册（为互联网的免费精神干杯🍻）。域名在国内的万网、西部数码，国外的 Godady 等网站购买都是可以的。</p>
+<p>购买域名之后，我们只需要把 DNS 解析创建两个 A 记录到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">192.30.252.153</span><br><span class="line">192.30.252.154</span><br><span class="line"></span><br><span class="line">如果使用 Coding.net，创建 CNAME 记录到：</span><br><span class="line">pages.coding.me</span><br></pre></td></tr></table></figure>
+<p>之后在自己的博客根目录下创建一个 <code>CNAME</code> 文件，里面放你解析的域名。</p>
+<p>之后修改根目录下的 <code>_config.yml</code> 文件，把站点地址更新成新的绑定的域名即可。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://yoursite.com</span></span><br></pre></td></tr></table></figure>
+<p>现在，就可以使用自己的域名访问自己的博客了，例如： <a href="http://kchen.cc">http://kchen.cc</a> </p>
+<h3 id="DNS-负载均衡"><a href="#DNS-负载均衡" class="headerlink" title="DNS 负载均衡"></a>DNS 负载均衡</h3><p>为了让国内国外都顺畅地访问我们的博客，我们可以把自己的博客同时部署到 Github 和 Coding.net：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">https://github.com/quentin-chen/quentin-chen.github.io.git,master</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@git.coding.net:quentinchen/quentinchen.git,master</span></span><br></pre></td></tr></table></figure>
+<p>可是问题来了：</p>
+<blockquote>
+<p>我只有一个域名，怎么让不同地方的人访问的时候给他不同地方的资源呢？</p>
+</blockquote>
+<p>其实，这是一个典型负载均衡问题，就是把访问流量分流提高访问流畅性，只不过我们在这里还有穿越国内高墙限制的用途在里面。常见的负载均衡技术有 CDN 和 DNS 均衡等。</p>
+<p>CDN 的做法是把网站常访问数据缓存到 CDN 服务器，当用户访问网站的时候 DNS 会把请求发送到离用户最近的 CDN 服务器上去。听起来是不是很棒？但是 CDN 服务一来挺贵，当然也有免费的，可是很难做到全球网络范围内的 CDN，另一方面流量都是 CDN 去帮我们做了，如果想有一些客制化的要求不容易实现。何况，其实 Github 和 Coding.net 自己本身就做了挺好的 CDN 加速，我们既然把博客托管在上面，善加利用就是了。所以我们采用 DNS 负载均衡来实现国内外分流。</p>
+<p>大部分人可能天天都用着 DNS 却不知道它的基本原理，你可能知道我们访问互联网需要查询 DNS 服务器：</p>
+<p><img src="http://data.kchen.cc/mac_qrsync/3bddb2d99dab6a63f0b3da0402af2bad.png-960.jpg" alt="DNS"></p>
+<p>可是你知道它具体是怎么工作的么？</p>
+<p>其实 DNS 系统是一个典型的树状架构，上图所示的 DNS 服务器其实应该叫 DNS 缓存查询服务器，它是为了减轻互联网上 DNS 查询的负载所设计的。如果你的请求没有命中缓存，那么这个缓存服务器就会自己进行一次标准查询，然后再把结果缓存起来，简单来说就是从根服务器开始一级一级的问。我们以前经常谈到根服务器的重要性其实就体现在这里了，它保留了对所有域名的起始解释权。</p>
+<blockquote>
+<p>我国高墙常使用的一个技术手段称为 DNS 投毒，就是在根服务器上投毒，把需要墙的网站域名解析到不存在的地址上去。再配合地方的 DNS 劫持，你就别想访问到这些被墙的网站了。</p>
+</blockquote>
+<p>根据 DNS 的特点我们可以使用 <a href="https://www.cloudxns.net" target="_blank" rel="noopener">CloudXNS</a> 提供的免费智能 DNS 解析服务（再次为互联网的免费精神干杯🍻）来动态解析我们域名。</p>
+<p>为什么使用 CloudXNS 呢，不仅因为它免费，而且：</p>
+<ul>
+<li>不但拥有主流 DNS 产品的全部功能，而且扩展有自己独有的解析记录类型，在解析速度方面也明显优于国内其他同类产品，它的解析速度比传统 DNS 快两到三倍，DNS 配置生效更快，可做到实时生效。</li>
+<li>有非常多的线路选择，不仅可以按照海内、海外分类，甚至海内可以按照移动、联通、电信、铁通等等再划分到省级线路，海外可以详细到不同的地区和国家等上百条不同的解析线路：</li>
+</ul>
+<p><img src="http://data.kchen.cc/mac_qrsync/17b74c02dcce4490b23b55851181684e.png-960.jpg" alt="routes"></p>
+<p>因为我们的博客始终是个小站，用不了那么多的线路区分，我们主要利用海内海外的线路来分流数据到 Github 和 Coding.net。</p>
+<p>首先注册一个 CloudXNS 的账号，然后去原域名购买商处，将域名的 DNS 服务器指定为 CloudXNS 的服务器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lv3ns1.ffdns.net</span><br><span class="line">lv3ns2.ffdns.net</span><br><span class="line">lv3ns3.ffdns.net</span><br><span class="line">lv3ns4.ffdns.net</span><br></pre></td></tr></table></figure>
+<p>然后在 CloudXNS 设置你的域名，并添加如下域名解析：</p>
+<p><img src="http://data.kchen.cc/mac_qrsync/0ac2ac1d019390aeb81baeb35196b482.png-960.jpg" alt="balance"></p>
+<p>这样，默认访问将会被解析到 Coding.net，但是海外访问会被解析到 Github。非常方便。如果你的网站域名已经备案了的话，你还可以使用 CloudXNS 提供的免费 CDN 服务进一步为自己的网站提速。</p>
+<hr>
+<h2 id="Travis-CI-持续集成"><a href="#Travis-CI-持续集成" class="headerlink" title="Travis CI 持续集成"></a>Travis CI 持续集成</h2><p>到这一步，你其实已经可以很简便的使用 Hexo 来写博客了，可人是一种永远不满足的动物。使用 Hexo 来写博客有一个问题就是，我只能在安装了 Hexo 的计算机上写东西，然后 <code>hexo generate</code> 再 <code>hexo deploy</code> 到托管服务器。如果我想在没有安装 Hexo 的电脑上写博客呢？如果我想随时随地修改，或者写一下博客呢？</p>
+<p>当然一个简单办法就是把自己博客的源文件也托管到 Github，每次都把源文件 <code>clone</code> 下来，然后安装 Hexo，再构建发布就好了。可是这样做的话，始终不太优雅。那可以搞一个远程的服务器，把构建博客的事情交给服务器，每次要写博客的时候连接到服务器上去就行了。可既然我们把博客都托管到了 Github，为甚么博客的构建还需要服务呢？不行，这样还是不够优雅。如果有什么服务能够代替上述的那个服务器就好了，答案是确实有的——<strong>持续集成</strong>。</p>
+<h3 id="什么是持续集成"><a href="#什么是持续集成" class="headerlink" title="什么是持续集成"></a>什么是持续集成</h3><blockquote>
+<p><strong>持续集成</strong>（Continuous Integration）是一种软件开发实践。 在持续集成中，团队成员频繁集成他们的工作成果，一般每人每天至少集成一次，也可以多次。 每次集成会经过自动构建（包括自动测试）的检验，以尽快发现集成错误。</p>
+</blockquote>
+<h3 id="什么是-Travis-CI"><a href="#什么是-Travis-CI" class="headerlink" title="什么是 Travis CI"></a>什么是 Travis CI</h3><blockquote>
+<p>Travis CI 是目前新兴的开源持续集成构建项目，它与 jenkins，GO 的很明显的特别在于采用 yaml 格式，同时它是在线的服务，不像 jenkins 需要你本地搭建服务器，简洁清新独树一帜。目前大多数的 Github 项目都已经移入到 Travis CI 的构建队列中，据说Travis CI 每天运行超过 4000 次完整构建。对于做开源项目或者 Github 的使用者，如果你的项目还没有加入 Travis CI 构建队列，那么我真的想对你说 OUT 了。</p>
+</blockquote>
+<h3 id="Travis-和-Hexo"><a href="#Travis-和-Hexo" class="headerlink" title="Travis 和 Hexo"></a>Travis 和 Hexo</h3><p>为什么我们要选择 Travis 呢，因为它和 Github 集成的程度非常高，对于 Github 上的开源项目，可以免费在 Travis 上构建（我们是不是该为免费的互联网精神干杯🍻），而非开源的私有项目想在 Travis 上构建价格还是非常感人的。</p>
+<p>我先把在 Travis 上进行自动构建的思路说一下：</p>
+<p><img src="http://data.kchen.cc/mac_qrsync/cbc37bcd05062212564fe2aaaee6631f.png-960.jpg" alt="sequence"></p>
+<ul>
+<li>我们在在 Github 的博客仓库里新建一个 <code>blog-source</code> 分支，然后把博客的源码托管到这个分支</li>
+<li>每当我们在本地写好了博文之后，把修改 <code>push</code> 到该分支</li>
+<li>Travis 上可以对这个项目的 <code>blog-source</code> 分支设置钩子，每当检测到 <code>push</code> 的时候就去仓库 <code>clone</code> 源代码</li>
+<li>Travis 执行构建脚本</li>
+<li>Travis 把构建结果通过 <code>push</code> 部署到 <code>master</code> 分支或者 Coding.net 的仓库里 </li>
+</ul>
+<p>在这样的自动化流程下，我们唯一需要做的事情就是 <code>push</code> 我们的博文到源代码分支，其他的事情交给 Travis，当然，这一流程是需要我们配置的。</p>
+<h3 id="配置-Travis"><a href="#配置-Travis" class="headerlink" title="配置 Travis"></a>配置 Travis</h3><h4 id="注册-Travis"><a href="#注册-Travis" class="headerlink" title="注册 Travis"></a>注册 Travis</h4><p>Travis CI 不需要单独注册，直接使用 GitHub 账号登录就可以了。</p>
+<p>上<a href="https://travis-ci.org/" target="_blank" rel="noopener">官网</a>会发现有 Sign in with GitHub（使用GitHUb登录）和 Sign Up（注册），其实这俩做的事情都一样，就是用 GitHub 账号登录。登录后界面会显示你的 GitHub Repository，默认全部全部没有勾选，选择你的博客的 Repository 后完成第一步，如图：</p>
+<p><img src="http://data.kchen.cc/mac_qrsync/c5c4ae39bc22681ccf481119befbe363.png-960.jpg" alt="travis"></p>
+<p>如果你没有看到自己的项目，请点击右上角的 Sync with Github。</p>
+<h4 id="安装-Travis-CML"><a href="#安装-Travis-CML" class="headerlink" title="安装 Travis CML"></a>安装 Travis CML</h4><p>在进行下面的步骤之前，我们需要先安装 Travis 的 CML，因为后面的部署需要我们加密的自己的 SSH 私钥和 Github、Coding.net 通信。安装过程请看 <a href="https://github.com/travis-ci/travis.rb#installation" target="_blank" rel="noopener">Travis CML Installation</a>：</p>
+<p>首先必须有 <a href="http://www.ruby-lang.org/en/downloads/" target="_blank" rel="noopener">Ruby</a> 1.9.3 以上，检查了版本之后，安装 Travis，检查版本即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ruby -v</span><br><span class="line">gem install travis -v 1.8.4 --no-rdoc --no-ri</span><br><span class="line">travis version</span><br></pre></td></tr></table></figure>
+<p>如上，如果出现 1.8.2 这样的版本信息，则说明 Travis CI Command Line Client 安装成功。之后进行登录，执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">travis login</span><br></pre></td></tr></table></figure>
+<p>按照提示登录就好了。</p>
+<h4 id="配置-Travis-1"><a href="#配置-Travis-1" class="headerlink" title="配置 Travis"></a>配置 Travis</h4><p>在博客根目录下添加 Travis CI 所需要的配置文件 <code>.travis.yml</code>，配置文件内容和一些说明如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> <span class="string">node_js</span></span><br><span class="line"><span class="attr">node_js:</span> <span class="string">stable</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># assign build branches</span></span><br><span class="line"><span class="attr">branches:</span></span><br><span class="line">  <span class="attr">only:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">blog-source</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># cache this directory</span></span><br><span class="line"><span class="attr">cache:</span></span><br><span class="line">  <span class="attr">directories:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">node_modules</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># S: Build Lifecycle</span></span><br><span class="line"><span class="attr">before_install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">openssl</span> <span class="string">aes-256-cbc</span> <span class="string">-K</span> <span class="string">$encrypted_a0b7f0848317_key</span> <span class="string">-iv</span> <span class="string">$encrypted_a0b7f0848317_iv</span> <span class="string">-in</span> <span class="string">./.travis/id_rsa.enc</span> <span class="string">-out</span> <span class="string">~/.ssh/id_rsa</span> <span class="string">-d</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">chmod</span> <span class="number">600</span> <span class="string">~/.ssh/id_rsa</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">eval</span> <span class="string">$(ssh-agent)</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">ssh-add</span> <span class="string">~/.ssh/id_rsa</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">cp</span> <span class="string">.travis/ssh_config</span> <span class="string">~/.ssh/config</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">-g</span> <span class="string">hexo-cli</span> <span class="comment"># 安装 hexo</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">clone</span> <span class="string">-b</span> <span class="string">mod</span> <span class="string">https://github.com/quentin-chen/hexo-theme-even.git</span> <span class="string">themes/even</span></span><br><span class="line"></span><br><span class="line"><span class="attr">install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span> <span class="comment"># 安装 package.json 中的插件</span></span><br><span class="line"></span><br><span class="line"><span class="attr">script:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">hexo</span> <span class="string">generate</span></span><br><span class="line"></span><br><span class="line"><span class="attr">after_success:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.name</span> <span class="string">"Quentin_Chen"</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.email</span> <span class="string">"quentin.chen@foxmail.com"</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">sed</span> <span class="string">-i''</span> <span class="string">"/^ *repo/s~github\.com~$&#123;githubToken&#125;@github.com~"</span> <span class="string">_config.yml</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">hexo</span> <span class="string">deploy</span></span><br><span class="line"><span class="comment"># E: Build LifeCycle</span></span><br></pre></td></tr></table></figure>
+<p>我逐步来讲解一下每一个配置项的意思。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> <span class="string">node_js</span></span><br><span class="line"><span class="attr">node_js:</span> <span class="string">stable</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># assign build branches</span></span><br><span class="line"><span class="attr">branches:</span></span><br><span class="line">  <span class="attr">only:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">blog-source</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># cache this directory</span></span><br><span class="line"><span class="attr">cache:</span></span><br><span class="line">  <span class="attr">directories:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">node_modules</span></span><br></pre></td></tr></table></figure>
+<p>这里指定了构建的环境是 Node.js，版本是当前稳定版本。设置的 WebHook 钩子只检测 <code>blog-source</code> 分支的 <code>push</code> 变动。另外我们把 <code>node_modules</code> 文件夹放入缓存，这样可以大大节约每次构建的时间（2min -&gt; 30s）。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">before_install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">openssl</span> <span class="string">aes-256-cbc</span> <span class="string">-K</span> <span class="string">&lt;you_key&gt;</span> <span class="string">-iv</span> <span class="string">&lt;your_iv&gt;</span> <span class="string">-in</span> <span class="string">./.travis/id_rsa.enc</span> <span class="string">-out</span> <span class="string">~/.ssh/id_rsa</span> <span class="string">-d</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">chmod</span> <span class="number">600</span> <span class="string">~/.ssh/id_rsa</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">eval</span> <span class="string">$(ssh-agent)</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">ssh-add</span> <span class="string">~/.ssh/id_rsa</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">cp</span> <span class="string">.travis/ssh_config</span> <span class="string">~/.ssh/config</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">-g</span> <span class="string">hexo-cli</span> <span class="comment"># 安装 hexo</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">clone</span> <span class="string">&lt;theme_repo&gt;</span> <span class="string">themes/&lt;theme&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其实每次 Travis 构建的时候，相当于创建了一个干净的虚拟机，除了 Git 等必须的工具，甚至连 Node.js 的环境都是现安装的。所以我们在构建自己的博客之前，需要做一些环境的准备。</p>
+<p>其中 2-6 行是用来配置 SSH 私钥的，这样才能让 Github 和 Coding.net 知道你的身份。这一部分我们后面再说。</p>
+<p>第 7 行是在 Travis 中安装 Hexo 环境，第 8 行是安装主题。</p>
+<blockquote>
+<p>关于主题这里，如果你对自己的主题做了修改（包括配置文件），那么应该把自己修改过的主题托管到 Github，这里填的 <code>&lt;theme_repo&gt;</code> 应是你自己地址。</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span> <span class="comment"># 安装 package.json 中的插件</span></span><br><span class="line"></span><br><span class="line"><span class="attr">script:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">hexo</span> <span class="string">generate</span></span><br><span class="line"></span><br><span class="line"><span class="attr">after_success:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.name</span> <span class="string">"&lt;You Name&gt;"</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.email</span> <span class="string">"&lt;email&gt;"</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">hexo</span> <span class="string">deploy</span></span><br></pre></td></tr></table></figure>
+<p>这一部分，就是在 Travis 上模拟部署过程。因为要使用 Git，所以要提前配置好 Committer 的信息。</p>
+<h4 id="生成私钥加密文件"><a href="#生成私钥加密文件" class="headerlink" title="生成私钥加密文件"></a>生成私钥加密文件</h4><blockquote>
+<p>什么是私钥？</p>
+</blockquote>
+<p>私钥就是密钥对（密钥对指一对公钥和私钥），我们在使用 Github 的时候，首先需要在 Github 上配置公钥，这是最基础的。那么，存在我们本地的私钥就是你的个人身份标示，如果你的项目 git 地址配置的是 <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/projectname.git（相对的还有 <a href="https://github.com/username/projectname.git），" target="_blank" rel="noopener">https://github.com/username/projectname.git），</a> 当你在对 Repository 在一些操作（比如 <code>push</code> 等），则需要私钥进行身份验证了（这是自动验证的，如果是使用 https 的配置，则需要提供用户名和密码）。</p>
+<p>我们在 Travis CI 上自动部署代码，就牵扯到了 <code>push</code> 操作，那么就需要提供私钥了。</p>
+<blockquote>
+<p>为什么生成私钥加密文件？</p>
+</blockquote>
+<p>将私钥直接放在项目里，那么人人都能看到。私钥的泄露将会发生一系列的问题，比如有坏人拿你的私钥直接操作你的 git 项目，你能干啥他也能干啥（原理上面讲了），这咋整？我们需要对私钥进行加密。</p>
+<p>Travis 提供了加密文件的支持，什么意思呢？我们可以对文件（这里指私钥）在本地进行加密，然后把加密过后的文件放在项目里，那么别人就无法获取里面的真实内容。然后我们在让 Travis 执行脚本的时候，在读取加密文件之前对文件进行解密（使用的解密密码提前在 Travis 上配置好了），这样就可以达到不将文件内容暴露，并且让 Travis 获取到真实内容的目的了，大概的时序图如下：</p>
+<p><img src="http://data.kchen.cc/mac_qrsync/8801dc034d298600bfc9b7124a0f42cd.png-960.jpg" alt="enc-key"></p>
+<p>开始吧，我们首先把自己的在博客的根目录下建立 <code>.travis</code> 文件夹来存放相关的资料：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir .travis &amp;&amp; <span class="built_in">cd</span> .travis</span><br></pre></td></tr></table></figure>
+<p>把本地的私钥复制一份过来，用 Travis 加密，然后删除（<strong>切记加密完了一定要删除原始密钥！！！</strong>）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp ~/.ssh/id_rsa .</span><br><span class="line">travis encrypt-file id_rsa</span><br><span class="line">rm id_rsa</span><br></pre></td></tr></table></figure>
+<p>现在 <code>ls</code> 命令查看一下 <code>.travis</code> 目录应该只有 <code>id_rsa.enc</code> 这一个文件才对。然后我们再在当前目录下新建一个 <code>ssh_config</code> 用来配置 Travis 上的 SSH Client。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host *</span><br><span class="line">  User git</span><br><span class="line">  StrictHostKeyChecking no</span><br><span class="line">  IdentityFile ~/.ssh/id_rsa</span><br><span class="line">  IdentitiesOnly yes</span><br></pre></td></tr></table></figure>
+<p>现在，我们在 Travis 网站，博客项目的设置（项目右上角）里可以看到两个用于解密私钥的环境变量：</p>
+<p><img src="http://data.kchen.cc/mac_qrsync/c180cfd5996f2b3c1d43f9017a11b7c9.png-960.jpg" alt="travis-env"></p>
+<p>把这两个环境变量名复制到上面的 <code>.travis.yaml</code> 文件里替换相应部分：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">before_install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">openssl</span> <span class="string">aes-256-cbc</span> <span class="string">-K</span> <span class="string">&lt;you_key&gt;</span> <span class="string">-iv</span> <span class="string">&lt;your_iv&gt;</span> <span class="string">-in</span> <span class="string">./.travis/id_rsa.enc</span> <span class="string">-out</span> <span class="string">~/.ssh/id_rsa</span> <span class="string">-d</span></span><br></pre></td></tr></table></figure>
+<p>这样，全部的配置就完成了。</p>
+<blockquote>
+<p>Tips： Github 还支持 Application Token 的方式来认证身份，比使用 SSH 私钥要更简便，但考虑到 Coding.net 并不支持，我还是选择普适的方法。有兴趣的同学可以自己研究一下，就当做课后作业吧:D。</p>
+</blockquote>
+<h3 id="完成工作流"><a href="#完成工作流" class="headerlink" title="完成工作流"></a>完成工作流</h3><p>在进行工作流之前我们来检查一下我们现在工作目录和所有必须的东西：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── .travis*</span><br><span class="line">│   ├── id_rsa.enc</span><br><span class="line">│   └── ssh_config</span><br><span class="line">├── _config.yml*</span><br><span class="line">├── db.json*</span><br><span class="line">├── node_modules</span><br><span class="line">├── package.json*</span><br><span class="line">├── scaffolds*</span><br><span class="line">├── <span class="built_in">source</span>*</span><br><span class="line">│   ├── CNAME*</span><br><span class="line">│   ├── _posts</span><br><span class="line">│   ├── about</span><br><span class="line">│   ├── categories</span><br><span class="line">│   ├── img</span><br><span class="line">│   ├── media</span><br><span class="line">│   └── tags</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<p>我用星号标记的文件和文件夹都是十分重要的，确保 Git 覆盖了这些文件和目录，然后我们把目录 <code>push</code> 到 <code>github/blog-source</code> 仓库分支。Travis WebHook 立马就会检测到 <code>push</code>，然后开始构建了：</p>
+<p><img src="http://data.kchen.cc/mac_qrsync/e0f11bcfb411c5b73bdcac015ee87b3d.png-960.jpg" alt="build-success"></p>
+<p>上图是一次成功的构建，我们可以点开 <code>Job log</code> 看一下构建过程的 Log 文件，特别是构建没有成功的话，我们更要仔细阅读，找准问题，对症下药。</p>
+<p>构建成功以后再去刷新你的网页，是不是已经是最新的了呢？</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>至此，这套教程就全部写完了。我们来回顾一下：</p>
+<ul>
+<li>Hexo 的安装和使用</li>
+<li>配置博客和使用自定义主题</li>
+<li>部署自己的博客到 Github 或者 Coding.net 等静态页面托管服务</li>
+<li>利用 CloudXNS 对自己的域名进行动态解析，以加速国内国外的全网访问速度</li>
+<li>利用 Travis 实现全自动部署</li>
+</ul>
+<p>希望你能学会，并爱上用这样的方式来写作博客！一切只是刚刚开始，可以折腾的东西还有好多好多，祝你玩得愉快！</p>
+<blockquote>
+<p>在操作过程中有什么疑问，欢迎在下方留言。大家一起交流讨论。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://kchen.cc">Kun Chen</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://kchen.cc/2016/11/12/hexo-instructions/">http://kchen.cc/2016/11/12/hexo-instructions/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Hexo/">Hexo</a>
+            
+              <a href="/tags/Travis/">Travis</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/11/14/ssh-for-aws/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">启用密码登录 AWS</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/11/11/ssh-port-forwarding/">
+        <span class="next-text nav-default">SSH 端口转发</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:kchen2991@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.facebook.com/quentin.chenkun" class="iconfont icon-facebook" title="facebook"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/kchen0x" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/chen-kun-92-07/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kun Chen</span>
+    <span class="division">|</span>
+    <span> <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备17053524号</a></span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://kchen.cc/2016/11/12/hexo-instructions/';
+        this.page.identifier = '2016/11/12/hexo-instructions/';
+        this.page.title = '基于 Hexo 的全自动博客构建部署系统';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//kchen.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  </body>
+</html>

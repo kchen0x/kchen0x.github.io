@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="default">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="iTerm2 与 Tmux 的集成">
+
+
+
+
+  <meta name="keywords" content="tmux, iTerm2, KChen's Blog">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="KChen's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://kchen.cc/2016/11/17/iterm2-and-tmux-integration/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?940f951acbfe5399f7a2816cdbdae170";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41464607-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41464607-2');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz",
+      appKey: "wVKlG50ntVertqEOw4aQEVwI"
+    });
+  </script>
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":"E6WKI3ciNvoyQWfb6qdM50rJ-gzGzoHsz","app_key":"wVKlG50ntVertqEOw4aQEVwI"},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> iTerm2 与 Tmux 的集成 - KChen's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="mobile-header-logo">
+    <a href="/." class="logo">KChen's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">KChen's Blog</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          iTerm2 与 Tmux 的集成
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-11-17
+        </span>
+        
+        
+        <span class="post-visits" data-url="/2016/11/17/iterm2-and-tmux-integration/" data-title="iTerm2 与 Tmux 的集成">
+          阅读次数 0
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-text">用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#限制"><span class="toc-text">限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建-tmux"><span class="toc-text">创建 tmux</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://camo.githubusercontent.com/9a07003e528862ebff782aac2220ef226d28db57/68747470733a2f2f7261772e6769746875622e636f6d2f636872697368756e742f636f6c6f722d736368656d65732f6d61737465722f7468617965722f73637265656e73686f742e706e67" alt="tmux"></p>
+<p>iTerm2 最新的特性已经集成了 tmux，这意味着什么？</p>
+<p>通常情况下，当你使用 tmux 的时候，会在一个「物理」窗口（Window）中创建多个虚拟的窗口。你可以通过在 tmux 中使用各种命令来操作它的环境，但这样也会随之带来一些问题：</p>
+<ul>
+<li>你需要敲下前缀修饰键来进入 tmux 的命令模式（默认情况下是<code>control + b</code>，这和 emacs 中的左移光标是冲突的，而且这也会让与 shell 的交互变得更加困难）。</li>
+<li>你需要不止一次的使用 ssh 来连接到远程服务器（remote host）以获得不止一个的 tmux 会话（session）窗口。</li>
+<li>你需要学习 tmux 的命令。</li>
+<li>你需要开启鼠标报告（mouse reporting）来调整分割窗格（pane）的大小，尽管你并不想启用它。</li>
+<li>当你使用 tmux 的时候，一些终端模拟器内置的功能不能很好工作，比如说：你并不能像在普通的终端窗口中那般快捷的使用回滚查看历史，同时，tmux 的查找功能也完全跟 iTerm2 的不能比拟。</li>
+</ul>
+<p>对于大多数的用户而言，在终端中使用复用器（Multiplexer）是十分好用的工作方式，但是他们并不想接受以上的种种缺陷。</p>
+<a id="more"></a>
+<p>iTerm2 与 tmux 的集成（iTerm2’s tmux integration）就解决了这些痛点。</p>
+<p>当你执行 <code>tmux -CC</code> 命令时一个新的 tmux 会话就会被创建，一个看上去和普通 iTerm2 窗口没有差别的窗口将会被打开。唯一不同的地方就是，当 iTerms2 退出或者是 ssh 会话丢失时，tmux 会保持运行。你可以重新连接上刚刚 ssh 连接的远程主机，然后执行 <code>tmux -CC attach</code> 命令，iTerm2 窗口会重新打开并恢复到断开时相同的状态。那么，一些应用场景就不难想象了：</p>
+<p>对于那些常常使用 ssh 的小伙伴来说，你可以：</p>
+<ul>
+<li>回到家中然后恢复公司的工作环境。</li>
+<li>不必担心系统升级的电脑重启。</li>
+</ul>
+<p>而对于所有小伙伴而言，你可以：</p>
+<ul>
+<li>通过连接同一个 tmux 会话和别的小伙伴协作（collaborate）。</li>
+<li>保护自己不因 iTerm2 崩溃（iTerm3 会通过会话修复特性来减轻这种状况）而丢失工作环境。</li>
+</ul>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>你可以一如往常那般使用 tmux，只需要在末尾加上 <code>-CC</code> 参数就可以了，实际上，也就是执行以下任意一个命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tmux -CC</span><br><span class="line">tmux -CC attach</span><br></pre></td></tr></table></figure>
+<p>当你执行 <code>tmux -CC</code> 命令的时候，你将会在终端中看到如下的菜单：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">** tmux mode started **</span><br><span class="line"></span><br><span class="line">Command Menu</span><br><span class="line">----------------------------</span><br><span class="line">esc    Detach cleanly.</span><br><span class="line">  X    Force-quit tmux mode.</span><br><span class="line">  L    Toggle logging.</span><br><span class="line">  C    Run tmux <span class="built_in">command</span>.</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果你按下 <code>esc</code> 键，tmux 窗口会关闭，tmux 客户端也会终止。</li>
+<li>如果你按下 <code>esc</code> 键但是任何事情都没有发生，这说明 tmux 的客户端可能崩溃了或者是除了别的状况。这时按下 <code>X</code> 键来强制 iTerm2 退出 tmux 模式。如果真是的 tmux 客户端崩溃的话，你也许会需要执行 <code>stty sane</code> 命令来恢复你的终端状态。</li>
+<li>如果你想提交一个 Bug 的话，可以通过按下 <code>L</code> 键来重现问题，tmux 协议命令会被打印到屏幕上。</li>
+<li>如果你想执行菜单中没有的命令，你可以按下 <code>C</code> 键来进入 tmux 命令模式，一个可以输入命令的对话框将会弹出，你可以键入类似 <code>new-window</code> 这样的命令。</li>
+</ul>
+<p>通常情况下， 大多数的动作都不需要通过键入命令来实现，以下的一些 iTerm2 的动作就可以直接作用于 tmux：</p>
+<ul>
+<li>关闭会话，标签页（tab）或者是窗口：终止 tmux 会话或窗口。</li>
+<li>分割窗格：通过 <code>split-window</code> 分割 tmux 窗口。</li>
+<li>调整窗格大小：通过 <code>resize-pane</code> 命令调整 tmux 窗格大小。</li>
+<li>调整窗口大小：告诉 tmux 客户端的大小改变了，重调所有窗口的大小。窗口不会大于它连接（attach）的最小的客户端的大小，一个灰色的区域将会出现的窗口的右下方表明实际窗口的大小超出了 tmux 窗口允许的最大大小。这一原则的一个好处就是所有的 tmux 窗口/标签页都包含完全相同的行数和列数。</li>
+<li>通过菜单栏 Shell-&gt;tmux 创建一个新的窗口或者标签页：创建一个新的 tmux 窗口。</li>
+<li>通过菜单栏 Shell-&gt;tmux-&gt;Detach 断开（detach）与 tmux 会话的连接：断开与 tmux 会话的连接，所有 tmux 窗口都会被关闭，你可以通过 <code>tmux -CC attach</code> 命令重新与之连上。</li>
+</ul>
+<h2 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h2><p>大多数的限制都将会在接下来的版本中得到解决和改进：</p>
+<ul>
+<li>在早于2.9版本的 iTerm2 中，你只能同时连接上一个 tmux 会话。在2.9和更新的版本中，你可以同时连接多个 tmux 会话。</li>
+<li><code>.tmuxrc</code> 文件未经测试，可能运转不正常。</li>
+<li>在早于2.9版本的 iTerm2 中，不能最大化窗格，已经在2.9版本中解决了这一问题。</li>
+</ul>
+<h2 id="创建-tmux"><a href="#创建-tmux" class="headerlink" title="创建 tmux"></a>创建 tmux</h2><p>你需要使用1.8或更高版本的 tmux，在 Mac 上安装 tmux 最简便的方法是使用 <code>homebrew</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tmux</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>原文链接 <a href="https://gitlab.com/gnachman/iterm2/wikis/TmuxIntegration" target="_blank" rel="noopener">《iTerm2 and tmux Ingeration》</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://kchen.cc">Kun Chen</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://kchen.cc/2016/11/17/iterm2-and-tmux-integration/">http://kchen.cc/2016/11/17/iterm2-and-tmux-integration/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/tmux/">tmux</a>
+            
+              <a href="/tags/iTerm2/">iTerm2</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/11/18/custom-multiplexer-k-tmux/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">为你量身定制的终端复用器 K-Tmux</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/11/16/solarized-colorscheme/">
+        <span class="next-text nav-default">八卦阴阳鱼，谈谈 Solarized 配色</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:kchen2991@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.facebook.com/quentin.chenkun" class="iconfont icon-facebook" title="facebook"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/kchen0x" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/chen-kun-92-07/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Kun Chen</span>
+    <span class="division">|</span>
+    <span> <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备17053524号</a></span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://kchen.cc/2016/11/17/iterm2-and-tmux-integration/';
+        this.page.identifier = '2016/11/17/iterm2-and-tmux-integration/';
+        this.page.title = 'iTerm2 与 Tmux 的集成';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//kchen.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  </body>
+</html>
