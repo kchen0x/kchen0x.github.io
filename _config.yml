@@ -97,8 +97,8 @@ math:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  # - type: git
-  #   repo: https://github.com/kchen0x/kchen0x.github.io.git
   - type: git
-    repo: git@git.coding.net:quentinchen/quentinchen.git,master
-  - type: baidu_url_submitter
+    repo: https://github.com/kchen0x/kchen0x.github.io.git
+  # - type: git
+  #   repo: git@git.coding.net:quentinchen/quentinchen.git,master
+  # - type: baidu_url_submitter
